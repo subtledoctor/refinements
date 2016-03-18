@@ -1,0 +1,58 @@
+/* Installs the Use Scrolls Engine and related Blade and Shapeshifter hacks.
+
+- Create shaptF and shaptw from Shapeshifter.
+  - Alter the Clab file.
+- Create bladetw from Blade.
+  - Alter the Clab file.
+- adds scripts for Use Scrolls (or other HLAs) and/or Dual Class handling.
+
+*/
+
+//Creates a new CLAB file for the Blade twin kit
+COPY_EXISTING ~CLABBA02.2DA~     ~override/CLABBLTW.2DA~
+REPLACE_TEXTUALLY ~GA_SPCL521~     ~GA_LI#FINO~
+REPLACE_TEXTUALLY ~GA_SPCL522~     ~GA_LI#FIND~
+
+//Fixes the original shapeshifter CLAB
+COPY_EXISTING ~clabdr03.2da~ ~override~
+  REPLACE_TEXTUALLY ~GA_SPCL644  ~ ~****        ~
+  SET_2DA_ENTRY 1 13 5 ~GA_SPCL644~
+
+//Creates a new one for shapeshifters who pick 
+//Feral Spirit and then dual to fighter!
+COPY_EXISTING ~clabdr03.2da~ ~override/CLABSHTW.2DA~
+  REPLACE_TEXTUALLY ~GA_SPCL644  ~ ~****        ~
+  REPLACE_TEXTUALLY ~GA_SPCL643  ~ ~****        ~
+
+
+COPY_KIT SHAPESHIFTER shaptw (
+CLAB ~override/clabshtw.2da~
+)
+COPY_KIT SHAPESHIFTER shaptF (
+CLAB ~refinements/hlab/thief/clab/clabempt.2da~
+)
+
+COPY_KIT BLADE bladetw (
+CLAB ~override/clabbltw.2da~
+)
+
+
+EXTEND_TOP li#stri.bcs ~refinements/hlab/thief/li#stribase.baf~ EVALUATE_BUFFER
+
+
+OUTER_FOR (i = 1; i <= 6; i +=1) BEGIN
+  OUTER_SET numberofmagekits = 9
+  OUTER_TEXT_SPRINT kitwildmage ~~
+
+  // ToBEx Wildmage check
+  ACTION_IF (FILE_EXISTS ~bgmain.exe~) OR (GAME_IS ~bgee bg2ee eet iwdee~) THEN BEGIN
+    OUTER_SET numberofmagekits = 10
+    OUTER_TEXT_SPRINT kitwildmage ~Kit(Player%i%,WILDMAGE)~
+  END
+	EXTEND_TOP baldur.bcs ~refinements/hlab/thief/baldurbase.baf~ EVALUATE_BUFFER
+	EXTEND_TOP baldur25.bcs ~refinements/hlab/thief/baldurbase.baf~ EVALUATE_BUFFER
+END
+VERBOSE
+
+
+

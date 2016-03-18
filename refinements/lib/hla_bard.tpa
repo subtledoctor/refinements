@@ -1,0 +1,92 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Bards */
+/* Mostly a courtesy of aVENGER. Stuff is expanded and refined too. */
+
+COPY ~refinements/Hlab/Bard/d5_bahla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  39   1 ~Ba2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  40   1 ~Ba3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  41   1 ~Ba4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Bard/copy~	  	 ~override~
+COPY ~refinements/Hlab/Bard/TG#MASS.SPL~	 ~override/TG#MASS.SPL~
+SAY NAME1 @170
+SAY NAME2 @170
+SAY UNIDENTIFIED_DESC @171
+COPY ~refinements/Hlab/Bard/TG#ENTH.SPL~	 ~override/TG#ENTH.SPL~
+SAY NAME1 @172
+SAY NAME2 @172
+SAY UNIDENTIFIED_DESC @173
+COPY ~refinements/Hlab/Bard/TG#SOUN.SPL~	 ~override/TG#SOUN.SPL~
+SAY NAME1 @174
+SAY NAME2 @174
+SAY UNIDENTIFIED_DESC @175
+COPY ~refinements/Hlab/Bard/TG#LI01.SPL~	 ~override/TG#LI01.SPL~
+SAY NAME1 @176
+SAY NAME2 @176
+SAY UNIDENTIFIED_DESC @177
+COPY ~refinements/Hlab/Bard/TG#BFLU.SPL~	 ~override/TG#BFLU.SPL~
+SAY UNIDENTIFIED_DESC @178
+
+APPEND  ~TOOLTIP.2DA~ ~TG#BFLU	 	  34625	       34582 	   7480~
+
+/* Bard Kits */
+
+COPY ~refinements/Hlab/Bard/TG#AMB2.SPL~	~override/TG#AMB2.SPL~
+SAY NAME1 @370
+SAY NAME2 @370
+SAY UNIDENTIFIED_DESC @371
+COPY ~refinements/Hlab/Bard/TG#SWSP.SPL~	~override/TG#SWSP.SPL~
+SAY NAME1 @372
+SAY NAME2 @372
+SAY UNIDENTIFIED_DESC @373
+COPY ~refinements/Hlab/Bard/TG#BWSP.SPL~	~override/TG#BWSP.SPL~
+SAY NAME1 @374
+SAY NAME2 @374
+SAY UNIDENTIFIED_DESC @375
+COPY ~refinements/Hlab/Bard/TG#EN03.SPL~	~override/TG#EN03.SPL~
+SAY NAME1 @376
+SAY NAME2 @376
+SAY UNIDENTIFIED_DESC @377
+COPY ~refinements/Hlab/Bard/TG#LI03.SPL~	~override/TG#LI03.SPL~
+SAY NAME1 @378
+SAY NAME2 @378
+SAY UNIDENTIFIED_DESC @379
+COPY ~refinements/Hlab/Bard/TG#EN02.SPL~	~override/TG#EN02.SPL~
+SAY NAME1 @380
+SAY NAME2 @380
+SAY UNIDENTIFIED_DESC @381
+COPY ~refinements/Hlab/Bard/TG#LI02.SPL~	~override/TG#LI02.SPL~
+SAY NAME1 @382
+SAY NAME2 @382
+SAY UNIDENTIFIED_DESC @383
+COPY ~refinements/Hlab/Bard/LI#EN01.SPL~	~override/LI#EN01.SPL~
+SAY NAME1 @384
+SAY NAME2 @384
+SAY UNIDENTIFIED_DESC @385
+COPY ~refinements/Hlab/Bard/TG#BFL2.SPL~	~override/TG#BFL2.SPL~
+SAY NAME1 @386
+SAY NAME2 @386
+SAY UNIDENTIFIED_DESC @387
+COPY ~refinements/Hlab/Bard/LI#FINE.SPL~	~override/LI#FINE.SPL~
+SAY NAME1 @388
+SAY NAME2 @388
+SAY UNIDENTIFIED_DESC @389
+SAY 0xfe @390
+
+// New projectiles additions (actually not only for kits..)
+COPY ~refinements/Hlab/Bard/TG#LIN1.SPL~         ~override/TG#LIN1.SPL~ 
+WRITE_SHORT   0x98   LI#BARD1
+COPY ~refinements/Hlab/Bard/TG#LIN2.SPL~         ~override/TG#LIN2.SPL~
+WRITE_SHORT   0x98   LI#BARD2
+COPY ~refinements/Hlab/Bard/TG#LIN3.SPL~         ~override/TG#LIN3.SPL~
+WRITE_SHORT   0x98   LI#BARD1
+
+
+//////////////////////////////////////////////////////////////////////////////////
+

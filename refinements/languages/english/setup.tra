@@ -19,6 +19,9 @@ Backwards from 100:
 @12 = ~This step may take a few moments...~
 @13 = ~This component is already present!~
 @14 = ~Sorry, this step may take several minutes...~ 
+//
+// NEW !!
+@15 = ~Not updated for EE~
 
 //Useful for automatic replacements in KITLIST.2DA
 @20 = ~Thief~
@@ -94,7 +97,24 @@ This nefarious poison hinders the blood's clotting process, so every successful 
 //////////////////////////////////////////////
 //New Abilities
 
-@101 = ~Revised High Level Abilities~
+//
+// CHANGED !!
+@100 = ~Revised High Level Abilities~
+//
+// NEW !!
+@101 = ~Install revised HLAs for all classes~
+@102 = ~Choose which classes get revised HLAs~
+@10101 = ~Fighter HLAs~
+@10102 = ~Barbarian HLAs~
+@10103 = ~Ranger HLAs~
+@10104 = ~Paladin HLAs~
+@10105 = ~Cleric HLAs~
+@10106 = ~Druid HLAs~
+@10107 = ~Monk HLAs~
+@10108 = ~Wizard HLAs~
+@10109 = ~Bard HLAs~
+@10110 = ~Thief HLAs~
+
 
 /* shared files */
 

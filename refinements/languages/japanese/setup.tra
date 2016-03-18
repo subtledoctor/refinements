@@ -19,6 +19,7 @@ Backwards from 100:
 @12 = ~この工程には若干時間がかかります…~
 @13 = ~このコンポーネントはすでにインストールされています！~
 @14 = ~この工程には数分かかるかもしれません。申し訳ありません…~ 
+@15 = ~EE~
 
 //Useful for automatic replacements in KITLIST.2DA
 @20 = ~Thief~

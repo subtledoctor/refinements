@@ -4,10 +4,6 @@
   - Script to turn pure thieves into trueres.
 - Create magetw, a Mage clone.
   - Script to trun pure mages into magetw.
-- Create shaptF and shaptw from Shapeshifter.
-  - Alter the Clab file.
-- Create bladetw from Blade.
-  - Alter the Clab file.
 - Initiates a loop in kitlist.2da and edits kits in the following manner:
   - thief, cleric, fighter kit (including trueres):
     - creates a tF copy with empty clab file
@@ -122,21 +118,6 @@ BEGIN
 		WRITE_SHORT   0x246 0x4000 + magetw   //swashbuckler
 END
 
-//Creates a new CLAB file for the Blade twin kit
-COPY_EXISTING ~CLABBA02.2DA~     ~override/CLABBLTW.2DA~
-REPLACE_TEXTUALLY ~GA_SPCL521~     ~GA_LI#FINO~
-REPLACE_TEXTUALLY ~GA_SPCL522~     ~GA_LI#FIND~
-
-//Fixes the original shapeshifter CLAB
-COPY_EXISTING ~clabdr03.2da~ ~override~
-  REPLACE_TEXTUALLY ~GA_SPCL644  ~ ~****        ~
-  SET_2DA_ENTRY 1 13 5 ~GA_SPCL644~
-
-//Creates a new one for shapeshifters who pick 
-//Feral Spirit and then dual to fighter!
-COPY_EXISTING ~clabdr03.2da~ ~override/CLABSHTW.2DA~
-  REPLACE_TEXTUALLY ~GA_SPCL644  ~ ~****        ~
-  REPLACE_TEXTUALLY ~GA_SPCL643  ~ ~****        ~
 
 COPY_EXISTING CLABTH01.2da override
 SILENT
@@ -176,36 +157,10 @@ SAY #30497
 SAY #30497
 SAY #9563
 
-COPY_KIT SHAPESHIFTER shaptw (
-CLAB ~override/clabshtw.2da~
-)
-COPY_KIT SHAPESHIFTER shaptF (
-CLAB ~refinements/hlab/thief/clab/clabempt.2da~
-)
 
-COPY_KIT BLADE bladetw (
-CLAB ~override/clabbltw.2da~
-)
-
-EXTEND_TOP li#stri.bcs ~refinements/hlab/thief/li#stribase.baf~ EVALUATE_BUFFER
-
-OUTER_FOR (i = 1; i <= 6; i +=1) BEGIN
-  OUTER_SET numberofmagekits = 9
-  OUTER_TEXT_SPRINT kitwildmage ~~
-
-  // ToBEx Wildmage check
-  ACTION_IF (FILE_EXISTS ~bgmain.exe~) THEN BEGIN
-    OUTER_SET numberofmagekits = 10
-    OUTER_TEXT_SPRINT kitwildmage ~Kit(Player%i%,WILDMAGE)~
-  END
-	EXTEND_TOP baldur.bcs ~refinements/hlab/thief/baldurbase.baf~ EVALUATE_BUFFER
-	EXTEND_TOP baldur25.bcs ~refinements/hlab/thief/baldurbase.baf~ EVALUATE_BUFFER
-END
-VERBOSE
-
-COPY_EXISTING - kitlist.2da ~/tmp/kitlist.2da~
+COPY_EXISTING ~kitlist.2da~ ~override~
   READ_2DA_ENTRIES_NOW _kitlist 9
-  FOR (kitnumber = 1; kitnumber < _kitlist; kitnumber = kitnumber + 1) BEGIN
+  FOR (kitnumber = 2; kitnumber < _kitlist; kitnumber = kitnumber + 1) BEGIN
     READ_2DA_ENTRY_FORMER _kitlist kitnumber 8 class
     READ_2DA_ENTRY_FORMER _kitlist kitnumber 1 oldName
     PATCH_IF !(~%oldName%~ STRING_COMPARE_CASE ~C!ArcSyl~) BEGIN
@@ -216,16 +171,16 @@ COPY_EXISTING - kitlist.2da ~/tmp/kitlist.2da~
     END
   // ToBEx Barbarian check
 	PATCH_IF ~%oldName%~ STRING_COMPARE_CASE ~BARBARIAN~ || (FILE_EXISTS ~bgmain.exe~) BEGIN
-		PATCH_IF ((class = 2) || (class = 4) || (class = 3)) &&
+		PATCH_IF ((%class% = 2) || (%class% = 4) || (%class% = 3)) &&
 			(FILE_CONTAINS_EVALUATED (~dualclas.2da~ ~%oldName%~)) &&
 					(~%oldName%~ STRING_COMPARE_CASE ~yrkensai~) BEGIN
-		  PATCH_IF class = 2 BEGIN
+		  PATCH_IF %class% = 2 BEGIN
         SPRINT oldClass FIGHTER_MAGE
 		  END
-		  PATCH_IF class = 3 BEGIN
+		  PATCH_IF %class% = 3 BEGIN
         SPRINT oldClass CLERIC_MAGE
 		  END
-		  PATCH_IF class = 4 BEGIN
+		  PATCH_IF %class% = 4 BEGIN
         SPRINT oldClass MAGE_THIEF
 		  END
 		  SPRINT oldKit ~%oldName%~
@@ -278,6 +233,7 @@ COPY_EXISTING - kitlist.2da ~/tmp/kitlist.2da~
 		END
     END
   END
+BUT_ONLY
 
 // the kitlist.2da was edited by COPY_KIT inside a COPY kitlist, I need to
 // SET_2DA_ENTRIES_NOW in a different copy action.

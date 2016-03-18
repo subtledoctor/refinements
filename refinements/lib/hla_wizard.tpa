@@ -1,0 +1,250 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Wizard */
+
+COPY ~refinements/Hlab/wizard/d5_wihla.d5~ ~override~
+COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  19   1 ~Ma2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  20   1 ~Ma6~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  21   1 ~Ma5~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  22   1 ~Ma9~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  23   1 ~Ma8~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  24   1 ~Ma7~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  25   1 ~Ma3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  26   1 ~Ma4~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  50   1 ~WMG~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  51   1 ~SRC~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Wizard/copy~	  	~override~
+COPY ~refinements/Hlab/Wizard/TG#AEGI.SPL~	~override/TG#AEGI.SPL~
+SAY NAME1 @130
+SAY NAME2 @130
+SAY UNIDENTIFIED_DESC @131
+COPY ~refinements/Hlab/Wizard/TG#DTHF.SPL~	~override/TG#DTHF.SPL~
+SAY NAME1 @132
+SAY NAME2 @132
+SAY UNIDENTIFIED_DESC @133
+WRITE_SHORT   0x98   ~%LI#BARD2%~
+COPY ~refinements/Hlab/Wizard/LI#DTHF.SPL~	~override/LI#DTHF.SPL~
+WRITE_SHORT   0x98   ~%LI#BARD2%~
+COPY ~refinements/Hlab/Wizard/LI#DTH2.SPL~	~override/LI#DTH2.SPL~
+WRITE_SHORT   0x98   ~%LI#BARD2%~
+COPY ~refinements/Hlab/Wizard/TG#BONU.SPL~	~override/TG#BONU.SPL~
+SAY NAME1 @134
+SAY NAME2 @134
+SAY UNIDENTIFIED_DESC @135
+COPY ~refinements/Hlab/Wizard/TG#CLEA.SPL~	~override/TG#CLEA.SPL~
+SAY NAME1 @136
+SAY NAME2 @136
+SAY UNIDENTIFIED_DESC @137
+
+COPY_EXISTING ~SPWI921.SPL~                     ~override/SPWI921.SPL~
+SAY UNIDENTIFIED_DESC @138
+COPY ~refinements/Hlab/Wizard/TG#COME.SPL~	~override/TG#COME.SPL~
+SAY UNIDENTIFIED_DESC @294
+COPY ~refinements/Hlab/Wizard/TG#DRGB.SPL~	~override/TG#DRGB.SPL~
+SAY UNIDENTIFIED_DESC @293
+COPY ~refinements/Hlab/Wizard/TG#FORS.SPL~	~override/TG#FORS.SPL~
+SAY NAME1 @139
+SAY NAME2 @139
+SAY UNIDENTIFIED_DESC @140
+
+/* specialist mages: */
+
+COPY ~refinements/Hlab/Wizard/LI#MICL.SPL~	~override/LI#MICL.SPL~
+SAY NAME1 @301
+SAY NAME2 @301
+SAY UNIDENTIFIED_DESC @302
+SAY 0x18e @303
+SAY 0x1be @303
+SAY 0x1ee @303
+COPY ~refinements/Hlab/Wizard/LI#REV2.SPL~	~override/LI#REV2.SPL~
+SAY NAME1 @304
+COPY ~refinements/Hlab/Wizard/LI#REVE.SPL~	~override/LI#REVE.SPL~
+SAY NAME1 @304
+SAY NAME2 @304
+SAY UNIDENTIFIED_DESC @305
+COPY ~refinements/Hlab/Wizard/LI#REV3.SPL~	~override/LI#REV3.SPL~
+SAY NAME1 @306
+COPY ~refinements/Hlab/Wizard/LI#RUNE.SPL~	~override/LI#RUNE.SPL~
+SAY NAME1 @307
+SAY NAME2 @307
+SAY UNIDENTIFIED_DESC @308
+COPY ~refinements/Hlab/Wizard/TG#BONE.SPL~	~override/TG#BONE.SPL~
+SAY NAME1 @309
+SAY NAME2 @309
+SAY UNIDENTIFIED_DESC @310
+COPY ~refinements/Hlab/Wizard/bonefsu.cre~	~override/bonefsu.cre~
+SAY NAME1 @311
+SAY NAME2 @311
+COPY ~refinements/Hlab/Wizard/bonesu2.cre~	~override/bonesu2.cre~
+SAY NAME1 @312
+SAY NAME2 @312
+// The next one in truth is used by clerics (this one must attack everyone!)
+COPY ~refinements/Hlab/Wizard/LI#APBN.cre~	~override/LI#APBN.cre~
+SAY NAME1 @312
+SAY NAME2 @312
+COPY ~refinements/Hlab/Wizard/CA#SPWO.SPL~	~override/CA#SPWO.SPL~
+SAY NAME1 @313
+SAY NAME2 @313
+SAY UNIDENTIFIED_DESC @314
+COPY ~refinements/Hlab/Wizard/CA#WSTR.SPL~	~override/CA#WSTR.SPL~
+SAY NAME1 @315
+SAY NAME2 @315
+SAY UNIDENTIFIED_DESC @316
+COPY ~refinements/Hlab/Wizard/TG#DARP.SPL~	~override/TG#DARP.SPL~
+SAY NAME1 @317
+SAY NAME2 @317
+SAY UNIDENTIFIED_DESC @318
+COPY ~refinements/Hlab/Wizard/TG#MAG1.SPL~	~override/TG#MAG1.SPL~
+SAY NAME1 @404
+SAY NAME2 @404
+COPY ~refinements/Hlab/Wizard/TG#MAGG.SPL~	~override/TG#MAGG.SPL~
+SAY NAME1 @319
+SAY NAME2 @319
+SAY UNIDENTIFIED_DESC @320
+COPY ~refinements/Hlab/Wizard/TG#GMAL.SPL~	~override/TG#GMAL.SPL~
+SAY NAME1 @321
+SAY NAME2 @321
+SAY UNIDENTIFIED_DESC @322
+COPY ~refinements/Hlab/Wizard/TG#GOLE.SPL~	~override/TG#GOLE.SPL~
+SAY NAME1 @323
+SAY NAME2 @323
+SAY UNIDENTIFIED_DESC @324
+COPY ~refinements/Hlab/Wizard/TG#ADAM.SPL~	~override/TG#ADAM.SPL~
+SAY NAME1 @325
+SAY NAME2 @325
+SAY UNIDENTIFIED_DESC @326
+
+/* Sorcerer */
+
+STRING_SET ~45866~ @430
+COPY ~refinements/Hlab/Sorcerer/copy~	  	~override~
+COPY ~refinements/Hlab/Sorcerer/TG#IDOF.SPL~	~override/TG#IDOF.SPL~
+SAY 0x3ce @431
+SAY 0x3fe @431
+SAY NAME1 @400
+SAY NAME2 @400
+SAY UNIDENTIFIED_DESC @401
+COPY ~refinements/Hlab/Sorcerer/TG#SSPR.SPL~	~override/TG#SSPR.SPL~
+SAY NAME1 @402
+SAY NAME2 @402
+SAY UNIDENTIFIED_DESC @403
+COPY ~refinements/Hlab/Sorcerer/TG#SSHA.SPL~	~override/TG#SSHA.SPL~
+SAY NAME1 @404
+SAY NAME2 @404
+SAY UNIDENTIFIED_DESC @405
+COPY ~refinements/Hlab/Sorcerer/TG#SRES.SPL~	~override/TG#SRES.SPL~
+SAY NAME1 @406
+SAY NAME2 @406
+SAY UNIDENTIFIED_DESC @407
+COPY ~refinements/Hlab/Sorcerer/LI#SRES.SPL~	~override/LI#SRES.SPL~
+SAY 0x9e @413
+COPY ~refinements/Hlab/Sorcerer/TG#SPOF.SPL~	~override/TG#SPOF.SPL~
+SAY 0x48e @432
+SAY 0x4be @432
+SAY NAME1 @408
+SAY NAME2 @408
+SAY UNIDENTIFIED_DESC @409
+COPY ~refinements/Hlab/Sorcerer/TG#SINF.SPL~	~override/TG#SINF.SPL~
+SAY NAME1 @410
+SAY NAME2 @410
+SAY UNIDENTIFIED_DESC @411
+SAY 0x12e @412
+// @413 USED
+COPY ~refinements/Hlab/Sorcerer/TG#AQUA.SPL~	~override/TG#AQUA.SPL~
+SAY 0x51e @433
+SAY 0x54e @433
+SAY NAME1 @414
+SAY NAME2 @414
+SAY UNIDENTIFIED_DESC @415
+COPY ~refinements/Hlab/Sorcerer/TG#SCST.SPL~	~override/TG#SCST.SPL~
+SAY 0x48e @434
+SAY 0x4be @434
+SAY NAME1 @416
+SAY NAME2 @416
+SAY UNIDENTIFIED_DESC @417
+COPY ~refinements/Hlab/Sorcerer/TG#SPSP.SPL~	~override/TG#SPSP.SPL~
+SAY NAME1 @418
+SAY NAME2 @418
+SAY UNIDENTIFIED_DESC @419
+COPY ~refinements/Hlab/Sorcerer/TG#ENES.SPL~	~override/TG#ENES.SPL~
+SAY NAME1 @420
+SAY NAME2 @420
+SAY UNIDENTIFIED_DESC @421
+COPY ~refinements/Hlab/Sorcerer/TG#CHAM.SPL~	~override/TG#CHAM.SPL~
+SAY NAME1 @422
+SAY NAME2 @422
+SAY UNIDENTIFIED_DESC @423
+COPY ~refinements/Hlab/Sorcerer/TG#CAAW.SPL~	~override/TG#CAAW.SPL~
+SAY NAME1 @424
+SAY NAME2 @424
+SAY UNIDENTIFIED_DESC @425
+COPY ~refinements/Hlab/Sorcerer/LI#AUCL.SPL~	~override/LI#AUCL.SPL~
+SAY NAME1 @426
+SAY NAME2 @426
+SAY UNIDENTIFIED_DESC @427
+COPY ~refinements/Hlab/Sorcerer/TG#ENE2.SPL~	~override/TG#ENE2.SPL~
+WRITE_SHORT   0x98   TG#ENES2
+COPY ~refinements/Hlab/Sorcerer/TG#ENE4.SPL~	~override/TG#ENE4.SPL~
+WRITE_SHORT   0x98   TG#ENES3
+// @431-@434 USED
+COPY ~refinements/Hlab/Sorcerer/TG#SHOC.SPL~	~override/TG#SHOC.SPL~
+SAY NAME1 @435
+SAY NAME2 @435
+SAY UNIDENTIFIED_DESC @436
+WRITE_SHORT   0x98   TG#SHOC
+
+
+// Robe of Vecna ~nerfed~ for sorcerers. Code by the_bigg.
+ACTION_IF !(MOD_IS_INSTALLED ~item_rev.tp2~ 0) THEN BEGIN
+	COPY_EXISTING ~wa2robe.itm~ ~override~
+		READ_LONG 0x6a offeff
+		READ_SHORT 0x6e offequipeff
+		READ_SHORT 0x70 countequipeff
+		WRITE_SHORT 0x70 countequipeff + 1
+		SET myeffoff = offeff + offequipeff * 0x30
+		INSERT_BYTES myeffoff 0x30
+		WRITE_SHORT myeffoff 0xb1
+		WRITE_BYTE myeffoff + 2 1
+		WRITE_BYTE myeffoff + 3 1
+		WRITE_LONG myeffoff + 4 19
+		WRITE_LONG myeffoff + 8 5
+		WRITE_BYTE myeffoff + 0xc 2
+		WRITE_BYTE myeffoff + 0x12 100
+		WRITE_ASCII myeffoff + 0x14 ~TB#VECNA~
+		SAY DESC @437
+END
+
+COPY ~refinements/Hlab/Sorcerer/tb#vecna.eff~ ~override~
+
+/* Multiclasses */
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lufm0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#MDRE.SPL~	 ~override/TG#MDRE.SPL~
+ SAY NAME1 @504
+ SAY NAME2 @504
+ SAY UNIDENTIFIED_DESC @505
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_clhla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lucm0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#UNIO.SPL~	 ~override/TG#UNIO.SPL~
+ SAY NAME1 @512
+ SAY NAME2 @512
+ // ToBEx 'Apply Casting Level Bonus' check
+ PATCH_IF FILE_EXISTS ~bgmain.exe~ THEN BEGIN
+  SAY UNIDENTIFIED_DESC @513
+ END ELSE BEGIN
+  SAY UNIDENTIFIED_DESC @514
+ END
+ COPY ~refinements/Hlab/Multiclass/LI#UNIO.SPL~	 ~override/LI#UNIO.SPL~
+ WRITE_SHORT   0x98   TG#HOLA
+END
+
+//////////////////////////////////////////////////////////////////////////////////
+

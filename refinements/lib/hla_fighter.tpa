@@ -1,0 +1,39 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Fighter + Figther Kits */
+
+COPY ~refinements/Hlab/Fighter/d5_fihla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  27   1 ~Fi2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  28   1 ~Fi3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  29   1 ~Fi4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Fighter/copy~	  	~override~
+COPY ~refinements/Hlab/Fighter/TG#GCR2.SPL~	~override/TG#GCR2.SPL~
+SAY NAME1 @440
+SAY NAME2 @440
+SAY UNIDENTIFIED_DESC @441
+COPY ~refinements/Hlab/Fighter/TG#WIZS.SPL~	~override/TG#WIZS.SPL~
+SAY NAME1 @442
+SAY NAME2 @442
+SAY UNIDENTIFIED_DESC @443
+COPY ~refinements/Hlab/Fighter/TG#GKAI.SPL~	~override/TG#GKAI.SPL~
+SAY NAME1 @444
+SAY NAME2 @444
+SAY UNIDENTIFIED_DESC @445
+COPY ~refinements/Hlab/Fighter/TG#IMCR.SPL~	~override/TG#IMCR.SPL~
+SAY NAME1 @446
+SAY NAME2 @446
+SAY UNIDENTIFIED_DESC @447
+COPY ~refinements/Hlab/Fighter/TG#TOUG.spl~	~override/TG#TOUG.spl~
+SAY NAME1 @448
+SAY NAME2 @448
+SAY UNIDENTIFIED_DESC @449
+
+
+//////////////////////////////////////////////////////////////////////////////////
+

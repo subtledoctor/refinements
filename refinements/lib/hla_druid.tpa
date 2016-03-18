@@ -1,0 +1,156 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Druid */
+
+COPY ~refinements/Hlab/Druid/d5_drhla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  42   1 ~Dr2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  43   1 ~Dr3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  44   1 ~Dr4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Druid/copy~	  	 ~override~
+COPY ~refinements/Hlab/Druid/TG#NATW.SPL~	 ~override/TG#NATW.SPL~
+SAY NAME1 @160
+SAY NAME2 @160
+SAY UNIDENTIFIED_DESC @161
+COPY ~refinements/Hlab/Druid/TG#TRAN.SPL~	 ~override/TG#TRAN.SPL~
+SAY NAME1 @162
+SAY NAME2 @162
+SAY UNIDENTIFIED_DESC @163
+COPY ~refinements/Hlab/Druid/TG#TRAA.SPL~	 ~override/TG#TRAA.SPL~
+SAY NAME1 @162
+COPY ~refinements/Hlab/Druid/TG#VOLC.SPL~	 ~override/TG#VOLC.SPL~
+SAY NAME1 @164
+SAY NAME2 @164
+SAY UNIDENTIFIED_DESC @165
+COPY ~refinements/Hlab/Druid/TG#ELSU.SPL~	 ~override/TG#ELSU.SPL~
+SAY NAME1 @166
+SAY NAME2 @166
+SAY UNIDENTIFIED_DESC @167
+COPY ~refinements/Hlab/Druid/TG#PRCA.SPL~	 ~override/TG#PRCA.SPL~
+SAY NAME1 @168
+SAY NAME2 @168
+SAY UNIDENTIFIED_DESC @169
+COPY ~refinements/Hlab/Druid/TG#BLON.SPL~	 ~override/TG#BLON.SPL~
+SAY NAME1 @292
+SAY NAME2 @292
+SAY UNIDENTIFIED_DESC @291
+SAY 0x1be @290
+
+COPY ~refinements/Hlab/Druid/Princes/_shared~	  	 ~override~
+COPY ~refinements/Hlab/Druid/Princes/Chan/copy~	  	 ~override~
+COPY ~refinements/Hlab/Druid/Princes/Chan/TG#SUMC.SPL~	 ~override/TG#SUMC.SPL~
+SAY NAME1 @279
+SAY NAME2 @279
+COPY ~refinements/Hlab/Druid/Princes/Sunnis/copy~	 ~override~
+COPY ~refinements/Hlab/Druid/Princes/Sunnis/TG#SUMS.SPL~ ~override/TG#SUMS.SPL~
+SAY NAME1 @278
+SAY NAME2 @278
+COPY ~refinements/Hlab/Druid/Princes/Zaaman/copy~	 ~override~
+COPY ~refinements/Hlab/Druid/Princes/Zaaman/TG#SUMZ.SPL~ ~override/TG#SUMZ.SPL~
+SAY NAME1 @277
+SAY NAME2 @277
+COPY ~refinements/Hlab/Druid/Princes/Ben/copy~	         ~override~
+COPY ~refinements/Hlab/Druid/Princes/Ben/TG#SUMB.SPL~    ~override/TG#SUMB.SPL~
+SAY NAME1 @287
+SAY NAME2 @287
+COPY ~refinements/Hlab/Druid/Princes/Ben/TG#BENH.cre~    ~override/TG#BENH.cre~
+SAY NAME1 @288
+SAY NAME2 @288
+COPY ~refinements/Hlab/Druid/Princes/Ben/TG#WEL2.cre~    ~override/TG#WEL2.cre~
+SAY NAME1 @289
+SAY NAME2 @289
+COPY ~refinements/Hlab/Druid/Princes/Ben/TG#BENG.SPL~    ~override/TG#BENG.SPL~
+SAY NAME1 @286
+SAY NAME2 @286
+/*
+COPY ~refinements/Hlab/Druid/Princes/Ben/ELEMBENH.BCS~    ~override/ELEMBENH.BCS~
+REPLACE ~295~      @295
+//STRING_SET ~72796~ @285
+//STRING_SET ~72798~ @283
+COPY_EXISTING ~elemchan.bcs~ ~override~
+REPLACE ~72796~ @285
+COPY_EXISTING ~elemsunn.bcs~ ~override~
+REPLACE ~72798~ @283
+*/
+COMPILE ~refinements/Hlab/Druid/Princes/_scripts~ USING ~refinements/languages/%s/miscscripts.tra~
+
+COPY ~refinements/Hlab/Druid/LI#IMPL.SPL~	 ~override/LI#IMPL.SPL~
+SAY NAME1 @281
+SAY NAME2 @281
+SAY UNIDENTIFIED_DESC @280
+COPY ~refinements/Hlab/Druid/LI#WHIR.SPL~	 ~override/LI#WHIR.SPL~
+SAY NAME1 @276
+SAY NAME2 @276
+SAY UNIDENTIFIED_DESC @275
+COPY ~refinements/Hlab/Druid/LI#WHIRB.SPL~	 ~override/LI#WHIRB.SPL~
+WRITE_SHORT   0x98   TG#ENES2
+COPY ~refinements/Hlab/Druid/LI#ELTR.SPL~	 ~override/LI#ELTR.SPL~
+SAY NAME1 @274
+SAY NAME2 @274
+SAY UNIDENTIFIED_DESC @273
+
+COPY ~refinements/Hlab/Druid/Elemental/copy~	         ~override~
+ACTION_IF FILE_EXISTS ~tb#shap_alt.txt~ THEN BEGIN
+  COPY ~refinements/shapefix/alt/LI#DRFIR.SPL~	 ~override/LI#DRFIR.SPL~
+  SAY NAME1 @299
+  SAY NAME2 @299
+  COPY ~refinements/shapefix/alt/LI#DREAR.SPL~	 ~override/LI#DREAR.SPL~
+  SAY NAME1 @298
+  SAY NAME2 @298
+  COPY ~refinements/shapefix/alt/LI#DRAIR.SPL~	 ~override/LI#DRAIR.SPL~
+  SAY NAME1 @297
+  SAY NAME2 @297
+  COPY ~refinements/shapefix/alt/LI#DRWAT.SPL~	 ~override/LI#DRWAT.SPL~
+  SAY NAME1 @296
+  SAY NAME2 @296
+END ELSE BEGIN
+  COPY ~refinements/Hlab/Druid/Elemental/LI#DRFIR.SPL~	 ~override/LI#DRFIR.SPL~
+  SAY NAME1 @299
+  SAY NAME2 @299
+  COPY ~refinements/Hlab/Druid/Elemental/LI#DREAR.SPL~	 ~override/LI#DREAR.SPL~
+  SAY NAME1 @298
+  SAY NAME2 @298
+  COPY ~refinements/Hlab/Druid/Elemental/LI#DRAIR.SPL~	 ~override/LI#DRAIR.SPL~
+  SAY NAME1 @297
+  SAY NAME2 @297
+  COPY ~refinements/Hlab/Druid/Elemental/LI#DRWAT.SPL~	 ~override/LI#DRWAT.SPL~
+  SAY NAME1 @296
+  SAY NAME2 @296
+END
+
+/* Druid Kits */
+
+COPY ~refinements/Hlab/Druid/TG#COMD.SPL~	~override/TG#COMD.SPL~
+SAY NAME1 @470
+SAY NAME2 @470
+SAY UNIDENTIFIED_DESC @471
+COPY ~refinements/Hlab/Druid/TG#FERA.SPL~	~override/TG#FERA.SPL~
+SAY NAME1 @472
+SAY NAME2 @472
+SAY UNIDENTIFIED_DESC @473
+COPY ~refinements/Hlab/Druid/TG#SPIR.cre~      ~override/TG#SPIR.cre~ 
+SAY NAME1 @475
+SAY NAME2 @475
+COPY ~refinements/Hlab/Druid/TG#SPIR.SPL~       ~override/TG#SPIR.SPL~
+SAY NAME1 @475
+SAY NAME2 @475
+SAY UNIDENTIFIED_DESC @476
+SAY DESC @476
+COMPILE ~refinements/Hlab/Druid/tb#spir.baf~ USING ~refinements/languages/%s/miscscripts.tra~
+
+/* Multiclasses */
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lufd0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#FERL.SPL~	 ~override/TG#FERL.SPL~
+ SAY NAME1 @502
+ SAY NAME2 @502
+ SAY UNIDENTIFIED_DESC @503
+END
+
+//////////////////////////////////////////////////////////////////////////////////
+

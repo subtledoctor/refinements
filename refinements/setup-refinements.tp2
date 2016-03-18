@@ -2,6 +2,7 @@
 BG2-ToB Refinements Mod
 Authors: T.G. Maestro, Littiz, the_bigg
 WeiDU by Littiz, the_bigg
+Adapted for EE circa 2016 by SubtleDoctor
 **************************** */
 
 
@@ -31,77 +32,47 @@ ALWAYS
 	// Corrections to KIT.IDS. Translates in WeiDU the corrections originally
 	// made by Dyara
 
-	COPY_EXISTING     ~KIT.IDS~                  ~override/KIT.IDS~
-		REPLACE_TEXTUALLY ~0x00004000 TRUECLASS~     ~0x4000 TRUECLASS~
-		REPLACE_TEXTUALLY ~0x00000001~         ~0x4001~
-		REPLACE_TEXTUALLY ~0x00000002~         ~0x4002~
-		REPLACE_TEXTUALLY ~0x00000004~         ~0x4003~
-		REPLACE_TEXTUALLY ~0x00000008~         ~0x4004~
-		REPLACE_TEXTUALLY ~0x00000010~         ~0x4005~
-		REPLACE_TEXTUALLY ~0x00000020~         ~0x4006~
-		REPLACE_TEXTUALLY ~0x00000040~         ~0x0040~
-		REPLACE_TEXTUALLY ~0x00000080~         ~0x0080~
-		REPLACE_TEXTUALLY ~0x00000100~         ~0x0100~
-		REPLACE_TEXTUALLY ~0x00000200~         ~0x0200~
-		REPLACE_TEXTUALLY ~0x00000400~         ~0x0400~
-		REPLACE_TEXTUALLY ~0x00000800~         ~0x0800~
-		REPLACE_TEXTUALLY ~0x00001000~         ~0x1000~
-		REPLACE_TEXTUALLY ~0x00002000~         ~0x2000~
-		REPLACE_TEXTUALLY ~0x00008000~         ~0x4007~
-		REPLACE_TEXTUALLY ~0x00010000~         ~0x4008~
-		REPLACE_TEXTUALLY ~0x00020000~         ~0x4009~
-		REPLACE_TEXTUALLY ~0x00040000 MAGESCHOOL_GENERALIST~   ~0x4000 MAGESCHOOL_GENERALIST~
-		REPLACE_TEXTUALLY ~0x00080000~         ~0x400B~
-		REPLACE_TEXTUALLY ~0x00100000~         ~0x400C~
-		REPLACE_TEXTUALLY ~0x00200000~         ~0x400D~
-		REPLACE_TEXTUALLY ~0x00400000~         ~0x400E~
-		REPLACE_TEXTUALLY ~0x00800000~         ~0x400F~
-		REPLACE_TEXTUALLY ~0x01000000~         ~0x4013~
-		REPLACE_TEXTUALLY ~0x02000000~         ~0x4014~
-		REPLACE_TEXTUALLY ~0x04000000~         ~0x4015~
-		REPLACE_TEXTUALLY ~0x08000000~         ~0x4010~
-		REPLACE_TEXTUALLY ~0x10000000~         ~0x4011~
-		REPLACE_TEXTUALLY ~0x20000000~         ~0x4012~
-		// Added by the_bigg, further corrections by Littiz. Some installations have a
-		// different (and still wrong) version of KIT.IDS, so they require a different patch:
-		REPLACE_TEXTUALLY ~0x00004000 BARBARIAN~         ~0x40000000 BARBARIAN~
-		REPLACE_TEXTUALLY ~0x0000 BARBARIAN~         ~0x40000000 BARBARIAN~
-		REPLACE_TEXTUALLY ~0x00008000 WILDMAGE~         ~0x80000000 WILDMAGE~
-		REPLACE_TEXTUALLY ~0x0000 WILDMAGE~         ~0x80000000 WILDMAGE~
-		REPLACE_TEXTUALLY ~0x40010000~ 	       ~0x4001~
-		REPLACE_TEXTUALLY ~0x40020000~ 	       ~0x4002~
-		REPLACE_TEXTUALLY ~0x40030000~ 	       ~0x4003~
-		REPLACE_TEXTUALLY ~0x40040000~ 	       ~0x4004~
-		REPLACE_TEXTUALLY ~0x40050000~ 	       ~0x4005~
-		REPLACE_TEXTUALLY ~0x40060000~ 	       ~0x4006~
-		REPLACE_TEXTUALLY ~0x00400000~ 	       ~0x0040~
-		REPLACE_TEXTUALLY ~0x00800000~ 	       ~0x0080~
-		REPLACE_TEXTUALLY ~0x01000000~ 	       ~0x0100~
-		REPLACE_TEXTUALLY ~0x02000000~ 	       ~0x0200~
-		REPLACE_TEXTUALLY ~0x04000000~ 	       ~0x0400~
-		REPLACE_TEXTUALLY ~0x08000000~ 	       ~0x0800~
-		REPLACE_TEXTUALLY ~0x10000000~ 	       ~0x1000~
-		REPLACE_TEXTUALLY ~0x20000000~ 	       ~0x2000~
-		REPLACE_TEXTUALLY ~0x40000000 TRUECLASS~ 	       ~0x4000 TRUECLASS~
-		REPLACE_TEXTUALLY ~0x40000000 MAGESCHOOL_GENERALIST~   ~0x4000 MAGESCHOOL_GENERALIST~
-		REPLACE_TEXTUALLY ~0x40070000~ 	       ~0x4007~
-		REPLACE_TEXTUALLY ~0x40080000~ 	       ~0x4008~
-		REPLACE_TEXTUALLY ~0x40090000~ 	       ~0x4009~
-		REPLACE_TEXTUALLY ~0x400A0000~ 	       ~0x400A~
-		REPLACE_TEXTUALLY ~0x400B0000~ 	       ~0x400B~
-		REPLACE_TEXTUALLY ~0x400C0000~ 	       ~0x400C~
-		REPLACE_TEXTUALLY ~0x400D0000~ 	       ~0x400D~
-		REPLACE_TEXTUALLY ~0x400E0000~ 	       ~0x400E~
-		REPLACE_TEXTUALLY ~0x400F0000~ 	       ~0x400F~
-		REPLACE_TEXTUALLY ~0x40130000~ 	       ~0x4013~
-		REPLACE_TEXTUALLY ~0x40140000~ 	       ~0x4014~
-		REPLACE_TEXTUALLY ~0x40150000~ 	       ~0x4015~
-		REPLACE_TEXTUALLY ~0x40100000~ 	       ~0x4010~
-		REPLACE_TEXTUALLY ~0x40110000~ 	       ~0x4011~
-		REPLACE_TEXTUALLY ~0x40120000~ 	       ~0x4012~
-		REPLACE_TEXTUALLY ~0x401F0000~ 	       ~0x401F~
-	BUT_ONLY_IF_IT_CHANGES
-
+	ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+        COPY_EXISTING ~kit.ids~ ~override~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]TRUECLASS[ %TAB%]*~              ~0x4000 TRUECLASS~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BERSERKER[ %TAB%]*~              ~0x4001 BERSERKER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]WIZARDSLAYER[ %TAB%]*~           ~0x4002 WIZARDSLAYER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]KENSAI[ %TAB%]*~                 ~0x4003 KENSAI~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]CAVALIER[ %TAB%]*~               ~0x4004 CAVALIER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]INQUISITOR[ %TAB%]*~             ~0x4005 INQUISITOR~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]UNDEADHUNTER[ %TAB%]*~           ~0x4006 UNDEADHUNTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_ABJURER[ %TAB%]*~     ~0x0040 MAGESCHOOL_ABJURER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_CONJURER[ %TAB%]*~    ~0x0080 MAGESCHOOL_CONJURER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_DIVINER[ %TAB%]*~     ~0x0100 MAGESCHOOL_DIVINER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_ENCHANTER[ %TAB%]*~   ~0x0200 MAGESCHOOL_ENCHANTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_ILLUSIONIST[ %TAB%]*~ ~0x0400 MAGESCHOOL_ILLUSIONIST~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_INVOKER[ %TAB%]*~     ~0x0800 MAGESCHOOL_INVOKER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_NECROMANCER[ %TAB%]*~ ~0x1000 MAGESCHOOL_NECROMANCER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_TRANSMUTER[ %TAB%]*~  ~0x2000 MAGESCHOOL_TRANSMUTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]MAGESCHOOL_GENERALIST[ %TAB%]*~  ~0x4000 MAGESCHOOL_GENERALIST~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]FERALAN[ %TAB%]*~                ~0x4007 FERALAN~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]STALKER[ %TAB%]*~                ~0x4008 STALKER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BEASTMASTER[ %TAB%]*~            ~0x4009 BEASTMASTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]ASSASIN[ %TAB%]*~                ~0x400A ASSASIN~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BOUNTYHUNTER[ %TAB%]*~           ~0x400B BOUNTYHUNTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]SWASHBUCKLER[ %TAB%]*~           ~0x400C SWASHBUCKLER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BLADE[ %TAB%]*~                  ~0x400D BLADE~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]JESTER[ %TAB%]*~                 ~0x400E JESTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]SKALD[ %TAB%]*~                  ~0x400F SKALD~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]GODTALOS[ %TAB%]*~               ~0x4013 GODTALOS~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]GODHELM[ %TAB%]*~                ~0x4014 GODHELM~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]GODLATHANDER[ %TAB%]*~           ~0x4015 GODLATHANDER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]TOTEMIC[ %TAB%]*~                ~0x4010 TOTEMIC~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]SHAPESHIFTER[ %TAB%]*~           ~0x4011 SHAPESHIFTER~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BEASTFRIEND[ %TAB%]*~            ~0x4012 BEASTFRIEND~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]BARBARIAN[ %TAB%]*~              ~0x40000000 BARBARIAN~
+          REPLACE_TEXTUALLY ~.*[ %TAB%]WILDMAGE[ %TAB%]*~               ~0x80000000 WILDMAGE~
+        BUT_ONLY
+         
+        APPEND ~kit.ids~ ~0x4000 TRUECLASS~ UNLESS ~[ %TAB%]TRUECLASS[ %TAB%]*~
+        APPEND ~kit.ids~ ~0x40000000 BARBARIAN~ UNLESS ~[ %TAB%]BARBARIAN[ %TAB%]*~
+        APPEND ~kit.ids~ ~0x80000000 WILDMAGE~ UNLESS ~[ %TAB%]WILDMAGE[ %TAB%]*~
+    END
 
 // load NL variables
 OUTER_INNER_PATCH ~1~
@@ -183,32 +154,134 @@ DEPRECATED @13
 
 
 
+//new stuff by subtledoctor
+
 
 //////////////////////////////////////////////////////////////////////////////////
 //New HLAs
 
 BEGIN @101
 DESIGNATED 10
-REQUIRE_FILE ~Data/25Dialog.bif~ @10
-AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Revised_HLAs.txt~
+SUBCOMPONENT @100
+//AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Revised_HLAs.txt~
+
+INCLUDE ~refinements/lib/hlab.tpa~
+INCLUDE ~refinements/lib/hla_fighter.tpa~
+INCLUDE ~refinements/lib/hla_barbarian.tpa~
+INCLUDE ~refinements/lib/hla_ranger.tpa~
+INCLUDE ~refinements/lib/hla_paladin.tpa~
+INCLUDE ~refinements/lib/hla_cleric.tpa~
+INCLUDE ~refinements/lib/hla_druid.tpa~
+INCLUDE ~refinements/lib/hla_monk.tpa~
+INCLUDE ~refinements/lib/hla_wizard.tpa~
+INCLUDE ~refinements/lib/hla_bard.tpa~
+INCLUDE ~refinements/lib/hla_thief.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+
+BEGIN @102
+DESIGNATED 11
+SUBCOMPONENT @100
+//AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Revised_HLAs.txt~
 
 INCLUDE ~refinements/lib/hlab.tpa~
 
+//////////////////////////////////////////////////////////////////////////////////
+//Fighter HLAs
 
-/* COMMENTED OUT!!! This slot will be used in Version 3.
-                t_b ----> Really hope not - that destroys component count.
+BEGIN @10101
+DESIGNATED 101
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
 
-////////////////////////////////////////////////////////////////////////////////////
-//Revised Balthazar
+INCLUDE ~refinements/lib/hla_fighter.tpa~
 
-BEGIN @550
-REQUIRE_FILE ~Data/25Dialog.bif~ @10
-AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Revised_Balthazar.txt~
+//////////////////////////////////////////////////////////////////////////////////
+//Barbarian HLAs
 
-COPY ~refinements/Hlab/Monk/balth~	  	 ~override~
+BEGIN @10102
+DESIGNATED 102
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
 
-*/
+INCLUDE ~refinements/lib/hla_barbarian.tpa~
 
+//////////////////////////////////////////////////////////////////////////////////
+//Ranger HLAs
+
+BEGIN @10103
+DESIGNATED 103
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_ranger.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Paladin HLAs
+
+BEGIN @10104
+DESIGNATED 104
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_paladin.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Cleric HLAs
+
+BEGIN @10105
+DESIGNATED 105
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_cleric.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Druid HLAs
+
+BEGIN @10106
+DESIGNATED 106
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_druid.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Monk HLAs
+
+BEGIN @10107
+DESIGNATED 107
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_monk.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Wizard HLAs
+
+BEGIN @10108
+DESIGNATED 108
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_wizard.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Bard HLAs
+
+BEGIN @10109
+DESIGNATED 109
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_bard.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+//Thief HLAs
+
+BEGIN @10110
+DESIGNATED 110
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~REFINEMENTS.TP2~ ~11~) ~...~
+
+INCLUDE ~refinements/lib/hla_thief.tpa~
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// end of subtledoctor's stuff... back to the bigg show
 
 
 
@@ -222,10 +295,6 @@ DESIGNATED 20
 SUBCOMPONENT @601
 
 INCLUDE ~refinements/lib/swashimoen.tpa~
-
-
-
-
 
 
 
@@ -253,8 +322,6 @@ COPY_EXISTING ~imoen10.cre~ ~override~
 
 
 
-
-
 ////////////////////////////////////////////////////////////////////////////////////
 //Swashimoen, Detect Illusions rather than Set Traps.
 
@@ -268,9 +335,6 @@ COPY_EXISTING ~imoen10.cre~ ~override~
 			  ~imoen213.cre~ ~override~
   WRITE_BYTE 0x64 60 // detect illusions
   WRITE_BYTE 0x65 0  // set traps
-
-
-
 
 
 
@@ -312,8 +376,6 @@ END
 
 
 
-
-
 ////////////////////////////////////////////////////////
 //Universal Robes
 
@@ -336,7 +398,6 @@ COPY_EXISTING ~CLCK09.ITM~	 ~override/CLCK09.ITM~
 
 
 
-
 ////////////////////////////////////////////////////////////////////////////////////
 //New Kit Installation
 
@@ -346,10 +407,6 @@ REQUIRE_FILE ~Data/25Dialog.bif~ @10
 AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Sword_Angel.txt~
 
 INCLUDE ~refinements/lib/swang.tpa~
-
-
-
-
 
 
 

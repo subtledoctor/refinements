@@ -1,0 +1,93 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Monk */
+
+COPY ~refinements/Hlab/monk/d5_mohla.d5~ ~override~
+
+COPY ~refinements/Hlab/Monk/copy~	  	 ~override~
+COPY ~refinements/Hlab/Monk/TG#BL03.SPL~	 ~override/TG#BL03.SPL~
+SAY NAME1 @180
+SAY NAME2 @180
+SAY UNIDENTIFIED_DESC @181
+COPY ~refinements/Hlab/Monk/TG#TIGS.SPL~	 ~override/TG#TIGS.SPL~
+SAY NAME1 @182
+SAY NAME2 @182
+SAY UNIDENTIFIED_DESC @183
+COPY ~refinements/Hlab/Monk/TG#BL09.SPL~	 ~override/TG#BL09.SPL~
+SAY NAME1 @184
+SAY NAME2 @184
+SAY UNIDENTIFIED_DESC @185
+SAY 0xce @196
+COPY ~refinements/Hlab/Monk/TG#CHNT.SPL~	 ~override/TG#CHNT.SPL~
+SAY NAME1 @186
+SAY NAME2 @186
+SAY UNIDENTIFIED_DESC @187
+COPY ~refinements/Hlab/Monk/TG#REGE.SPL~	 ~override/TG#REGE.SPL~
+SAY NAME1 @188
+SAY NAME2 @188
+SAY UNIDENTIFIED_DESC @189
+COPY ~refinements/Hlab/Monk/TG#FAST.SPL~	 ~override/TG#FAST.SPL~
+SAY NAME1 @190
+SAY NAME2 @190
+SAY UNIDENTIFIED_DESC @191
+COPY ~refinements/Hlab/Monk/TG#INTI.SPL~	 ~override/TG#INTI.SPL~
+SAY NAME1 @192
+SAY NAME2 @192
+SAY UNIDENTIFIED_DESC @193
+/*
+COPY ~refinements/Hlab/Monk/LI#INTI.SPL~	 ~override/LI#INTI.SPL~
+WRITE_SHORT   0x98   ~%TG#INTI%~
+COPY ~refinements/Hlab/Monk/TG#INT1.SPL~	 ~override/TG#INT1.SPL~
+WRITE_SHORT   0x98   ~%TG#INTI%~
+*/
+COPY ~refinements/Hlab/Monk/TG#GEVA.SPL~	 ~override/TG#GEVA.SPL~
+SAY NAME1 @194
+SAY NAME2 @194
+SAY UNIDENTIFIED_DESC @195
+COPY ~refinements/Hlab/Monk/TG#SECW.SPL~	 ~override/TG#SECW.SPL~
+SAY NAME1 @197
+SAY NAME2 @197
+SAY UNIDENTIFIED_DESC @198
+WRITE_BYTE 0x27 TB#SecondWind
+COPY ~refinements/Hlab/Monk/TG#SEC2.SPL~	 ~override/TG#SEC2.SPL~
+SAY NAME1 @197
+SAY NAME2 @197
+WRITE_LONG 786 TB#SecondWind
+COPY ~refinements/Hlab/Monk/TG#ETHE.SPL~	 ~override/TG#ETHE.SPL~
+SAY NAME1 @220
+SAY NAME2 @220
+SAY UNIDENTIFIED_DESC @221
+COPY ~refinements/Hlab/Monk/TG#DIAM.SPL~	 ~override/TG#DIAM.SPL~
+SAY NAME1 @222
+SAY NAME2 @222
+SAY UNIDENTIFIED_DESC @223
+COPY ~refinements/Hlab/Monk/TG#FINP.ITM~	 ~override/TG#FINP.ITM~
+SAY NAME1 @224
+SAY NAME2 @224
+COPY ~refinements/Hlab/Monk/TG#FINP.SPL~	 ~override/TG#FINP.SPL~
+SAY NAME1 @224
+SAY NAME2 @224
+SAY UNIDENTIFIED_DESC @225
+COPY ~refinements/Hlab/Monk/TG#DIS2.SPL~	 ~override/TG#DIS2.SPL~
+SAY 0x1be @226
+COPY ~refinements/Hlab/Monk/TG#DISP.SPL~	 ~override/TG#DISP.SPL~
+SAY NAME1 @226
+SAY NAME2 @226
+SAY UNIDENTIFIED_DESC @227
+
+// Modified Quivering Palm (now pickable also from HLA table)
+COPY ~refinements/Hlab/Monk/SPCL820.SPL~	 ~override/SPCL820.SPL~
+SAY UNIDENTIFIED_DESC @228
+
+// Changing Quivering Palm's save to a save vs. Death
+COPY_EXISTING     ~QUIVVIS.EFF~                  ~override/QUIVVIS.EFF~
+  WRITE_BYTE 0x40 4
+COPY_EXISTING     ~SPCL820.EFF~                  ~override/SPCL820.EFF~
+  WRITE_BYTE 0x40 4
+  WRITE_BYTE 0x44 0
+
+
+//////////////////////////////////////////////////////////////////////////////////
+

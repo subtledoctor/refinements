@@ -1,0 +1,107 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Cleric */
+
+COPY ~refinements/Hlab/Cleric/d5_clhla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  45   1 ~Cl2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  46   1 ~Cl3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  47   1 ~Cl4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Cleric/copy~	  	 ~override~
+COPY ~refinements/Hlab/Cleric/TG#DSTR.ITM~	 ~override/TG#DSTR.ITM~
+SAY NAME1 @150
+SAY NAME2 @150
+COPY ~refinements/Hlab/Cleric/TG#DSTR.SPL~	 ~override/TG#DSTR.SPL~
+SAY NAME1 @150
+SAY NAME2 @150
+SAY UNIDENTIFIED_DESC @151
+COPY ~refinements/Hlab/Cleric/TG#DIVN.SPL~	 ~override/TG#DIVN.SPL~
+SAY NAME1 @152
+SAY NAME2 @152
+SAY UNIDENTIFIED_DESC @153
+COPY ~refinements/Hlab/Cleric/TG#ENLI.SPL~	 ~override/TG#ENLI.SPL~
+SAY NAME1 @154
+SAY NAME2 @154
+SAY UNIDENTIFIED_DESC @155
+COPY ~refinements/Hlab/Cleric/TG#RECI.SPL~	 ~override/TG#RECI.SPL~
+SAY NAME1 @156
+SAY NAME2 @156
+SAY UNIDENTIFIED_DESC @157
+COPY ~refinements/Hlab/Cleric/TG#DI13.SPL~       ~override/TG#DI13.SPL~
+SAY NAME1 @238
+SAY NAME2 @238
+COPY ~refinements/Hlab/Cleric/TG#DI12.SPL~       ~override/TG#DI12.SPL~
+SAY NAME1 @239
+SAY NAME2 @239
+COPY ~refinements/Hlab/Cleric/LI#DIVI.BCS~       ~override/LI#DIVI.BCS~
+REPLACE 99999240 @240
+REPLACE 99999241 @241
+REPLACE 99999242 @242
+REPLACE 99999243 @243
+REPLACE 99999244 @244
+REPLACE 99999245 @245
+REPLACE 99999246 @246
+REPLACE 99999247 @247
+REPLACE 99999248 @248
+REPLACE 99999251 @251
+REPLACE 99999256 @256
+REPLACE 99999258 @258
+REPLACE 99999262 @262
+REPLACE 99999263 @263
+COPY ~refinements/Hlab/Cleric/TG#DIV5.SPL~	 ~override/TG#DIV5.SPL~
+SAY 0x45e @255
+COPY ~refinements/Hlab/Cleric/LI#DIFA.SPL~	 ~override/LI#DIFA.SPL~
+SAY 0x24e @1037
+SAY 0x1ee @1011
+COPY ~refinements/Hlab/Cleric/TG#DIVI.SPL~	 ~override/TG#DIVI.SPL~
+SAY NAME1 @158
+SAY NAME2 @158
+SAY UNIDENTIFIED_DESC @159
+COPY ~refinements/Hlab/Cleric/TG#AURA.SPL~	 ~override/TG#AURA.SPL~
+SAY NAME1 @249
+SAY NAME2 @249
+COPY ~refinements/Hlab/Cleric/TG#DIVE.SPL~	 ~override/TG#DIVE.SPL~
+SAY NAME1 @158
+SAY NAME2 @158
+SAY UNIDENTIFIED_DESC @250
+
+COMPILE ~refinements/Hlab/Cleric/_scripts~ USING ~refinements/languages/%s/miscscripts.tra~
+
+/* Cleric Kits */
+
+COPY ~refinements/Hlab/Cleric/TG#CIO2.SPL~	~override/TG#CIO2.SPL~
+SAY NAME1 @480
+SAY NAME2 @480
+SAY UNIDENTIFIED_DESC @481
+COPY ~refinements/Hlab/Cleric/TG#CHAOS.ITM~	~override/TG#CHAOS.ITM~
+SAY NAME1 @482
+SAY NAME2 @482
+COPY ~refinements/Hlab/Cleric/TG#CHAO.SPL~	~override/TG#CHAO.SPL~
+SAY NAME1 @482
+SAY NAME2 @482
+SAY UNIDENTIFIED_DESC @483
+COPY ~refinements/Hlab/Cleric/TG#GANG.SPL~	~override/TG#GANG.SPL~
+SAY NAME1 @484
+SAY NAME2 @484
+SAY UNIDENTIFIED_DESC @485
+SAY 0x9e @486
+
+/* Multiclasses */
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lufc0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/LI#COPR.SPL~	 ~override/LI#COPR.SPL~
+ SAY NAME1 @510
+ SAY NAME2 @510
+ SAY UNIDENTIFIED_DESC @511
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_rahla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lucr0.2da~	 ~override~
+END
+
+//////////////////////////////////////////////////////////////////////////////////
+

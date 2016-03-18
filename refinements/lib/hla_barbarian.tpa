@@ -1,0 +1,33 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Barbarian */
+
+COPY ~refinements/Hlab/Barbarian/d5_bbhla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  49   1 ~BRB~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Barbarian/copy~	  	 ~override~
+COPY ~refinements/Hlab/Barbarian/TG#GCRY.SPL~	 ~override/TG#GCRY.SPL~
+SAY NAME1 @200
+SAY NAME2 @200
+SAY UNIDENTIFIED_DESC @201
+COPY ~refinements/Hlab/Barbarian/TG#HSKI.SPL~	 ~override/TG#HSKI.SPL~
+SAY NAME1 @202
+SAY NAME2 @202
+SAY UNIDENTIFIED_DESC @203
+COPY ~refinements/Hlab/Barbarian/TG#TLES.SPL~	 ~override/TG#TLES.SPL~
+SAY NAME1 @204
+SAY NAME2 @204
+SAY UNIDENTIFIED_DESC @205
+COPY ~refinements/Hlab/Barbarian/TG#RSKI.SPL~	 ~override/TG#RSKI.SPL~
+SAY NAME1 @206
+SAY NAME2 @206
+SAY UNIDENTIFIED_DESC @207
+
+
+//////////////////////////////////////////////////////////////////////////////////
+

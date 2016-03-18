@@ -1,0 +1,61 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Paladin */
+
+COPY ~refinements/Hlab/paladin/d5_pahla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  30   1 ~Pa2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  31   1 ~Pa3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  32   1 ~Pa4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Paladin/copy~	 	~override~
+COPY ~refinements/Hlab/Paladin/TG#EXOR.SPL~     ~override/TG#EXOR.SPL~
+SAY NAME1 @120
+SAY NAME2 @120
+SAY UNIDENTIFIED_DESC @121
+COPY ~refinements/Hlab/Paladin/TG#PURG.SPL~     ~override/TG#PURG.SPL~
+SAY NAME1 @122
+SAY NAME2 @122
+SAY UNIDENTIFIED_DESC @123
+COPY ~refinements/Hlab/Paladin/TG#RIGH.SPL~     ~override/TG#RIGH.SPL~
+SAY NAME1 @124
+SAY NAME2 @124
+SAY UNIDENTIFIED_DESC @125
+COPY ~refinements/Hlab/Paladin/TG#SHOL.SPL~     ~override/TG#SHOL.SPL~
+SAY NAME1 @126
+SAY NAME2 @126
+SAY UNIDENTIFIED_DESC @127
+COPY ~refinements/Hlab/Paladin/TG#HOLA.SPL~     ~override/TG#HOLA.SPL~
+SAY NAME1 @128
+SAY NAME2 @128
+SAY UNIDENTIFIED_DESC @129
+WRITE_BYTE 0x27 TB#Paladinhood
+COPY ~refinements/Hlab/Paladin/TG#HOL1.SPL~     ~override/TG#HOL1.SPL~
+WRITE_SHORT   0x98   ~%TG#HOLA%~
+
+EXTEND_TOP ~Baldur.bcs~   ~refinements/Hlab/Paladin/FALLEN.BAF~
+EXTEND_TOP ~Baldur25.bcs~   ~refinements/Hlab/Paladin/FALLEN.BAF~
+
+/* Paladin Kits */
+
+COPY ~refinements/Hlab/Paladin/TG#VIRT.SPL~	~override/TG#VIRT.SPL~
+SAY NAME1 @450
+SAY NAME2 @450
+SAY UNIDENTIFIED_DESC @451
+WRITE_BYTE 0x27 TB#Paladinhood
+COPY ~refinements/Hlab/Paladin/TG#CIOL.SPL~	~override/TG#CIOL.SPL~
+SAY NAME1 @452
+SAY NAME2 @452
+SAY UNIDENTIFIED_DESC @453
+COPY ~refinements/Hlab/Paladin/TG#SMUN.SPL~	~override/TG#SMUN.SPL~
+SAY NAME1 @454
+SAY NAME2 @454
+SAY UNIDENTIFIED_DESC @455
+
+
+//////////////////////////////////////////////////////////////////////////////////
+

@@ -1,0 +1,285 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Thief */
+
+INCLUDE ~refinements/lib/remove_lines.tpa~
+
+COPY ~refinements/Hlab/thief/d5_thhla.d5~ ~override~
+
+ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+  /* Include our patented 'Use Scrolls' engine. */
+  INCLUDE ~refinements/lib/kit.tpa~
+END
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  36   1 ~Th2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  37   1 ~Th3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  38   1 ~Th4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/thief/copy~	  	~override~
+
+// ToBEx Assassin and Bounty Hunter
+ACTION_IF FILE_EXISTS ~bgmain.exe~ THEN BEGIN
+  COPY_EXISTING ~luth2.2da~ ~override~
+                ~luth3.2da~ ~override~
+    SET_2DA_ENTRY 11 1 10 AP_TG#USSC
+    SET_2DA_ENTRY 11 4 10 1
+    SET_2DA_ENTRY 11 5 10 99
+    SET_2DA_ENTRY 11 6 10 1
+    SET_2DA_ENTRY 12 1 10 GA_LI#SCRT
+    SET_2DA_ENTRY 12 4 10 1
+    SET_2DA_ENTRY 12 5 10 99
+    SET_2DA_ENTRY 12 6 10 1
+    SET_2DA_ENTRY 12 7 10 AP_TG#USSC
+END
+
+COPY ~refinements/Hlab/Thief/TG#CRIP.SPL~	~override/TG#CRIP.SPL~
+SAY NAME1 @141
+SAY NAME2 @141
+SAY UNIDENTIFIED_DESC @142
+SAY 0x5ae @143
+COPY ~refinements/Hlab/Thief/TG#USSC.SPL~	~override/TG#USSC.SPL~
+SAY NAME1 @144
+SAY NAME2 @144
+SAY UNIDENTIFIED_DESC @145
+SAY 0xfe @146
+
+// subtledoctor's EE new stuff here:___________________________________________
+//
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+ COPY_EXISTING ~clabth01.2da~ ~override~
+	LPM remove_blank_lines
+	APPEND_FILE ~refinements/Hlab/thief/ee/no_use_scrolls.txt~
+ COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS ~9~ "rows"
+	FOR ( index = 2 ; index < rows ; index = index + 1 ) BEGIN
+		READ_2DA_ENTRY %index% 5 9 modclab
+		READ_2DA_ENTRY %index% 8 9 modclass
+		DEFINE_ASSOCIATIVE_ARRAY d5_scrolls_array BEGIN "%modclab%" => "%modclass%" END
+	END
+ BUT_ONLY
+ ACTION_PHP_EACH d5_scrolls_array AS bo => zo BEGIN
+	ACTION_IF (%zo% = 4) AND (FILE_EXISTS_IN_GAME ~%bo%.2da~) BEGIN
+		COPY_EXISTING ~%bo%.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~refinements/Hlab/thief/ee/no_use_scrolls.txt~
+	END
+	ACTION_IF (%zo% = 1) AND (FILE_EXISTS_IN_GAME ~%bo%.2da~) BEGIN
+		COPY_EXISTING ~%bo%.2da~ ~override~
+			LPM remove_blank_lines
+			APPEND_FILE ~refinements/Hlab/thief/ee/use_scrolls.txt~
+	END
+ END
+ ACTION_FOR_EACH mageclab IN ~clabma01~ ~clabma02~ ~clabma03~ ~clabma04~ ~clabma05~ ~clabma06~ ~clabma07~ ~clabma08~ ~clabma09~ BEGIN
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~%mageclab%.2da~ BEGIN
+   COPY ~refinements/Hlab/thief/ee/%mageclab%.2da~ ~override~
+	LPM remove_blank_lines
+	APPEND_FILE ~refinements/Hlab/thief/ee/use_scrolls.txt~
+  END 
+ END
+ CLEAR_ARRAYS
+ COPY ~refinements/Hlab/thief/ee/copy~	  	~override~
+ COPY ~refinements/Hlab/thief/ee/d5_scrl.spl~	~override/d5_scrl.spl~
+    SAY NAME1 @144
+    SAY NAME2 @144
+    SAY UNIDENTIFIED_DESC @145
+  COPY_EXISTING ~luth2.2da~ ~override~
+                ~luth3.2da~ ~override~
+    SET_2DA_ENTRY 11 1 9 AP_D5_SCRL
+    SET_2DA_ENTRY 11 4 9 1
+    SET_2DA_ENTRY 11 5 9 99
+    SET_2DA_ENTRY 11 6 9 1
+    SET_2DA_ENTRY 12 1 9 GA_LI#SCRT
+    SET_2DA_ENTRY 12 4 9 1
+    SET_2DA_ENTRY 12 5 9 99
+    SET_2DA_ENTRY 12 6 9 1
+    SET_2DA_ENTRY 12 7 9 AP_D5_SCRL
+ COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+  READ_BYTE     0x2f current ELSE 0
+  READ_BYTE     0x2b current2 ELSE 0
+  // Analyze items; if:
+  // 1) Have 2 extended headers
+  // 2) one contains ~cast spell~ (0x92 or 0x94) on a wizard spell
+  // 3) The other contains ~Learn Spell~ (0x93) on the same spell
+  // then it's a wizardly spell scroll: update for Use Scrolls!
+  READ_LONG 0x64 headoffset  ELSE 0
+  READ_SHORT 0x68 headcount  ELSE 0
+  READ_LONG 0x6a effectsoffset  ELSE 0
+  haslearn = 0
+  hascast = 0
+  PATCH_IF (headcount = 2) BEGIN
+    FOR (headcyc = 0; headcyc < headcount ; headcyc = headcyc + 1) BEGIN
+      thishead = 0
+      READ_SHORT (headoffset + (headcyc * 0x38) + 0x1e) effcount  ELSE 0
+      READ_SHORT (headoffset + (headcyc * 0x38) + 0x20) effectsindex  ELSE 0
+      FOR (effcyc = 0; effcyc < effcount; effcyc = effcyc + 1) BEGIN
+        READ_SHORT (effectsoffset + (effectsindex + effcyc)* 0x30) opcode ELSE 0
+        PATCH_IF (opcode = 0x93) AND (thishead = 0) BEGIN
+          READ_ASCII (effectsoffset + 0x14 + (effectsindex + effcyc)* 0x30) resref_learn  ELSE 0
+          INNER_PATCH_FILE ~%resref_learn%.spl~ BEGIN
+            READ_SHORT 0x1c type
+          END
+          PATCH_IF (type = 1) BEGIN //wizardly
+            thishead = 1
+            haslearn = 1
+          END
+        END // PATCH_IF... (opcode = learn spell)
+        PATCH_IF ((opcode = 0x92) OR (opcode = 0x94)) AND (thishead = 0) BEGIN
+          READ_ASCII (effectsoffset + 0x14 + (effectsindex + effcyc)* 0x30) resref_cast  ELSE 0
+          INNER_PATCH_FILE ~%resref_cast%.spl~ BEGIN
+            READ_SHORT 0x1c type
+          END
+          PATCH_IF (type = 1) BEGIN //wizardly
+            thishead = 1
+            hascast = 1
+          END
+        END // PATCH_IF (opcode = cast spell)
+      END // FOR... effect_cycle
+    END // FOR... header cycle
+  END // PATCH_IF... have exactly 2 headers
+  PATCH_IF (haslearn = 1) AND (hascast = 1) AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) BEGIN
+	READ_BYTE ~0x1f~ ~byte1~
+	WRITE_BYTE ~0x1f~ (~%byte1%~ BAND ~0b11111101~)
+	READ_BYTE ~0x20~ ~byte2~
+	WRITE_BYTE ~0x20~ (~%byte2%~ BAND ~0b10111101~)
+	WRITE_SHORT 0x2f current BOR 0b00100000
+  END
+ BUT_ONLY_IF_IT_CHANGES
+END
+//end EE new stuff_____________________________________________________________
+
+/* Thief Kits */
+
+COPY ~refinements/Hlab/Thief/TG#NPOI.SPL~	~override/TG#NPOI.SPL~
+SAY NAME1 @350
+SAY NAME2 @350
+SAY UNIDENTIFIED_DESC @351
+COPY ~refinements/Hlab/Thief/TG#ACRO.SPL~	~override/TG#ACRO.SPL~
+SAY NAME1 @352
+SAY NAME2 @352
+SAY UNIDENTIFIED_DESC @353
+COPY ~refinements/Hlab/Thief/TG#TRAC.SPL~	~override/TG#TRAC.SPL~
+SAY NAME1 @354
+SAY NAME2 @354
+SAY UNIDENTIFIED_DESC @355
+COPY ~refinements/Hlab/Thief/TG#BRPO.SPL~	~override/TG#BRPO.SPL~
+SAY NAME1 @356
+SAY NAME2 @356
+SAY UNIDENTIFIED_DESC @357
+COPY ~refinements/Hlab/Thief/TG#TOXT.SPL~	~override/TG#TOXT.SPL~
+SAY NAME1 @358
+SAY NAME2 @358
+SAY UNIDENTIFIED_DESC @359
+COPY ~refinements/Hlab/Thief/TG#TOXB.SPL~	~override/TG#TOXB.SPL~
+//WRITE_SHORT   0x98   ~%TG#TOXT%~
+
+
+// Poisons. Strings' numbers ~stealt~ from the first positions :(
+COPY ~refinements/Hlab/Thief/brewpois/LI#BPOI.BCS~       ~override/LI#BPOI.BCS~
+REPLACE 82 @82
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR01.SPL~	~override/LI#BR01.SPL~
+SAY NAME1 @99
+SAY NAME2 @99
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR01.SPL~	~override/TG#BR01.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP1.ITM~	~override/TG#BRP1.ITM~
+SAY NAME2 @99
+SAY DESC @98
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR02.SPL~	~override/LI#BR02.SPL~
+SAY NAME1 @97
+SAY NAME2 @97
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR02.SPL~	~override/TG#BR02.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP2.ITM~	~override/TG#BRP2.ITM~
+SAY NAME2 @97
+SAY DESC @96
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR03.SPL~	~override/LI#BR03.SPL~
+SAY NAME1 @95
+SAY NAME2 @95
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR03.SPL~	~override/TG#BR03.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP3.ITM~	~override/TG#BRP3.ITM~
+SAY NAME2 @95
+SAY DESC @94
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR04.SPL~	~override/LI#BR04.SPL~
+SAY NAME1 @93
+SAY NAME2 @93
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR04.SPL~	~override/TG#BR04.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP4.ITM~	~override/TG#BRP4.ITM~
+SAY NAME2 @93
+SAY DESC @92
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR05.SPL~	~override/LI#BR05.SPL~
+SAY NAME1 @91
+SAY NAME2 @91
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR05.SPL~	~override/TG#BR05.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP5.ITM~	~override/TG#BRP5.ITM~
+SAY NAME2 @91
+SAY DESC @90
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR06.SPL~	~override/LI#BR06.SPL~
+SAY NAME1 @89
+SAY NAME2 @89
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR06.SPL~	~override/TG#BR06.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP6.ITM~	~override/TG#BRP6.ITM~
+SAY NAME2 @89
+SAY DESC @88
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR07.SPL~	~override/LI#BR07.SPL~
+SAY NAME1 @87
+SAY NAME2 @87
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR07.SPL~	~override/TG#BR07.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP7.ITM~	~override/TG#BRP7.ITM~
+SAY NAME2 @87
+SAY DESC @86
+
+COPY ~refinements/Hlab/Thief/brewpois/LI#BR08.SPL~	~override/LI#BR08.SPL~
+SAY NAME1 @85
+SAY NAME2 @85
+COPY ~refinements/Hlab/Thief/brewpois/TG#BR08.SPL~	~override/TG#BR08.SPL~
+SAY 0x12e @83
+COPY ~refinements/Hlab/Thief/brewpois/TG#BRP8.ITM~	~override/TG#BRP8.ITM~
+SAY NAME2 @85
+SAY DESC @84
+
+// ~Updating~ Zone of Sweet Air:
+APPEND  ~CLEARAIR.2DA~ ~ToxicTrap     TG#TOXT~
+ COPY_EXISTING ~CLEARAIR.2DA~          ~override/CLEARAIR.2DA~
+ REPLACE_TEXTUALLY ~TG#TOXT~ ~%TG#TOXT%~
+
+/* Multiclasses */
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/luft0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#COMR.SPL~	 ~override/TG#COMR.SPL~
+ SAY NAME1 @500
+ SAY NAME2 @500
+ SAY UNIDENTIFIED_DESC @501
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_wihla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/lumt0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#SLIP.SPL~	 ~override/TG#SLIP.SPL~
+ SAY NAME1 @506
+ SAY NAME2 @506
+ SAY UNIDENTIFIED_DESC @507
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5_clhla.d5~) BEGIN
+ COPY ~refinements/Hlab/Multiclass/luct0.2da~	 ~override~
+ COPY ~refinements/Hlab/Multiclass/TG#DINV.SPL~	 ~override/TG#DINV.SPL~
+ SAY NAME1 @508
+ SAY NAME2 @508
+ SAY UNIDENTIFIED_DESC @509
+END
+
+//////////////////////////////////////////////////////////////////////////////////
+

@@ -19,6 +19,7 @@ Backwards from 100:
 @12 = ~Cette etape peut demander quelques instants...~
 @13 = ~Ce composant est deja present !~
 @14 = ~Desole, cette etape peut demander quelques minutes...~ 
+@15 = ~EE~
 
 //Useful for automatic replacements in KITLIST.2DA
 @20 = ~Voleur~

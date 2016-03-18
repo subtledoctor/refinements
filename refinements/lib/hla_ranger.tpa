@@ -1,0 +1,109 @@
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+/* Ranger */
+
+COPY ~refinements/Hlab/ranger/d5_rahla.d5~ ~override~
+
+COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  33   1 ~Ra2~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  34   1 ~Ra3~
+SET_2DA_ENTRY_LATER ~_#_#_#lua~  35   1 ~Ra4~
+SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+
+COPY ~refinements/Hlab/Ranger/copy~	  	 ~override~
+COPY ~refinements/Hlab/Ranger/TG#AMBI.SPL~	 ~override/TG#AMBI.SPL~
+SAY NAME1 @210
+SAY NAME2 @210
+SAY UNIDENTIFIED_DESC @211
+COPY ~refinements/Hlab/Ranger/TG#ENDU.SPL~	 ~override/TG#ENDU.SPL~
+SAY NAME1 @212
+SAY NAME2 @212
+SAY UNIDENTIFIED_DESC @213
+
+ACTION_IF !(MOD_IS_INSTALLED ~item_rev.tp2~ 0) THEN BEGIN
+	COPY_EXISTING ~clck32.itm~ ~override~
+		 SAY DESC @214
+		 READ_LONG 0x6a eff_off
+		 READ_SHORT 0x70 eff_cnt
+		 WRITE_SHORT 0x70 eff_cnt + 1
+		 SET edit = 0
+		 WHILE (eff_cnt > 0) AND (edit = 0) BEGIN
+			   SET eff_cnt = eff_cnt - 1
+			   READ_SHORT eff_off + (eff_cnt * 0x30) opcode
+			   PATCH_IF opcode = 305 BEGIN
+						WRITE_LONG eff_off + (eff_cnt * 0x30) + 4 1
+						WRITE_SHORT eff_off + (eff_cnt * 0x30) + 0xd 0 //no dispel, bypass resistance
+						SET edit = 1
+			   END
+		 END
+		 INSERT_BYTES eff_off + ((eff_cnt + 1) * 0x30) 0x30
+		 SET copyloop = 0
+		 WHILE copyloop < 0x30 BEGIN
+			   READ_BYTE eff_off + (eff_cnt * 0x30) + copyloop copyme
+			   WRITE_BYTE eff_off + ((eff_cnt + 1) * 0x30) + copyloop copyme
+			   SET copyloop = copyloop + 1
+		 END
+		 WRITE_SHORT eff_off + ((eff_cnt + 1) * 0x30) 54
+END
+
+//COPY ~refinements/Hlab/Ranger/spcl922.spl~	 ~override/spcl922.spl~
+COPY_EXISTING ~spcl922.spl~ ~override~
+	READ_LONG  0x64 "abil_off" ELSE 0
+	READ_SHORT 0x68 "abil_num" ELSE 0
+	READ_LONG  0x6a "fx_off"	 ELSE 0
+	SET "delta" = 0
+	FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN
+		READ_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) "abil_fx_num"
+		READ_SHORT ("%abil_off%" + 0x20 + (0x28 * "%index%")) "abil_fx_idx"
+		SET "abil_fx_idx" = ("%abil_fx_idx%" + "%delta%")
+		WRITE_SHORT ("%abil_off%" + 0x20 + (0x28 * "%index%")) "%abil_fx_idx%"
+		INSERT_BYTES						("%fx_off%" + 			 (0x30 * ("%abil_fx_idx%"))) 0x30 // new effect
+			WRITE_SHORT ("%fx_off%" + 0x00 + (0x30 * ("%abil_fx_idx%"))) 146 // cast spell
+			WRITE_BYTE  ("%fx_off%" + 0x02 + (0x30 * ("%abil_fx_idx%"))) 1   // on self
+			WRITE_BYTE  ("%fx_off%" + 0x03 + (0x30 * ("%abil_fx_idx%"))) 10  // power
+			WRITE_LONG  ("%fx_off%" + 0x04 + (0x30 * ("%abil_fx_idx%"))) 10  // level
+			WRITE_LONG  ("%fx_off%" + 0x08 + (0x30 * ("%abil_fx_idx%"))) 1   // Instantly? = yes
+			WRITE_BYTE  ("%fx_off%" + 0x0c + (0x30 * ("%abil_fx_idx%"))) 1   // Timing = permanent until death
+			WRITE_BYTE  ("%fx_off%" + 0x12 + (0x30 * ("%abil_fx_idx%"))) 100 // Probability
+			WRITE_ASCII ("%fx_off%" + 0x14 + (0x30 * ("%abil_fx_idx%"))) ~tg#tra1~ // Probability
+		SET "delta" = "%delta%" + 1
+		SET "abil_fx_num" = "%abil_fx_num%" + 1
+		WRITE_SHORT ("%abil_off%" + 0x1e + (0x28 * "%index%")) "%abil_fx_num%"
+	END
+	SAY NAME1 @215
+	SAY NAME2 @215
+	SAY UNIDENTIFIED_DESC @216
+
+
+//correcting vampires who are wrongly listed as race 126 instead of 125. That means that Minsc is slightly stronger against the one in Korgan & Edwin dungeon.
+ACTION_IF FILE_EXISTS ~nevm4.cre~
+  THEN BEGIN COPY_EXISTING ~nevm4.cre~ ~override~ WRITE_BYTE 0x272 125 END
+ACTION_IF FILE_EXISTS ~vampyf01.cre~
+  THEN BEGIN COPY_EXISTING ~vampyf01.cre~ ~override~ WRITE_BYTE 0x272 125 END
+
+COPY ~refinements/Hlab/ranger/tb#hate.spl~ ~override~
+SAY NAME1 @217
+SAY NAME1 @217
+SAY UNIDENTIFIED_DESC @218
+
+/* Ranger Kits */
+
+COPY ~refinements/Hlab/Ranger/TG#ANIM.SPL~	~override/TG#ANIM.SPL~
+SAY NAME1 @460
+SAY NAME2 @460
+SAY UNIDENTIFIED_DESC @461
+COPY ~refinements/Hlab/Ranger/TG#PREC.SPL~	~override/TG#PREC.SPL~
+SAY NAME1 @462
+SAY NAME2 @462
+SAY UNIDENTIFIED_DESC @463
+SAY 0x15e @51
+COPY ~refinements/Hlab/Ranger/TG#STAL.SPL~	~override/TG#STAL.SPL~
+SAY NAME1 @464
+SAY NAME2 @464
+SAY UNIDENTIFIED_DESC @465
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
