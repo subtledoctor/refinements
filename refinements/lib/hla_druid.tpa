@@ -6,11 +6,116 @@
 
 COPY ~refinements/Hlab/Druid/d5_drhla.d5~ ~override~
 
-COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  42   1 ~Dr2~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  43   1 ~Dr3~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  44   1 ~Dr4~
-SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~GA_TG#SPIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~TOTEMIC_DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAPESHIFTER~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~AP_TG#FERA~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAPESHIFTER~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEAST_FRIEND~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_TG#COMD~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~GA_LI#ELTR~ num_allowed = ~5~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~BEAST_FRIEND~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_7.2da~ BEGIN
+  COPY_EXISTING ~lud5_7.2da~ ~override/ludr0.2da~
+END
+
+
+// old code, replaced by above
+//COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  42   1 ~Dr2~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  43   1 ~Dr3~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  44   1 ~Dr4~
+//SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Druid/copy~	  	 ~override~
 COPY ~refinements/Hlab/Druid/TG#NATW.SPL~	 ~override/TG#NATW.SPL~
@@ -143,9 +248,11 @@ SAY UNIDENTIFIED_DESC @476
 SAY DESC @476
 COMPILE ~refinements/Hlab/Druid/tb#spir.baf~ USING ~refinements/languages/%s/miscscripts.tra~
 
+
 /* Multiclasses */
+
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
- COPY ~refinements/Hlab/Multiclass/lufd0.2da~	 ~override~
+ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#FERL~ num_allowed = ~20~ END
  COPY ~refinements/Hlab/Multiclass/TG#FERL.SPL~	 ~override/TG#FERL.SPL~
  SAY NAME1 @502
  SAY NAME2 @502

@@ -6,11 +6,57 @@
 
 COPY ~refinements/Hlab/Fighter/d5_fihla.d5~ ~override~
 
-COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  27   1 ~Fi2~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  28   1 ~Fi3~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  29   1 ~Fi4~
-SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~GA_TG#GCR2~ num_allowed = ~1~ prerequisite = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~WIZARD_SLAYER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~WIZARD_SLAYER~ ability = ~GA_TG#WIZS~ num_allowed = ~1~ prerequisite = ~GA_SPCL904~ END
+LAF action_add_hla STR_VAR kit_name = ~WIZARD_SLAYER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~KENSAI~ remove_ability = ~GA_SPCL907~ END
+LAF action_add_hla STR_VAR kit_name = ~KENSAI~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~KENSAI~ ability = ~GA_TG#GKAI~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~KENSAI~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~DWARVEN_DEFENDER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~DWARVEN_DEFENDER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~Blackguard~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~Blackguard~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_2.2da~ BEGIN
+  COPY_EXISTING ~lud5_2.2da~ ~override/lufi0.2da~
+END
+
+
+// old code, replaced by above
+//COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  27   1 ~Fi2~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  28   1 ~Fi3~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  29   1 ~Fi4~
+//SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Fighter/copy~	  	~override~
 COPY ~refinements/Hlab/Fighter/TG#GCR2.SPL~	~override/TG#GCR2.SPL~

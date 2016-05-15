@@ -6,11 +6,60 @@
 
 COPY ~refinements/Hlab/ranger/d5_rahla.d5~ ~override~
 
-COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  33   1 ~Ra2~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  34   1 ~Ra3~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  35   1 ~Ra4~
-SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+LAF action_remove_hla STR_VAR kit_name = ~FERALAN~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FERALAN~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~FERALAN~ remove_ability = ~GA_SPCL903~ END
+LAF action_add_hla STR_VAR kit_name = ~FERALAN~ ability = ~GA_TG#PREC~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~FERALAN~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~FERALAN~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_add_hla STR_VAR kit_name = ~FERALAN~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~STALKER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~STALKER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~STALKER~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~STALKER~ remove_ability = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~STALKER~ ability = ~GA_TG#STAL~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~STALKER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~STALKER~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~STALKER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~STALKER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~BEASTMASTER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEASTMASTER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~BEASTMASTER~ remove_ability = ~GA_SPCL903~ END
+LAF action_add_hla STR_VAR kit_name = ~BEASTMASTER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BEASTMASTER~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BEASTMASTER~ ability = ~AP_TG#ANIM~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BEASTMASTER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BEASTMASTER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPCL903~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~RANGER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~RANGER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~RANGER~ remove_ability = ~GA_SPCL903~ END
+LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_8.2da~ BEGIN
+  COPY_EXISTING ~lud5_8.2da~ ~override/lura0.2da~
+END
+
+
+// old code, replaced by above
+//COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  33   1 ~Ra2~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  34   1 ~Ra3~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  35   1 ~Ra4~
+//SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Ranger/copy~	  	 ~override~
 COPY ~refinements/Hlab/Ranger/TG#AMBI.SPL~	 ~override/TG#AMBI.SPL~

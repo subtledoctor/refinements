@@ -6,6 +6,86 @@
 
 COPY ~refinements/Hlab/monk/d5_mohla.d5~ ~override~
 
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL900~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL906~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL907~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL908~ END
+LAF action_remove_hla STR_VAR kit_name = ~DARK_MOON~ remove_ability = ~GA_SPCL909~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#EVAS~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#BL09~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#BL03~ num_allowed = ~20~ prerequisite = ~GA_TG#BL09~END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#GEVA~ num_allowed = ~5~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#FAST~ num_allowed = ~20~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#INTI~ num_allowed = ~1~ prerequisite = ~GA_TG#FAST~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_SPCL820~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#TIGS~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#FINP~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ excluded_by = ~GA_TG#SECW~ alignment_restrict = ~ALL_GOOD~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~AP_TG#DIAM~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~AP_TG#REGE~ num_allowed = ~1~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#SECW~ num_allowed = ~1~ prerequisite = ~GA_TG#REGE~ excluded_by = ~GA_TG#FINP~ alignment_restrict = ~ALL_EVIL~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#CHNT~ num_allowed = ~20~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~GA_TG#ETHE~ num_allowed = ~5~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~DARK_MOON~ ability = ~AP_TG#DISP~ num_allowed = ~1~ prerequisite = ~GA_TG#ETHE~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL900~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL906~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL907~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL908~ END
+LAF action_remove_hla STR_VAR kit_name = ~SUN_SOUL~ remove_ability = ~GA_SPCL909~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#EVAS~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#BL09~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#BL03~ num_allowed = ~20~ prerequisite = ~GA_TG#BL09~END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#GEVA~ num_allowed = ~5~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#FAST~ num_allowed = ~20~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#INTI~ num_allowed = ~1~ prerequisite = ~GA_TG#FAST~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_SPCL820~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#TIGS~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#FINP~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ excluded_by = ~GA_TG#SECW~ alignment_restrict = ~ALL_GOOD~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~AP_TG#DIAM~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~AP_TG#REGE~ num_allowed = ~1~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#SECW~ num_allowed = ~1~ prerequisite = ~GA_TG#REGE~ excluded_by = ~GA_TG#FINP~ alignment_restrict = ~ALL_EVIL~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#CHNT~ num_allowed = ~20~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~GA_TG#ETHE~ num_allowed = ~5~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~SUN_SOUL~ ability = ~AP_TG#DISP~ num_allowed = ~1~ prerequisite = ~GA_TG#ETHE~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL900~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL906~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL907~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL908~ END
+LAF action_remove_hla STR_VAR kit_name = ~MONK~ remove_ability = ~GA_SPCL909~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#EVAS~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#BL09~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#BL03~ num_allowed = ~20~ prerequisite = ~GA_TG#BL09~END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#GEVA~ num_allowed = ~5~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#FAST~ num_allowed = ~20~ prerequisite = ~GA_TG#EVAS~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#INTI~ num_allowed = ~1~ prerequisite = ~GA_TG#FAST~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_SPCL820~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#TIGS~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#FINP~ num_allowed = ~1~ prerequisite = ~GA_TG#BL03~ excluded_by = ~GA_TG#SECW~ alignment_restrict = ~ALL_GOOD~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~AP_TG#DIAM~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~AP_TG#REGE~ num_allowed = ~1~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#SECW~ num_allowed = ~1~ prerequisite = ~GA_TG#REGE~ excluded_by = ~GA_TG#FINP~ alignment_restrict = ~ALL_EVIL~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#CHNT~ num_allowed = ~20~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#ETHE~ num_allowed = ~5~ prerequisite = ~AP_TG#DIAM~ END
+LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~AP_TG#DISP~ num_allowed = ~1~ prerequisite = ~GA_TG#ETHE~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_48.2da~ BEGIN
+  COPY_EXISTING ~lud5_48.2da~ ~override/lumo0.2da~
+END
+
+
 COPY ~refinements/Hlab/Monk/copy~	  	 ~override~
 COPY ~refinements/Hlab/Monk/TG#BL03.SPL~	 ~override/TG#BL03.SPL~
 SAY NAME1 @180

@@ -7,11 +7,96 @@
 
 COPY ~refinements/Hlab/Bard/d5_bahla.d5~ ~override~
 
-COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  39   1 ~Ba2~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  40   1 ~Ba3~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  41   1 ~Ba4~
-SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL910~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL911~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL912~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL913~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL914~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL917~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL919~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~AP_SPCL920~ END
+LAF action_remove_hla STR_VAR kit_name = ~BLADE~ remove_ability = ~GA_SPCL921~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#MASS~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#ENTH~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#SOUN~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#SCRB~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#BFLU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~AP_TG#AMB2~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~AP_LI#FINE~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~BLADE~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL910~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL911~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL912~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL913~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL914~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL917~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL919~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~AP_SPCL920~ END
+LAF action_remove_hla STR_VAR kit_name = ~JESTER~ remove_ability = ~GA_SPCL921~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#MASS~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#ENTH~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#SOUN~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#SCRB~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#BFLU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~AP_TG#EN02~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~AP_TG#LI02~ num_allowed = ~1~ prerequisite = ~AP_TG#EN02~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~JESTER~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL910~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL911~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL912~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL913~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL914~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL917~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL919~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~AP_SPCL920~ END
+LAF action_remove_hla STR_VAR kit_name = ~SKALD~ remove_ability = ~GA_SPCL921~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#MASS~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#ENTH~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#SOUN~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#BFL2~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_LI#EN03~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_TG#LI03~ num_allowed = ~1~ prerequisite = ~AP_LI#EN03~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_profs.d5~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_TG#SWSP~ num_allowed = ~16~ prerequisite = ~GA_SPCL915~ excluded_by = ~AP_TG#BWSP~ END
+  LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_TG#BWSP~ num_allowed = ~16~ prerequisite = ~GA_SPCL915~ excluded_by = ~AP_TG#SWSP~ END
+END
+
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL910~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL911~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL912~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL913~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL914~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL917~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL919~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~AP_SPCL920~ END
+LAF action_remove_hla STR_VAR kit_name = ~BARD~ remove_ability = ~GA_SPCL921~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#MASS~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#ENTH~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#SOUN~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#SCRB~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#BFLU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~AP_LI#EN01~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~AP_TG#LI01~ num_allowed = ~1~ prerequisite = ~AP_LI#EN01~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+LAF action_add_hla STR_VAR kit_name = ~BARD~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_5.2da~ BEGIN
+  COPY_EXISTING ~lud5_5.2da~ ~override/luba0.2da~
+END
+
+
+// old code, replaced by above
+//COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  39   1 ~Ba2~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  40   1 ~Ba3~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  41   1 ~Ba4~
+//SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Bard/copy~	  	 ~override~
 COPY ~refinements/Hlab/Bard/TG#MASS.SPL~	 ~override/TG#MASS.SPL~

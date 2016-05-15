@@ -17,7 +17,7 @@ AUTO_TRA ~refinements/languages/english~
 AUTO_TRA ~refinements/%s~
 
 README ~Refinements/README-Refinements.htm~
-VERSION ~Refinements v 3.31~
+VERSION ~beta 4.05~
 
 
 ALWAYS
@@ -74,23 +74,26 @@ ALWAYS
   END
 
 // load NL variables
-OUTER_INNER_PATCH ~1~
-BEGIN
+  OUTER_INNER_PATCH ~1~
+  BEGIN
 	WRITE_BYTE 0 0x0a
 	READ_ASCII 0 lnl (1)
 	WRITE_BYTE 0 0x0d
 	READ_ASCII 0 mnl (1)
-END
+  END
 
 
 // Needed for the broken entries in the key.
 // Thanx Camdawg and others for pointing this out.
-OUTER_SET tb#fix_file_size_min = 0x72
-OUTER_SPRINT tb#fix_file_size_target "SW1H01.ITM"
-OUTER_SPRINT tb#fix_file_size_category "items"
-OUTER_SPRINT tb#fix_file_size_regexp "^.*\.itm$"
-LAUNCH_ACTION_MACRO ~tb#fix_file_size~
+  OUTER_SET tb#fix_file_size_min = 0x72
+  OUTER_SPRINT tb#fix_file_size_target "SW1H01.ITM"
+  OUTER_SPRINT tb#fix_file_size_category "items"
+  OUTER_SPRINT tb#fix_file_size_regexp "^.*\.itm$"
+  LAUNCH_ACTION_MACRO ~tb#fix_file_size~
 
+  INCLUDE ~Refinements/lib/hla_actions.tpa~
+
+  INCLUDE ~Refinements/lib/fl#add_kit_ee.tpa~
 
 END  //ALWAYS
 
@@ -161,6 +164,7 @@ DEPRECATED @13
 
 BEGIN @101
 DESIGNATED 10
+REQUIRE_PREDICATE GAME_IS ~soa tob bgt bg2ee eet~ ~HLAs~
 SUBCOMPONENT @100
 //AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Revised_HLAs.txt~
 
@@ -402,7 +406,7 @@ COPY_EXISTING ~CLCK09.ITM~	 ~override/CLCK09.ITM~
 
 BEGIN @1001
 DESIGNATED 50
-REQUIRE_FILE ~Data/25Dialog.bif~ @10
+//REQUIRE_FILE ~Data/25Dialog.bif~ @10
 AT_INTERACTIVE_EXIT ~VIEW refinements/Docs/Sword_Angel.txt~
 
 INCLUDE ~refinements/lib/swang.tpa~

@@ -6,11 +6,61 @@
 
 COPY ~refinements/Hlab/paladin/d5_pahla.d5~ ~override~
 
-COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  30   1 ~Pa2~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  31   1 ~Pa3~
-SET_2DA_ENTRY_LATER ~_#_#_#lua~  32   1 ~Pa4~
-SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
+LAF action_remove_hla STR_VAR kit_name = ~CAVALIER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~CAVALIER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~CAVALIER~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~CAVALIER~ remove_ability = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~AP_TG#HOLA~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~GA_TG#EXOR~ num_allowed = ~5~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~GA_TG#PURG~ num_allowed = ~20~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~GA_TG#RIGH~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~CAVALIER~ ability = ~AP_TG#VIRT~ num_allowed = ~1~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~INQUISITOR~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~INQUISITOR~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~INQUISITOR~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~INQUISITOR~ remove_ability = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~AP_TG#HOLA~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~GA_TG#CIOL~ num_allowed = ~1~ prerequisite = ~AP_TG#SHOL~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~GA_TG#PURG~ num_allowed = ~20~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~GA_TG#RIGH~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~INQUISITOR~ ability = ~GA_TG#SHOL~ num_allowed = ~5~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ remove_ability = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~AP_TG#HOLA~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~GA_TG#EXOR~ num_allowed = ~5~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~GA_TG#PURG~ num_allowed = ~20~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~GA_TG#SMUN~ num_allowed = ~1~ prerequisite = ~AP_TG#EXOR~ END
+LAF action_add_hla STR_VAR kit_name = ~UNDEAD_HUNTER~ ability = ~GA_TG#SHOL~ num_allowed = ~5~ END
+
+LAF action_remove_hla STR_VAR kit_name = ~PALADIN~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~PALADIN~ remove_ability = ~GA_SPCL902~ END
+LAF action_remove_hla STR_VAR kit_name = ~PALADIN~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~PALADIN~ remove_ability = ~GA_SPCL908~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~AP_TG#HOLA~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#EXOR~ num_allowed = ~5~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#PURG~ num_allowed = ~20~ prerequisite = ~AP_TG#HOLA~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#RIGH~ num_allowed = ~20~ END
+LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#SHOL~ num_allowed = ~5~ END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~lud5_6.2da~ BEGIN
+  COPY_EXISTING ~lud5_6.2da~ ~override/lupa0.2da~
+END
+
+
+// old code, replaced by above
+//COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  30   1 ~Pa2~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  31   1 ~Pa3~
+//SET_2DA_ENTRY_LATER ~_#_#_#lua~  32   1 ~Pa4~
+//SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Paladin/copy~	 	~override~
 COPY ~refinements/Hlab/Paladin/TG#EXOR.SPL~     ~override/TG#EXOR.SPL~

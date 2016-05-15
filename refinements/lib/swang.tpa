@@ -214,6 +214,19 @@ SAY @1050
 SAY @1051
 SAY @1052
 
+//EE KIT EXTRAS_____________________________________________________________________
+//
+ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ THEN BEGIN
+	LAF fl#add_kit_ee
+		INT_VAR
+			briefdesc = RESOLVE_STR_REF (@1052)
+		STR_VAR
+			kit_name = SWANG
+			clswpbon = ~1 0 2~
+	END
+END
+//____________________________________________________________________________________
+
 /* ~Fallen~ status */
 COPY ~refinements/swang/LI#FALL.SPL~		~override/LI#FALL.SPL~
 SAY 0x1be @1054
