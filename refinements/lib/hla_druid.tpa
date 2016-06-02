@@ -96,9 +96,7 @@ LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR728~ E
 LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR731~ END
 LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR732~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
-LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#VOLC~ num_allowed = ~1~ prerequisite = ~GA_LI#IMPL~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END

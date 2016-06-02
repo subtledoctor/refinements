@@ -25,22 +25,34 @@ LAF action_add_hla STR_VAR kit_name = ~DWARVEN_DEFENDER~ ability = ~AP_TG#TOUG~ 
 LAF action_add_hla STR_VAR kit_name = ~Blackguard~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
 LAF action_add_hla STR_VAR kit_name = ~Blackguard~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL909~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ remove_ability = ~GA_SPCL905~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL909~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_DRUID~ remove_ability = ~GA_SPCL909~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL909~ END
 
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL901~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL903~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL909~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END

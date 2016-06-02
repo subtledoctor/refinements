@@ -20,10 +20,12 @@ LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL917~
 LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#NPOI~ num_allowed = ~1~ prerequisite = ~GA_SPCL918~ END
 LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#BRPO~ num_allowed = ~5~ prerequisite = ~GA_SPCL918~ END
-LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#CRIP~ num_allowed = ~5~ END
-LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#CRIP~ num_allowed = ~5~ END
+  LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL914~ END
@@ -32,10 +34,12 @@ LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SP
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#TOXT~ num_allowed = ~6~ END
 LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#TRAC~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL914~ END
@@ -43,10 +47,12 @@ LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPC
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~AP_TG#ACRO~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 //ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
@@ -61,10 +67,12 @@ LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPC
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 //ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
@@ -78,31 +86,46 @@ LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SP
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL914~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL917~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL918~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
+//ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
+ END
+ ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_D5_SCRL~ num_allowed = ~1~ END
+ END
+//END
 
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL914~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL914~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
@@ -117,20 +140,23 @@ LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL914~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL919~ END
-LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
-LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
-LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
+  LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_SPCL914~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
+  LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
+  LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
+END
 ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
@@ -402,6 +428,7 @@ APPEND  ~CLEARAIR.2DA~ ~ToxicTrap     TG#TOXT~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#COMR~ num_allowed = ~1~ END
+ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#COMR~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#COMR.SPL~	 ~override/TG#COMR.SPL~
  SAY NAME1 @500
  SAY NAME2 @500
@@ -409,6 +436,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_wihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~AP_TG#SLIP~ num_allowed = ~1~ END
+ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#SLIP~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#SLIP.SPL~	 ~override/TG#SLIP.SPL~
  SAY NAME1 @506
  SAY NAME2 @506

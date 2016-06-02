@@ -183,31 +183,30 @@ LAF action_add_hla STR_VAR kit_name = ~DRAGON_DISCIPLE~ ability = ~GA_TG#SCST~ n
 LAF action_add_hla STR_VAR kit_name = ~DRAGON_DISCIPLE~ ability = ~GA_TG#IDOF~ num_allowed = ~3~ excluded_by = ~GA_TG#SPOF~ END
 LAF action_add_hla STR_VAR kit_name = ~DRAGON_DISCIPLE~ ability = ~GA_TG#SPOF~ num_allowed = ~3~ excluded_by = ~GA_TG#IDOF~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPWI921~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPWI922~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPWI925~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL928~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~GA_TG#AEGI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~GA_TG#FORS~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~GA_LI#SCRB~ num_allowed = ~1~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPWI921~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPWI922~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPWI925~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL928~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#AEGI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#FORS~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_LI#SCRB~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_LI#MICL~ num_allowed = ~1~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPWI922~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPWI925~ END
@@ -215,34 +214,35 @@ LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPCL
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#MICL~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#AEGI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#FORS~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_LI#SCRB~ num_allowed = ~1~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPWI921~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPWI922~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPWI923~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPWI924~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPWI925~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL928~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#AEGI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_TG#FORS~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_LI#SCRB~ num_allowed = ~1~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPWI921~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPWI922~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPWI923~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPWI924~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPWI925~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL928~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#AEGI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#FORS~ num_allowed = ~1~ END
@@ -487,6 +487,7 @@ COPY ~refinements/Hlab/Sorcerer/tb#vecna.eff~ ~override~
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#MDRE~ num_allowed = ~3~ END
+ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#MDRE~ num_allowed = ~3~ END
  COPY ~refinements/Hlab/Multiclass/TG#MDRE.SPL~	 ~override/TG#MDRE.SPL~
  SAY NAME1 @504
  SAY NAME2 @504
@@ -494,6 +495,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_clhla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#UNIO~ num_allowed = ~1~ END
+ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#UNIO~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#UNIO.SPL~	 ~override/TG#UNIO.SPL~
  SAY NAME1 @512
  SAY NAME2 @512

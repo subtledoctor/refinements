@@ -47,12 +47,7 @@ LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ remove_ability = ~GA_S
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ remove_ability = ~GA_SPPR729~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#DIVN~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#RECI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_TG#ENLI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#DSTR~ num_allowed = ~1~ excluded_by = ~GA_SPPR729~ alignment_restrict = ~ALL_GOOD~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_SPPR729~ num_allowed = ~1~ excluded_by = ~GA_TG#DSTR~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPPR723~ END
@@ -60,47 +55,32 @@ LAF action_remove_hla STR_VAR kit_name = ~CLERIC_MAGE~ remove_ability = ~GA_SPPR
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DIVN~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#RECI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~AP_TG#ENLI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DSTR~ num_allowed = ~1~ excluded_by = ~GA_SPPR729~ alignment_restrict = ~ALL_GOOD~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_SPPR729~ num_allowed = ~1~ excluded_by = ~GA_TG#DSTR~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPPR723~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPPR729~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#DIVN~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#RECI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~AP_TG#ENLI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#DSTR~ num_allowed = ~1~ excluded_by = ~GA_SPPR729~ alignment_restrict = ~ALL_GOOD~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_SPPR729~ num_allowed = ~1~ excluded_by = ~GA_TG#DSTR~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPPR727~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ remove_ability = ~GA_SPPR729~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DIVN~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#RECI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#ENLI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DSTR~ num_allowed = ~1~ excluded_by = ~GA_SPPR729~ alignment_restrict = ~ALL_GOOD~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_SPPR729~ num_allowed = ~1~ excluded_by = ~GA_TG#DSTR~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPPR723~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SPPR729~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#DIVN~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#RECI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TG#ENLI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#DSTR~ num_allowed = ~1~ excluded_by = ~GA_SPPR729~ alignment_restrict = ~ALL_GOOD~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_SPPR729~ num_allowed = ~1~ excluded_by = ~GA_TG#DSTR~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC~ remove_ability = ~GA_SPPR723~ END
@@ -210,13 +190,14 @@ SAY 0x9e @486
 
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_LI#COPR.SPL~ num_allowed = ~2~ END
+LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_LI#COPR.SPL~ num_allowed = ~2~ END
  COPY ~refinements/Hlab/Multiclass/LI#COPR.SPL~	 ~override/LI#COPR.SPL~
  SAY NAME1 @510
  SAY NAME2 @510
  SAY UNIDENTIFIED_DESC @511
 END
 ACTION_IF (FILE_EXISTS_IN_GAME ~d5_rahla.d5~) BEGIN
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~LI#COPR.SPL~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_LI#COPR.SPL~ num_allowed = ~2~ END
 END
 
 //////////////////////////////////////////////////////////////////////////////////

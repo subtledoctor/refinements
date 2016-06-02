@@ -39,7 +39,6 @@ LAF action_remove_hla STR_VAR kit_name = ~CLERIC_RANGER~ remove_ability = ~GA_SP
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
-LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
 
 LAF action_remove_hla STR_VAR kit_name = ~RANGER~ remove_ability = ~GA_SPCL901~ END
 LAF action_remove_hla STR_VAR kit_name = ~RANGER~ remove_ability = ~GA_SPCL902~ END
