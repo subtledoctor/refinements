@@ -15,7 +15,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~ASSASIN~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#NPOI~ num_allowed = ~1~ prerequisite = ~GA_SPCL918~ END
@@ -29,7 +29,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#TOXT~ num_allowed = ~6~ END
@@ -43,7 +43,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~SWASHBUCKLER~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~AP_TG#ACRO~ num_allowed = ~1~ END
@@ -64,7 +64,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~SHADOWDANCER~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
@@ -84,7 +84,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL918~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_THIEF~ remove_ability = ~GA_SPCL919~ END
@@ -105,7 +105,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~MAGE_THIEF~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
@@ -115,9 +115,10 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
 
+LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL910~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~CLERIC_THIEF~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
@@ -137,7 +138,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
@@ -148,7 +149,7 @@ END
 
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL913~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL914~ END
-LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL915~ END
+LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~AP_SPCL915~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL917~ END
 LAF action_remove_hla STR_VAR kit_name = ~THIEF~ remove_ability = ~GA_SPCL919~ END
 LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
