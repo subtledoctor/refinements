@@ -50,8 +50,56 @@ LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#PURG~ num_allow
 LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#RIGH~ num_allowed = ~20~ END
 LAF action_add_hla STR_VAR kit_name = ~PALADIN~ ability = ~GA_TG#SHOL~ num_allowed = ~5~ END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~lud5_6.2da~ BEGIN
-  COPY_EXISTING ~lud5_6.2da~ ~override/lupa0.2da~
+ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+  OUTER_SET kitlist_row = 31
+END
+ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+  OUTER_SET kitlist_row = 40
+END
+COPY_EXISTING ~kitlist.2da~ ~override~
+//  COUNT_2DA_ROWS num_rows
+  COUNT_2DA_COLS num_cols
+  READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
+  PATCH_IF (%r2en_kitlist% >= %kitlist_row%) BEGIN
+	FOR (row = %kitlist_row%; row < r2en_kitlist; row += 1) BEGIN
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 1 kitlist_name
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 8 class_num
+	  PATCH_IF (class_num == 6) BEGIN // paladin
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL901~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL902~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL903~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL908~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#HOLA~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#EXOR~ num_allowed = ~5~ prerequisite = ~AP_TG#HOLA~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#PURG~ num_allowed = ~20~ prerequisite = ~AP_TG#HOLA~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#RIGH~ num_allowed = ~20~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#SHOL~ num_allowed = ~5~ END
+		END
+	  END
+	END
+  END
+BUT_ONLY
+
+LAF get_hla_table STR_VAR kit_name = ~PALADIN~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lupa0.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~CAVALIER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lupa2.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~INQUISITOR~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lupa3.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~UNDEAD_HUNTER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lupa4.2da~
 END
 
 

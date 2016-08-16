@@ -85,6 +85,24 @@ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#TRAN~ num
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
 
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR721~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR722~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR723~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR724~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR725~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR726~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR727~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR728~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR731~ END
+LAF action_remove_hla STR_VAR kit_name = ~SHAMAN~ remove_ability = ~GA_SPPR732~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+LAF action_add_hla STR_VAR kit_name = ~SHAMAN~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+
 LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR721~ END
 LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR722~ END
 LAF action_remove_hla STR_VAR kit_name = ~DRUID~ remove_ability = ~GA_SPPR723~ END
@@ -103,8 +121,107 @@ LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#TRAN~ num_allowed
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~lud5_7.2da~ BEGIN
-  COPY_EXISTING ~lud5_7.2da~ ~override/ludr0.2da~
+ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+  OUTER_SET kitlist_row = 31
+END
+ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+  OUTER_SET kitlist_row = 40
+END
+COPY_EXISTING ~kitlist.2da~ ~override~
+//  COUNT_2DA_ROWS num_rows
+  COUNT_2DA_COLS num_cols
+  READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
+  PATCH_IF (%r2en_kitlist% >= %kitlist_row%) BEGIN
+	FOR (row = %kitlist_row%; row < r2en_kitlist; row += 1) BEGIN
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 1 kitlist_name
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 8 class_num
+	  PATCH_IF (class_num == 11) BEGIN // druid
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR721~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR722~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR723~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR724~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR725~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR726~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR727~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR728~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR731~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR732~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+		END
+	  END
+	  PATCH_IF (class_num == 16) BEGIN // F/D
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR721~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR722~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR723~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR724~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR725~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR726~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR727~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR728~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR729~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR731~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR732~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#PRCA~ num_allowed = ~1~ prerequisite = ~GA_TG#ELSU~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+		END
+	  END
+	  PATCH_IF (class_num == 21) BEGIN // shaman
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR721~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR722~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR723~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR724~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR725~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR726~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR727~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR728~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR731~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPPR732~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ELSU~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#IMPL~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#NATW~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#WHIR~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#TRAN~ num_allowed = ~1~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
+		END
+	  END
+	END
+  END
+BUT_ONLY
+
+LAF get_hla_table STR_VAR kit_name = ~DRUID~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/ludr0.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~TOTEMIC_DRUID~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/ludr2.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~SHAPESHIFTER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/ludr3.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~BEAST_FRIEND~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/ludr4.2da~
 END
 
 

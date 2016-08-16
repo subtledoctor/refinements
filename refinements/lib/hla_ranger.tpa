@@ -49,8 +49,64 @@ LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~GA_TG#ENDU~ num_allowe
 LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~RANGER~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~lud5_8.2da~ BEGIN
-  COPY_EXISTING ~lud5_8.2da~ ~override/lura0.2da~
+ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+  OUTER_SET kitlist_row = 31
+END
+ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+  OUTER_SET kitlist_row = 40
+END
+COPY_EXISTING ~kitlist.2da~ ~override~
+//  COUNT_2DA_ROWS num_rows
+  COUNT_2DA_COLS num_cols
+  READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
+  PATCH_IF (%r2en_kitlist% >= %kitlist_row%) BEGIN
+	FOR (row = %kitlist_row%; row < r2en_kitlist; row += 1) BEGIN
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 1 kitlist_name
+	  READ_2DA_ENTRY_FORMER ~r2en_kitlist~ row 8 class_num
+	  PATCH_IF (class_num == 12) BEGIN // ranger
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL901~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL902~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL903~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TB#HATE~ num_allowed = ~1~ END
+		END
+	  END
+	  PATCH_IF (class_num == 18) BEGIN // C/R
+		INNER_ACTION BEGIN
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL901~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL902~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL903~ END
+			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL909~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ENDU~ num_allowed = ~1~ END
+			LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#AMBI~ num_allowed = ~1~ END
+		END
+	  END
+	END
+  END
+BUT_ONLY
+
+LAF get_hla_table STR_VAR kit_name = ~RANGER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lura0.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~FERALAN~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lura2.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~STALKER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lura3.2da~
+END
+
+LAF get_hla_table STR_VAR kit_name = ~BEASTMASTER~ RET hla_table END
+ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
+  COPY_EXISTING ~%hla_table%.2da~ ~override/lura4.2da~
 END
 
 
