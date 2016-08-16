@@ -119,7 +119,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL919~ END
 			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~AP_SPCL920~ END
 			LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL921~ END
-			ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#BHL01.SPL~ BEGIN
+//			ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#BHL01.SPL~ BEGIN
 			  LAF action_remove_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ remove_ability = ~GA_SPCL917~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#MASS~ num_allowed = ~5~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#ENTH~ num_allowed = ~5~ END
@@ -130,7 +130,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#SCRB~ num_allowed = ~16~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
-			END
+//			END
 		END
 	  END
 	END
