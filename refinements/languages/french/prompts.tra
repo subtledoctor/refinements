@@ -1,44 +1,97 @@
-@-1000= ~Welcome to the Refinements mod!
+// Traduit et complété (nouveaux prompts)
+@-1000= ~Bienvenue dans le mod Refinements !
 
-Refinements has~
-@-1001= ~distinct optional components.
-To save time, you can choose what to do with them at a high level rather than 
-being asked about each one.
-This is not suggested if this is your first installation, or you haven't read
-the readme.
+Refinements contient~
+@-1001= ~composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+Ce n'est pas recommande si c'est votre premiere installation ou si vous
+n'avez pas lu le readme.
 ~
-@-1002= ~What should be done with all components that are NOT YET installed?
-[I]nstall them, [S]kip them, [A]sk about each one? ~
-@-1003= ~What should be done with all components that are ALREADY installed?
-[R]e-install them, [U]ninstall them, [S]kip them, [A]sk about each one? ~
+@-1002= ~Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? ~
+@-1003= ~Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, les [S]auter, dem[A]nder pour chacun ? ~
 
-@-1004= ~Please post the file~
-@-1005= ~at~
+@-1004= ~S'IL VOUS PLAIT, postez le fichier~
+@-1005= ~sur~
 
-@-1006= ~What would you like to do with component `~
-@-1007= ~'?
-[R]e-Install, [N]o Change or [U]ninstall or [Q]uit? ~
-@-1008= ~'?
-[Y]es or [N]o or [Q]uit? ~
-// note that the keys are always R,N,U,Q,Y !!
+@-1006= ~Que voulez-vous faire avec le composant [~
+@-1007= ~] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? ~
+@-1008= ~] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? ~
 
-@-1009= ~Enter component of a module name: ~
+@-1009= ~Entrez un composant du nom du module : ~
 
-@-1010= ~Re-Installing the `~
-@-1011= ~' component ~
-@-1012= ~Re-Installing Using Language~
+@-1010= ~Reinstallation du composant [~
+@-1011= ~] ~
+@-1012= ~Reinstallation dans la langue~
 
-@-1013= ~Removing old installation of the `~
-@-1014= ~' component first ...~
-@-1015= ~SUCCESSFULLY REMOVED OLD~
+@-1013= ~Suppression de l'ancienne installation du composant [~
+@-1014= ~] au prealable...~
+@-1015= ~SUPPRESSION REUSSIE DE L'ANCIEN~
 
-@-1016= ~Installing~
-@-1017= ~ERROR Installing the `~
-@-1018= ~' component, rolling back to previous state~
-@-1019= ~SUCCESSFULLY INSTALLED~
-@-1020= ~Skipping~
-@-1021= ~Removing the `~
-@-1022= ~' component, which is number ~
+@-1016= ~Installation en cours~
+@-1017= ~ERREUR pendant l'installation du composant [~
+@-1018= ~], retour a l'etat anterieur~
+@-1019= ~INSTALLATION REUSSIE~
+@-1020= ~Saute~
+@-1021= ~Suppression du composant [~
+@-1022= ~], qui porte le numero ~
 @-1023= ~~
-@-1024= ~SUCCESSFULLY REMOVED THE `~
+@-1024= ~SUPPRESSION REUSSIE DE [~
 
+@-1025= ~] ?
+[R]einstaller, co[N]server, s[U]pprimer, [Q]uitter ou choisir un parmi :~
+@-1026= ~] ?
+[N]e pas installer, [Q]uitter ou choisir un parmi :~
+@-1027= ~ (installe actuellement)~
+
+@-1028= ~Souhaitez-vous afficher les composants de [~
+@-1029= ~] ?
+[Y]Oui, [N]on ? ~
+
+@-1030= ~] ?
+choisir un parmi :~
+@-1031= ~] ?
+[R]einstaller, co[N]server, [Q]uitter ou choisir un parmi :~
+@-1032= ~INSTALLATION ECHOUEE A CAUSE D'ERREURS~
+@-1033= ~INSTALLATION AVEC DES ALERTES~
+@-1034= ~Souhaitez-vous afficher les instructions (ReadMe) ? [Y]Oui [N]on~
+@-1035= ~Dans la langue~
+
+@-1036= ~Saute le GROUPE [~
+@-1037= ~] pour cause d'absence des pre-requis.~
+
+@-1038= ~dem[A]nder pour chaque composant, tout [S]auter, ou choisir une selection pre-definie :~
+@-1039= ~dem[A]nder pour chaque composant, [R]einstaller la configuration courante, tout s[U]pprimer, tout [S]auter, ou choisir une selection pre-definie :~
+
+@-1040= ~
+Veuillez choisir la langue dans laquelle vous souhaitez jouer au jeu.
+Si par la suite vous desirez jouer au jeu dans une langue differente, il vous
+faudra editer le fichier weidu.conf et reinstaller vos mods.
+~
+@-1041= ~Tcheque~
+@-1042= ~Allemand~
+@-1043= ~Anglais~
+@-1044= ~Espagnol~
+@-1045= ~Francais~
+@-1046= ~Italien~
+@-1047= ~Polonais~
+@-1048= ~Portugais~
+@-1049= ~Turc~
+@-1050= ~Japonais~
+@-1051= ~Coreen~
+@-1052= ~Chinois simplifie~
+@-1053= ~Russe~
+@-1054= ~Ukrainien~
+
+@-1060= ~
+Ce jeu est disponible en plusieurs langues mais WeiDU ne sait pas laquelle a ete choisie quand ce mod a ete installe.
+
+Veuillez indiquer quelle langue du jeu a ete utilisee quand vous avez installe ce mod. Votre choix servira jusqu'a ce que WeiDU s'arrete mais ne sera pas memorise.
+~
+@-1061= ~
+Utilisation de~
+@-1062= ~ et ~
