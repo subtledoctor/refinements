@@ -15,11 +15,13 @@ Backwards from 100:
 
 
 @10 = ~Throne of Bhaal est necessaire pour ce composant.~
-@11 = ~Vous devez installer le composant Capacites Speciales de Haut Niveau Modifiees avant celui ci.~
+@11 = ~Vous devez installer le composant Capacites Speciales de Haut Niveau Modifiees avant celui-ci.~
 @12 = ~Cette etape peut demander quelques instants...~
 @13 = ~Ce composant est deja present !~
 @14 = ~Desole, cette etape peut demander quelques minutes...~ 
-@15 = ~EE~
+//
+// NEW !!
+@15 = ~Non mis a jour pour l'EE~
 
 //Useful for automatic replacements in KITLIST.2DA
 @20 = ~Voleur~
@@ -29,11 +31,11 @@ Backwards from 100:
 @24 = ~Berserker~
 @25 = ~Kensai~
 @26 = ~Prêtre de Talos~
-@27 = ~Prêtre de Helm~
+@27 = ~Prêtre de Heaum~
 @28 = ~Prêtre de Lathandre~
 @29 = ~Mage~ 
 
-@50 = ~Restore original strings~ 
+@50 = ~Restaurer les textes d'origine~
 @51 = ~Vous ne pouvez utiliser cette capacité maintenant.~
 
 // Stealing string numbers for poisons' descriptions :(
@@ -61,7 +63,7 @@ Toute créature vivante touchée par ce poison devient berserk durant 3 rounds à m
 @92 = ~Torche infernale
 Durée : 3 rounds
 Jet de sauvegarde : contre le poison à -4
-Ce poison inflige une grande douleur à sa victime. A chaque coup porté, la cible doit réussir un jet de sauvegarde contre le poison à -4 ou subir un malus de 2 à son THAC0, sa classe d'armure et ses dégâts. Ces effets sont cumulatifs et durent 3 rounds.~
+Ce poison inflige une grande douleur à sa victime. A chaque coup porté, la cible doit réussir un jet de sauvegarde contre le poison à -4 ou subir un malus de 2 à son TAC0, sa classe d'armure et ses dégâts. Ces effets sont cumulatifs et durent 3 rounds.~
 
 @91 = ~Thrombose~
 @90 = ~Thrombose
@@ -73,13 +75,13 @@ Toute créature vivante touchée par ce poison doit réussir un jet de sauvegarde c
 @88 = ~Blocage nerveux
 Durée : 3 rounds
 Jet de sauvegarde : contre le poison
-Ce poison de contact embrouille les pensées et rend toute incantation presque impossible. Quiconque est touché par ses effets souffre de 75% de chance de rater un sort pendant 3 rounds.~
+Ce poison de contact embrouille les pensées et rend toute incantation presque impossible. Quiconque est touché par ses effets souffre de 75 % de chance de rater un sort pendant 3 rounds.~
 
 @87 = ~Crampe~
 @86 = ~Crampe
 Durée : 3 rounds
 Jet de sauvegarde : contre le poison à -2
-Ce poison de contact attaque le système musculaire de la jambe, diminuant la vitesse de déplacement de 40%, à moins de réussir un jet de sauvegarde contre le poison à -2. Les effets de ce poison durent 4 rounds.~
+Ce poison de contact attaque le système musculaire de la jambe, diminuant la vitesse de déplacement de 40 %, à moins de réussir un jet de sauvegarde contre le poison à -2. Les effets de ce poison durent 4 rounds.~
 
 @85 = ~Rougeoiement cramoisi~
 @84 = ~Rougeoiement cramoisi
@@ -95,7 +97,24 @@ Cet horrible poison bloque le procédé de coagulation du sang, chaque coup réussi
 //////////////////////////////////////////////
 //New Abilities
 
-@101 = ~Capacites de haut niveau modifiees~
+//
+// CHANGED !!
+@100 = ~Capacites de haut niveau (HLA) modifiees~
+//
+// NEW !!
+@101 = ~Installer les HLA modifiees pour toutes les classes~
+@102 = ~Choisir quelles classes obtiennent les HLA modifiees~
+@10101 = ~HLAs de guerrier~
+@10102 = ~HLAs de barbare~
+@10103 = ~HLAs de rodeur~
+@10104 = ~HLAs de paladin~
+@10105 = ~HLAs de clerc~
+@10106 = ~HLAs de druide~
+@10107 = ~HLAs de moine~
+@10108 = ~HLAs de magicien~
+@10109 = ~HLAs de barde~
+@10110 = ~HLAs de voleur~
+
 
 /* shared files */
 
@@ -201,7 +220,7 @@ Cette capacité dure 10 rounds.~
 @128 = ~Aura sacrée~
 @129 = ~Aura sacrée
 
-Les paladins de haut niveau peuvent créer une puissante aura de bonté et de pureté. Tous les membres du groupe et les alliés dans un rayon de 3 mètres autour de lui reçoivent un bonus de +2 à leur CA et leurs jets de sauvegardes contre les créatures d'alignement mauvais. Ces effets sont permanents tant que les créatures sous la protection du paladin restent proches de lui. Toute créature quittant la zone d'effet de l'aura perd ses protections en un demi-round. Les bonus de plusieurs auras ne sont pas cumulables.~
+Les paladins de haut niveau peuvent créer une puissante aura de bonté et de pureté. Tous les membres du groupe et les alliés dans un rayon de 3 mètres autour de lui reçoivent un bonus de +2 à leur CA et leurs jets de sauvegarde contre les créatures d'alignement mauvais. Ces effets sont permanents tant que les créatures sous la protection du paladin restent proches de lui. Toute créature quittant la zone d'effet de l'aura perd ses protections en un demi-round. Les bonus de plusieurs auras ne sont pas cumulables.~
 
 
 /* Wizard */
@@ -212,10 +231,10 @@ Niveau : 10
 Portée : 0
 Durée : 5 rounds
 Temps d'incantation : 2
-Zone d'effet : Lanceur
-Jet de sauvegarde : Aucun
+Zone d'effet : jeteur de sorts
+Jet de sauvegarde : aucun
 
-Ce sort d'abjuration de haut niveau confère au mage une très puissante protection pendant un court moment. Les résistances aux dégâts physiques (tranchants, perforants, contondants, et aux projectiles) et les résistances aux éléments sont portées à 85%, la résistance aux dégâts magiques est portée à 60%. Le mage gagne aussi 5 points de bonus à sa CA et ses jets de sauvegarde sont réduits de 3 points. En plus de tous ces bonus, Egide protège le lanceur du premier sort qui devrait normalement dissiper ses protections de combat ou magiques. Ce sort dure 5 rounds.~
+Ce sort d'abjuration de haut niveau confère au mage une très puissante protection pendant un court moment. Les résistances aux dégâts physiques (tranchants, perforants, contondants, et aux projectiles) et les résistances aux éléments sont portées à 85 %, la résistance aux dégâts magiques est portée à 60 %. Le mage gagne aussi 5 points de bonus à sa CA et ses jets de sauvegarde sont réduits de 3 points. En plus de tous ces bonus, Egide protège le lanceur du premier sort qui devrait normalement dissiper ses protections de combat ou magiques. Ce sort dure 5 rounds.~
 
 @132 = ~Champ de mort~
 @133 = ~Champ de mort (toutes écoles)
@@ -223,10 +242,10 @@ Niveau : 10
 Durée : 5 secondes
 Temps d'incantation : 5
 Zone d'effet : rayon de 15 mètres
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 Ce sort est un sort anti-invocations extrêmement puissant. En le lançant, le mage attaque la force vitale de chaque ennemi et détruit toute créature invoquée dans un rayon de 15 mètres autour de lui. Les créatures invoquées n'ont droit à aucun jet de sauvegarde contre ce sort et leur résistance à la magie est ignorée, alors que les autres créatures doivent réussir un jet de sauvegarde contre les sorts à -2 pour éviter une mort certaine. Les créatures ayant moins de 8 dés de vie sont automatiquement tuées.
-Néanmoins, Champ de mort a un inconvénient: jusqu'à la fin du sort, c'est à dire 2 rounds après son lancement, le mage ne peut faire aucun mouvement ni aucune action et se retrouve totalement vulnérable aux attaques.~
+Néanmoins, Champ de mort a un inconvénient : jusqu'à la fin du sort, c'est à dire 2 rounds après son lancement, le mage ne peut faire aucun mouvement ni aucune action et se retrouve totalement vulnérable aux attaques.~
 
 @134 = ~Bonus aux sorts de mage~
 @135 = ~Bonus aux sorts de mage
@@ -246,7 +265,7 @@ Niveau : 10
 Portée : illimitée
 Durée : 2 rounds
 Temps d'incantation : 9
-Zone d'effet : spécial
+Zone d'effet : spéciale
 Jet de sauvegarde : spécial
 
 Ce sort permet d'éliminer les intervalles de temps entre les incantations de sorts. Ainsi, un magicien peut enchaîner un nouveau sort dès qu'il a fini le premier. Cet effet dure 2 rounds.
@@ -283,8 +302,8 @@ Niveau : 10
 Porté : 0
 Durée : 2 tours
 Temps d'incantation : 6
-Zone d'effet : Lanceur
-Jet de sauvegarde : Aucun
+Zone d'effet : jeteur de sorts
+Jet de sauvegarde : aucun
 
 Ce sort donne au lanceur un véritable sixième sens grâce auquel il peut percevoir à l'avance tout ce qui va se passer autour de lui. Une fois le sort lancé, le mage reçoit des avertissements sur les blessures et dangers imminents qui le menacent. Ainsi il ne sera jamais surpris. De plus, ce sort donne au lanceur une idée générale des actions à entreprendre afin de se protéger au mieux (se baisser, plonger à droite, fermer les yeux, et d'autres).
 Donc, quand un jet de sauvegarde est autorisé, le mage le réussit systématiquement, de plus sa classe d'armure est diminuée de 15 points.~
@@ -298,7 +317,7 @@ Donc, quand un jet de sauvegarde est autorisé, le mage le réussit systématiqueme
 @141 = ~Estropier~
 @142 = ~Estropier
 
-Un voleur expérimenté connait de nombreux sales tours afin d'handicaper un ennemi ou le mettre hors de combat. Durant 3 rounds après son lancement, chaque attaque a une chance d'affaiblir sa cible. A chaque coup réussi la victime doit réussir un jet de sauvegarde contre la mort ou voir sa force réduite à 10 pendant 18 secondes. De plus il y a 25% de chance que la cible soit aveuglée, ralentie, ou souffre de 5D6 points de dégâts perforants supplémentaires (jet de sauvegarde contre le souffle à -4 pour éviter ces effets).~
+Un voleur expérimenté connait de nombreux sales tours afin d'handicaper un ennemi ou le mettre hors de combat. Durant 3 rounds après son lancement, chaque attaque a une chance d'affaiblir sa cible. A chaque coup réussi la victime doit réussir un jet de sauvegarde contre la mort ou voir sa force réduite à 10 pendant 18 secondes. De plus il y a 25 % de chance que la cible soit aveuglée, ralentie, ou souffre de 5D6 points de dégâts perforants supplémentaires (jet de sauvegarde contre le souffle à -4 pour éviter ces effets).~
 @143 = ~Vous ne pouvez réactiver la capacité Estropier pour l'instant.~
 
 @144 = ~Utilisation de parchemins~
@@ -316,11 +335,11 @@ Les voleurs de faible intelligence risquent de ne pas être capables de reproduir
 @151 = ~Destruction (Nécromancie) 
 Niveau : Quête
 Sphère : Soin
-Portée : Contact
-Durée : Permanente
+Portée : contact
+Durée : permanente
 Temps d'incantation : 1 round
-Zone d'effet : Créature touchée
-Jet de sauvegarde : Spécial
+Zone d'effet : créature touchée
+Jet de sauvegarde : spécial
 
 C'est le sort opposé au sort de résurrection. Sur un coup réussi du prêtre, le sort se répand dans le corps de la victime et attaque sa force vitale, la détruisant. L'attaque suivante effectuée par le prêtre aura cet effet. Cependant, il n'a qu'un round pour effectuer l'attaque avant que le sort ne dégénère. De plus, si le prêtre rate son attaque, le sort est perdu. Un jet de sauvegarde contre la mort à -4 est autorisé afin d'éviter la destruction. Néanmoins, même si le jet de sauvegarde est réussi la cible encaisse 3D10 points de dégâts.~
 
@@ -331,16 +350,16 @@ Sphère : Protection
 Portée : 0
 Durée: 1 tour
 Temps d'incantation : 7
-Zone d'effet : Lanceur
-Jet de sauvegarde : Aucun
+Zone d'effet : jeteur de sorts
+Jet de sauvegarde : aucun
 
-Voici probablement le plus puissant sort de protection pour les lanceurs de sorts divins. Il confère 75% de résistance au feu, au froid et à l'électricité et 25% de résistance aux dégâts magiques. Le lanceur gagne en plus, temporairement, un bonus de 20% à son maximum de point de vie, 5 points de bonus à ses jets de sauvegarde contre la mort, et devient protégé contre les armes non magiques. Les sorts affectant son esprit ou entravant ses déplacements n'ont aucun effet sur le prêtre. Pour compléter tous ces bonus, le lanceur est protégé contre tout sort directement dirigé contre lui (juqu'au huitième niveau de sort). Il absorbe 15 niveaux de sort. Cette protection dure 1 tour.~
+Voici probablement le plus puissant sort de protection pour les lanceurs de sorts divins. Il confère 75 % de résistance au feu, au froid et à l'électricité et 25 % de résistance aux dégâts magiques. Le lanceur gagne en plus, temporairement, un bonus de 20 % à son maximum de point de vie, 5 points de bonus à ses jets de sauvegarde contre la mort, et devient protégé contre les armes non magiques. Les sorts affectant son esprit ou entravant ses déplacements n'ont aucun effet sur le prêtre. Pour compléter tous ces bonus, le lanceur est protégé contre tout sort directement dirigé contre lui (juqu'au huitième niveau de sort). Il absorbe 15 niveaux de sort. Cette protection dure 1 tour.~
 
 @154 = ~Eclaircissement~
 @155 = ~Eclaircissement
 
 Un prêtre de haut niveau est capable de tisser un lien plus fort avec son dieu. Grâce à cela le prêtre peut lancer plus de sorts sans se reposer.
-Eclaircissement permet au prêtre de lancer un sort supplémentaire du 6ème et 7ème niveau~
+Eclaircissement permet au prêtre de lancer un sort supplémentaire du 6ème et 7ème niveau.~
 
 @156 = ~Récitation~
 @157 = ~Récitation (Conjuration/Convocation) 
@@ -348,11 +367,11 @@ Niveau : Quête
 Portée : 0
 Durée : 1 tour
 Temps d'incantation : 9
-Zone d'effet : rayon de 9 mètres 
-Jet de sauvegarde : Aucun 
+Zone d'effet : rayon de 9 mètres
+Jet de sauvegarde : aucun
 
 En récitant un texte sacré ou une déclaration, le prêtre en appelle à son dieu afin de bénir ses alliés et semer la faiblesse et la confusion parmi ses ennemis. Les alliés du lanceur gagne un bonus de +2 à leur moral, leurs attaques, dégâts et jets de sauvegarde, alors que leurs ennemis reçoivent un malus de -2 à toutes ces caractéristiques.
-Récitation draine l'énergie du prêtre, celui si est donc fatigué durant toute la durée du sort.~
+Récitation draine l'énergie du prêtre, celui-ci est donc fatigué durant toute la durée du sort.~
 
 //Divine intervention, strings for EVIL version:
 
@@ -370,7 +389,7 @@ Récitation draine l'énergie du prêtre, celui si est donc fatigué durant toute la
 @249 = ~Aura de terreur~
 
 //Divine intervention, strings for GOOD version:
-@251 = ~Votre prière a été rejetée~
+@251 = ~Votre prière a été rejetée.~
 @255 = ~Prière~
 @256 = ~Sorts restaurés~
 @258 = ~Votre prière a été entendue !~
@@ -382,7 +401,7 @@ Récitation draine l'énergie du prêtre, celui si est donc fatigué durant toute la
 @159 = ~Intervention divine
 
 En entretenant un puissant lien avec leurs dieux, les clercs de haut niveau peuvent appeler les cieux à leur aide lorsqu'ils sont en grand danger. En récitant une prière, ils peuvent directement demander une intervention de leur dieu.
-Une intervention des dieux eux-même peut avoir de nombreux effets différents. Contrairement aux clercs d'alignement mauvais, l'appel d'un prêtre d'alignement bon n'aura jamais de mauvaises conséquences, mais il y a de plus grandes chances pour que la prière soit rejetée. Les résultats d'une telle intervention peuvent être vraiment divers, de petits bonus jusqu'à de vrais miracles.
+Une intervention des dieux eux-mêmes peut avoir de nombreux effets différents. Contrairement aux clercs d'alignement mauvais, l'appel d'un prêtre d'alignement bon n'aura jamais de mauvaises conséquences, mais il y a de plus grandes chances pour que la prière soit rejetée. Les résultats d'une telle intervention peuvent être vraiment divers, de petits bonus jusqu'à de vrais miracles.
 Cette action est vraiment éreintante pour le prêtre, un état de fatigue survient donc peu après. Intervention divine peut être utilisée une fois par jour.
 
 Pré-requis : Eclaircissement~
@@ -390,7 +409,7 @@ Pré-requis : Eclaircissement~
 @250 = ~Intervention divine (maléfique)
 
 En entretenant un puissant lien avec leurs dieux, les clercs de haut niveau peuvent appeler les cieux à leur aide lorsqu'ils sont en grand danger. En récitant une prière, ils peuvent directement demander une intervention de leur dieu. 
-Une intervention des dieux eux-même peut avoir de nombreux effets différents. Contrairement aux clercs d'alignement bon, l'appel d'un prêtre d'alignement mauvais entraînera forcément un résultat... et parfois un désastre. Les résultats d'une telle intervention peuvent être vraiment divers, de petits bonus jusqu'à de vrais miracles.
+Une intervention des dieux eux-mêmes peut avoir de nombreux effets différents. Contrairement aux clercs d'alignement bon, l'appel d'un prêtre d'alignement mauvais entraînera forcément un résultat... et parfois un désastre. Les résultats d'une telle intervention peuvent être vraiment divers, de petits bonus jusqu'à de vrais miracles.
 Cette action nécessite un sacrifice du prêtre, il perdra donc 3D10 points de vie immédiatement après le lancement du sort. Intervention divine peut être utilisée une fois par jour.
 
 Pré-requis : Eclaircissement~
@@ -402,11 +421,11 @@ Pré-requis : Eclaircissement~
 @161 = ~Fureur de la nature (Altération)
 Niveau : Quête
 Sphère : Combat/Plantes
-Portée : Champ visuel du lanceur
+Portée : champ visuel du lanceur
 Durée : 1 Tour
 Temps d'incantation : 7
-Zone d'effet : Rayon de 12 mètres
-Jet de sauvegarde : Spécial
+Zone d'effet : rayon de 12 mètres
+Jet de sauvegarde : spécial
 
 Les druides utilisent ce sort uniquement contre les pires ennemis de la nature car ses pouvoirs sont particulièrement destructeurs et irréversibles. Une fois lancé, le sort ravage la terre ; il a pour but la destruction de toutes les créatures vivantes et mortes-vivantes. Toute créature encaisse 1D10 points de dégâts de poison et 1D10 points de dégâts d'acide par round où elle est exposée aux vapeurs mortelles. Si une créature rate son jet de sauvegarde contre le poison à -2, elle est empoisonnée. Si elle rate un autre jet de sauvegarde contre le poison, elle tombe malade et perd 1 point de constitution pendant 5 rounds. Ce sort détruit toutes les créatures invoquées. Derrière ces effets destructeurs, Fureur de la nature cache une caractéristique bien plus vicieuse : elle tente d'empêcher les créatures d'échapper à la zone d'effet, ou, au pire, de les ralentir. Toute cible ratant son jet de sauvegarde contre les sorts à -4 est enchevêtrée durant un court moment. Les créatures enchevêtrées peuvent toujours attaquer.
 
@@ -419,8 +438,8 @@ Niveau : Quête
 Portée : 0
 Durée : 1 tour
 Temps d'incantation : 1 round
-Zone d'effet : Rayon de 12 mètres
-Jet de sauvegarde : Aucun
+Zone d'effet : rayon de 12 mètres
+Jet de sauvegarde : aucun
 
 Ce sort de haut niveau de druide crée une aura de soin qui se déplace avec le lanceur. Toute créature amie se trouvant dans la zone d'effet est guérie de 3D8 +10 points de vie/round, et est débarrassée des effets du poison et de la maladie. Le druide doit se concentrer afin de permettre au sort de durer, ce qui le ralenti jusqu'à la fin du sort, lequel dure 1 tour.
 
@@ -434,14 +453,14 @@ Portée : 110 mètres
 Durée : 4 rounds
 Temps d'incantation : 9 
 Zone d'effet : rayon de 15 mètres
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 C'est une version améliorée du sort de niveau 7 Tremblement de terre.
-Grâce à ce puissant sort le druide relâche les plus dévastateurs pouvoirs de la nature afin de balayer ses ennemis une fois pour toute de la surface de Féérune. De violentes secousses frappent  le sol et d'importantes éruptions enflamment le ciel alors qu'un jeune volcan crée une fissure projetant du feu partout dans un rayon de 15 mètres.
+Grâce à ce puissant sort le druide relâche les plus dévastateurs pouvoirs de la nature afin de balayer ses ennemis une fois pour toute de la surface de Féérune. De violentes secousses frappent le sol et d'importantes éruptions enflamment le ciel alors qu'un jeune volcan crée une fissure projetant du feu partout dans un rayon de 15 mètres.
 Il y a trois secousses causées par le tremblement de terre. La première d'entre elles cause 6D6 points de dégâts à toutes les créatures dans la zone d'effet (Jet de sauvegarde contre les sorts à -6 pour moitié). Ceux qui ratent leur jet de sauvegarde tombent au sol pour 4 rounds.
 La seconde secousse est mois sévère, ne causant que 4D6 points de dégâts (Jet de sauvegarde à -2 pour moitié). La secousse finale cause 2D6 points de dégâts (jet de sauvegarde pour moitié).
 En plus des dégâts contondants dus aux secousses, l'horrible chaleur et les projections de lave causent 3D6 points de dégâts de feu par round à toutes les créatures dans la zone d'effet.
-Ce sort affecte et les ennemis et les alliés du lanceur, la prudence est donc de rigueur lors de son l'utilisation. 
+Ce sort affecte et les ennemis et les alliés du lanceur, la prudence est donc de rigueur lors de son utilisation. 
 Lancer le sort Volcan est particulièrement éprouvant pour le druide, à la fois physiquement et mentalement. Il se retrouve donc essoufflé et incapable de lancer un sort pendant 2 rounds après son lancement.
 
 Pré-requis : Implosion~
@@ -452,19 +471,19 @@ Niveau : Quête
 Portée : 9 mètres
 Durée : 10 rounds
 Temps d'incantation : 1 round
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
-Ce sort invoque 2 élémentaux à 16 dés de vie, d'un élément choisi au hasard parmi les quatre existants (eau, air, terre et feu).  Ils restent à l'entière disposition du prêtre pendant 10 rounds. Il existe 20% de chance qu'un Prince élémentaire soit invoqué. Les Princes élémentaires maîtrisent les autres élémentaires dans leurs plans respectifs. Le Prince élémentaire de l'eau s'appelle Ben-Hadar, celui du feu, Zamaan Rul, la Princesse élémentaire de l'air se nomme Chan et celle de la terre, Sunnis.~
+Ce sort invoque 2 élémentaires à 16 dés de vie, d'un élément choisi au hasard parmi les quatre existants (eau, air, terre et feu). Ils restent à l'entière disposition du prêtre pendant 10 rounds. Il existe 20 % de chance qu'un Prince élémentaire soit invoqué. Les Princes élémentaires maîtrisent les autres élémentaires dans leurs plans respectifs. Le Prince élémentaire de l'eau s'appelle Ben-Hadar, celui du feu, Zamaan Rul, la Princesse élémentaire de l'air se nomme Chan et celle de la terre, Sunnis.~
 
-@168 = ~Invocation de princes élémentaires ~
-@169 = ~Invocation de princes élémentaires  (Conjuration/Convocation)
+@168 = ~Invocation de princes élémentaires~
+@169 = ~Invocation de princes élémentaires (Conjuration/Convocation)
 Niveau : Quête
 Portée : 9 mètres
 Durée : 10 rounds
 Temps d'incantation : 1 round
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 Comme les druides ont des relations plus profondes avec les éléments, ils peuvent, contrairement aux clercs, invoquer directement les princes élémentaires de l'eau, de l'air, de la terre ou du feu. Ceux-ci restent pendant 10 rounds à la disposition de leur invocateur. Les Princes élémentaires maîtrisent les autres élémentaires dans leurs plans respectifs. Le Prince élémentaire de l'eau s'appelle Ben-Hadar, celui du feu, Zamaan Rul, la Princesse élémentaire de l'air se nomme Chan et celle de la terre, Sunnis. Notez que les Princes élémentaires traversent directement un portail pour rejoindre le lanceur, ils ne sont donc pas affectés par les sorts attaquant les créatures invoquées.
 
@@ -477,7 +496,7 @@ Pré-requis : Invocation d'élémentaires~
 
 @292 = ~Bénédiction de la nature~
 @291 = ~Bénédiction de la nature
-Les druides de haut niveau tissent un lien plus profond avec la nature. Ceci lui donne une meilleure connexion avec les puissances de l'eau, du feu et du vent lui conférant 1 point supplémentaire de bonus à la sagesse et 10% de résistance supplémentaire au feu, au froid et à l'électricité de façon permanente.~
+Les druides de haut niveau tissent un lien plus profond avec la nature. Ceci leur donne une meilleure connexion avec les puissances de l'eau, du feu et du vent leur conférant 1 point supplémentaire de bonus à la sagesse et 10 % de résistance supplémentaire au feu, au froid et à l'électricité de façon permanente.~
 @290 = ~Votre sagesse et vos résistances aux éléments ont été augmentées de façon permanente.~
 
 @295 = ~Qui appelle Ben-Hadar, Prince de l'eau ?!~
@@ -493,11 +512,11 @@ Les druides de haut niveau tissent un lien plus profond avec la nature. Ceci lui
 @281 = ~Implosion~
 @280 = ~Implosion (Evocation)
 Niveau : Quête
-Portée :  Champ visuel du lanceur
+Portée : champ visuel du lanceur
 Durée : 2 Rounds
 Temps d'incantation : 5
 Zone d'effet : 1 créature
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 La terre s'ouvre puis se referme pendant un round sur la cible, la retenant prisonnière pendant 1 round et lui infligeant 10D10 points de dégâts du feu et 10D10 points de dégâts contondants. La victime peut tenter de réussir un jet de sauvegarde contre les sorts pour ne recevoir que la moitié des dégâts.
 
@@ -514,11 +533,11 @@ Portée : 32 mètres
 Durée : 2 tours
 Temps d'incantation : 6
 Zone d'effet : rayon de 6 mètres
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
-Un archidruide peut créer une grande tornade à l'aide de ce sort. La tornade nouvellement formée commence par errer aléatoirement autour de la zone d'effet, projetant toute créature sur son passage, amie ou ennemie. Ceux qui ne peuvent s'échapper souffrent automatiquement de 1D10 points de dégâts contondants et 1D10 points de dégâts tranchants, les créatures de taille normale ou de petite taille sont sonnées (aucun jet de sauvegarde). Celles qui restent encore dans la zone d'effet verront leurs chances de réussir une incantation tomber à 50% jusqu'à ce qu'ils aient quitté la zone (que ce soit intentionnellement ou parce qu'ils ont été projetés par la tornade). De plus, si quelq'un rate son jet de sauvegarde contre le souffle, il souffre alors de 1D10 points de dégâts contondants supplémentaires et devient inconscient pendant 1 round. 
+Un archidruide peut créer une grande tornade à l'aide de ce sort. La tornade nouvellement formée commence par errer aléatoirement autour de la zone d'effet, projetant toute créature sur son passage, amie ou ennemie. Ceux qui ne peuvent s'échapper souffrent automatiquement de 1D10 points de dégâts contondants et 1D10 points de dégâts tranchants, les créatures de taille normale ou de petite taille sont sonnées (aucun jet de sauvegarde). Celles qui restent encore dans la zone d'effet verront leurs chances de réussir une incantation tomber à 50 % jusqu'à ce qu'ils aient quitté la zone (que ce soit intentionnellement ou parce qu'ils ont été projetés par la tornade). De plus, si quelq'un rate son jet de sauvegarde contre le souffle, il souffre alors de 1D10 points de dégâts contondants supplémentaires et devient inconscient pendant 1 round. 
 La tornade tue instantanément les créatures de moins de 5 dés de vie, et balaye tous les nuages, vapeurs, brumes et gaz dans la zone.
-Une fois que la tornade a été invoquée, le druide n'a aucun contrôle sur ces vents violents, ce sort doit donc être utilisé avec précaution.~
+Une fois que la tornade a été invoquée, le druide n'a aucun contrôle sur ces vents violents ; ce sort doit donc être utilisé avec précaution.~
 
 @274 = ~Transformation en élémentaire~
 @273 = ~Transformation en élémentaire
@@ -535,19 +554,19 @@ Pré-requis : Bénédiction de la nature~
 @170 = ~Charme de masse~
 @171 = ~Charme de masse
 
-En concentrant sa volonté le barde peut influencer les actions des créatures alentours en leur suggérant quoi faire. Bien entendu les ordres d'autodestruction rompent le charme. La créature peut tenter un jet de sauvegarde contre les sorts afin de ne pas succomber, mais même si elle le réussit il y a 50% de chance pour que son esprit se brise. Ceci la fera devenir berserk pour 1 round (pas de jet de sauvegarde).
-C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée. Quiconque résiste ou échappe au contrôle du barde est moins succeptible, pour un temps, de succomber au charme s'il y est de nouveau confronté.~
+En concentrant sa volonté le barde peut influencer les actions des créatures alentours en leur suggérant quoi faire. Bien entendu les ordres d'autodestruction rompent le charme. La créature peut tenter un jet de sauvegarde contre les sorts afin de ne pas succomber, mais même si elle le réussit il y a 50 % de chance pour que son esprit se brise. Ceci la fera devenir berserk pour 1 round (pas de jet de sauvegarde).
+C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée. Quiconque résiste ou échappe au contrôle du barde est moins susceptible, pour un temps, de succomber au charme s'il y est de nouveau confronté.~
 
 @172 = ~Mélodie ensorcelante~
 @173 = ~Mélodie ensorcelante
 
-Alors que le barde fredonne doucement cet entraînant morceau, il peut stupéfier un auditoire complet, comprenant même des êtres qui ne comprennent pas sa langue. Tous les auditeurs dans la zone d'effet doivent réussir un jet de sauvegarde contre la paralysie ou donner au barde leur complète attention, ignorant totalement leur entourage. Même les ennemis se retrouvent assommés d'émerveillement pour 5 rounds s'ils ratent leur jet de sauvegarde. De plus, même si le jet de sauvegarde est réussi, il y a 50% de chances pour que les adversaires s'immergent si profondément dans l'hypnotique mélodie du barde qu'ils sombrent dans la débilité pendant 1 round (aucun jet de sauvegarde). 
+Alors que le barde fredonne doucement cet entraînant morceau, il peut stupéfier un auditoire complet, comprenant même des êtres qui ne comprennent pas sa langue. Tous les auditeurs dans la zone d'effet doivent réussir un jet de sauvegarde contre la paralysie ou donner au barde leur complète attention, ignorant totalement leur entourage. Même les ennemis se retrouvent assommés d'émerveillement pour 5 rounds s'ils ratent leur jet de sauvegarde. De plus, même si le jet de sauvegarde est réussi, il y a 50 % de chances pour que les adversaires s'immergent si profondément dans l'hypnotique mélodie du barde qu'ils sombrent dans la débilité pendant 1 round (aucun jet de sauvegarde). 
 C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée. Quiconque résiste ou échappe à la mélodie du barde est moins succeptible, pour un temps, d'y succomber s'il y est de nouveau confronté.~
 
 @174 = ~Eclatement sonore~
 @175 = ~Eclatement sonore
 
-Le barde utilise ses connaissances des mélodies et un ensemble de sons afin d'émettre une puissante note de musique fracassant la pierre. Les créatures alentours encaissent 15D6 points de dégâts contondants et sont aussi assourdies pour 5 rounds (Un personnage assourdi a 50% de chance de rater une incantation). Un jet de sauvegarde réussi contre le souffle permet de réduire les dégâts de moitié et de se protéger de la surdité.
+Le barde utilise ses connaissances des mélodies et un ensemble de sons afin d'émettre une puissante note de musique fracassant la pierre. Les créatures alentours encaissent 15D6 points de dégâts contondants et sont aussi assourdies pour 5 rounds (un personnage assourdi a 50 % de chance de rater une incantation). Un jet de sauvegarde réussi contre le souffle permet de réduire les dégâts de moitié et de se protéger de la surdité.
 C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée.~
 
 @176 = ~Chant persistant~
@@ -574,7 +593,7 @@ Cette flûte s'utilise comme une baguette magique. La flûte dure 1 journée.~
 @180 = ~Poing draconique~
 @181 = ~Poing draconique
 
-Les moines de haut niveau ont la capacité de concentrer leur ki dans leurs corps de bien des façons. En utilisant cette capacité toutes les attaques faites par le moine lors du round suivant enlèveront les protections spécifiques de la cible (jet de sauvegarde contre les sorts à -2) et une protection magique d'un niveau de sort inférieur ou égal au 8ème (pas de jet de sauvegarde). La victime doit en plus réussir un jet de sauvegarde contre le souffle afin d'éviter de perdre toutes ses protections physiques. Pour finir, les créatures frappées par Poing draconique doivent réussir un jet de sauvegarde contre la mort à -4, ou voir leur résistance à la magie diminuée de 19% pour 6 rounds. Cet effet est cumulatif. Point draconique retire toujours le plus puissant sort de protection de la cible.
+Les moines de haut niveau ont la capacité de concentrer leur ki dans leurs corps de bien des façons. En utilisant cette capacité toutes les attaques faites par le moine lors du round suivant enlèveront les protections spécifiques de la cible (jet de sauvegarde contre les sorts à -2) et une protection magique d'un niveau de sort inférieur ou égal au 8ème (pas de jet de sauvegarde). La victime doit en plus réussir un jet de sauvegarde contre le souffle afin d'éviter de perdre toutes ses protections physiques. Pour finir, les créatures frappées par Poing draconique doivent réussir un jet de sauvegarde contre la mort à -4, ou voir leur résistance à la magie diminuée de 19 % pour 6 rounds. Cet effet est cumulatif. Point draconique retire toujours le plus puissant sort de protection de la cible.
 
 Pré-requis : Coup d'ombre~
 
@@ -594,7 +613,7 @@ Cette capacité donne au moine une puissante attaque. Cet coup écrasant touche to
 @186 = ~Chant~
 @187 = ~Chant
 
-Cette capacité donne au moine de puissantes protections physiques durant un court moment. Elle augmente les résistances aux dégâts tranchants, perforants, contondants et aux projectiles de 75%, et les résistances au feu, au froid et à l'électricité de 25%. Il y a cependant un prix pour une telle protection : en concentrant son ki sur les attaques physiques, la résistance magique du moine est ramenée à 0 jusqu'à expiration de la capacité. Les effets de cette capacité durent 3 rounds. Les bonus de plusieurs Chants ne sont pas cumulables.
+Cette capacité donne au moine de puissantes protections physiques durant un court moment. Elle augmente les résistances aux dégâts tranchants, perforants, contondants et aux projectiles de 75 %, et les résistances au feu, au froid et à l'électricité de 25 %. Il y a cependant un prix pour une telle protection : en concentrant son ki sur les attaques physiques, la résistance magique du moine est ramenée à 0 jusqu'à expiration de la capacité. Les effets de cette capacité durent 3 rounds. Les bonus de plusieurs Chants ne sont pas cumulables.
 
 Pré-requis : Âme de diamant~
 
@@ -616,7 +635,7 @@ Pré-requis : Evasion~
 @193 = ~Temps intérieur
 
 Temps intérieur est clairement la plus puissante des capacités physiques et mentales du moine. Ayant atteint une maîtrise parfaite de leurs corps et de leurs âmes, les moines les plus expérimentés sont capables de ralentir leur temps intérieur au point qu'ils perçoivent chaque seconde comme un round entier. Cet état leur permet de juger des situations de combat avec plus de sagesse et de réagir à ce qui les entoure plus rapidement et plus efficacement.
-Temps intérieur ne se contente pas d'accélérer l'esprit, le corps aussi devient plus rapide, au point que n'importe qui trouverait les mouvements du moine incroyablement rapides. Ses poings deviennent plus dangereux que n'importe quelle arme : le moine obtient 8 attaques par round, 4 points de bonus à ses dégâts, son THAC0 et sa CA, le facteur de vitesse de ses attaques et son temps d'incantation sont aussi réduits de 2. Il peut attraper les projectiles et les relancer en un seul mouvement et enfin, il est protégé contre les attaques sournoises.
+Temps intérieur ne se contente pas d'accélérer l'esprit, le corps aussi devient plus rapide, au point que n'importe qui trouverait les mouvements du moine incroyablement rapides. Ses poings deviennent plus dangereux que n'importe quelle arme : le moine obtient 8 attaques par round, 4 points de bonus à ses dégâts, son TAC0 et sa CA, le facteur de vitesse de ses attaques et son temps d'incantation sont aussi réduits de 2. Il peut attraper les projectiles et les relancer en un seul mouvement et enfin, il est protégé contre les attaques sournoises.
 Après l'expiration de cette capacité (dont la durée est de 3 rounds), le moine devient essoufflé et est incapable d'utiliser une quelconque attaque spéciale ou capacité pour les deux rounds suivants.
 
 Pré-requis : Plus rapide que l'oeil~
@@ -625,7 +644,7 @@ Pré-requis : Plus rapide que l'oeil~
 @195 = ~Evasion
 
 Une version plus puissante d'Esquive, elle n'est pas apprise de la même manière par les moines que par les roublards. Elle a donc des effets différents.
-Elle diminue la CA de 4 et donne un bonus de 3 à tous les jets de sauvegarde, de plus, Evasion augmente la vitesse de déplacement du moine de 2, il se déplace alors si rapidement qu'il parvient à éviter les souffles (il n'encaisse que la moitié des dégâts lorsque c'est possible). 
+Elle diminue la CA de 4 et donne un bonus de 3 à tous les jets de sauvegarde. De plus, Evasion augmente la vitesse de déplacement du moine de 2, il se déplace alors si rapidement qu'il parvient à éviter les souffles (il n'encaisse que la moitié des dégâts lorsque c'est possible). 
 Evasion dure 5 rounds.
 
 Pré-requis : Esquive~
@@ -636,7 +655,7 @@ Pré-requis : Esquive~
 @197 = ~Second souffle~
 @198 = ~Second souffle
 
-Après de nombreuses années d'entraînement, un moine avec un esprit pur peut gagner la possibilité d'effectuer un second souffle. Second souffle permet au moine de guérir instantanément ses blessures si ses points de vie tombent en dessous de 10% de leur maximum. Cette capacité peut être utilisée une fois par jour et reste active durant 5 heures ou jusqu'à ce que le second souffle soit effectué.
+Après de nombreuses années d'entraînement, un moine avec un esprit pur peut gagner la possibilité d'effectuer un second souffle. Second souffle permet au moine de guérir instantanément ses blessures si ses points de vie tombent en dessous de 10 % de leur maximum. Cette capacité peut être utilisée une fois par jour et reste active durant 5 heures ou jusqu'à ce que le second souffle soit effectué.
 
 Pré-requis : Régénération de moine~
 
@@ -659,7 +678,7 @@ Le moine est capable de maîtriser son corps avec un talent presque magique, au p
 
 Les moines d'alignement mauvais peuvent concentrer leur ki de façons particulièrement meurtrières. Doigt de destruction est une technique secrète et interdite à beaucoup de moines, et seuls ceux qui n'ont aucun respect pour la vie des autres sont capables de l'apprendre.
 En concentrant son ki en un seul point du corps de sa cible, le moine touche l'ennemi avec l'extrémité de son doigt. Si l'attaque réussit, la cible perd 5 points de constitution et souffre d'un malus de -2 à ses jets de sauvegarde contre la mort pendant 5 tours (pas de jet de sauvegarde). Les créatures de moins de 10 dés de vie meurent immédiatement, celles qui ont plus de 10 dés de vie souffrent de 10 points de dégâts magiques.
-En plus des effets instantanés, cette capacité a une autre utilité : les énergies destructrices continuent d'affaiblir la cible qui souffrent d'un malus supplémentaire d'1 point à la constitution tous les deux rounds pendant un tour si elle rate son jet de sauvegarde contre la mort.
+En plus des effets instantanés, cette capacité a une autre utilité : les énergies destructrices continuent d'affaiblir la cible qui souffre d'un malus supplémentaire d'1 point à la constitution tous les deux rounds pendant un tour si elle rate son jet de sauvegarde contre la mort.
 Doigt de destruction ne peut être utilisé qu'une fois par jour.
 
 Pré-requis : Poing draconique~
@@ -668,7 +687,7 @@ Pré-requis : Poing draconique~
 @226 = ~Déplacement~
 @227 = ~Déplacement
 
-Après avoir appris à devenir une créature partiellement éthérée, le moine peut développer la capacité d'utiliser ce pouvoir instinctivement lorsqu'il est en danger. Quand il est sérieusement blessé il se connecte au monde éthéré, déplaçant son corps hors de la réalité. Lorsque ses points de vie tombent en dessous de 20% de leur maximum le moine disparaît partiellement, ce qui lui donne un bonus de 2 à sa CA et une immunité aux armes +2 et inférieures durant 5 rounds. Dans cet état le moine peut toujours être vu, attaqué et ciblé par des sorts.
+Après avoir appris à devenir une créature partiellement éthérée, le moine peut développer la capacité d'utiliser ce pouvoir instinctivement lorsqu'il est en danger. Quand il est sérieusement blessé il se connecte au monde éthéré, déplaçant son corps hors de la réalité. Lorsque ses points de vie tombent en dessous de 20 % de leur maximum le moine disparaît partiellement, ce qui lui donne un bonus de 2 à sa CA et une immunité aux armes +2 et inférieures durant 5 rounds. Dans cet état le moine peut toujours être vu, attaqué et ciblé par des sorts.
 
 Pré-requis: Forme éthérée~
 
@@ -688,14 +707,14 @@ Pré-requis : Poing draconique~
 @200 = ~Cri de guerre amélioré~
 @201 = ~Cri de guerre amélioré
 
-Avec le cri de guerre amélioré, le barbare pousse un puissant et effrayant hurlement qui terrorise les ennemis dans un rayon de 9 mètres s'ils ratent leur jet de sauvegarde contre les sorts à -2. En plus de cet effet, le Cri de guerre amélioré augmente la combativité des membres du groupe dans la zone d'effet en leur donnant un bonus de 3 au THAC0 et l'immunité à la peur pendant 2 rounds.
+Avec le cri de guerre amélioré, le barbare pousse un puissant et effrayant hurlement qui terrorise les ennemis dans un rayon de 9 mètres s'ils ratent leur jet de sauvegarde contre les sorts à -2. En plus de cet effet, le Cri de guerre amélioré augmente la combativité des membres du groupe dans la zone d'effet en leur donnant un bonus de 3 au TAC0 et l'immunité à la peur pendant 2 rounds.
 
 Pré-requis : Cri de guerre~
 
 @202 = ~Durcissement de la peau~
 @203 = ~Durcissement de la peau
 
-En choisissant cette capacité passive, le barbare augmente de façon permanente ses résistances aux dégâts tranchants, contondants et perforants de 5%.
+En choisissant cette capacité passive, le barbare augmente de façon permanente ses résistances aux dégâts tranchants, contondants et perforants de 5 %.
 Cette capacité peut être choisie plusieurs fois.
 
 Pré-requis : Résistance d'acier~
@@ -703,28 +722,28 @@ Pré-requis : Résistance d'acier~
 @204 = ~Rage infatigable~
 @205 = ~Rage infatigable
 
-C'est la version améliorée de la Rage du barbare. Elle donne un bonus de 4 à la force et à la constitution, et rend l'utilisateur immunisé à tous les sorts affectant l'esprit ou entravant les déplacements. Rage infatigable donne aussi un bonus de 20% à sa vitesse de déplacement.
+C'est la version améliorée de la Rage du barbare. Elle donne un bonus de 4 à la force et à la constitution, et rend l'utilisateur immunisé à tous les sorts affectant l'esprit ou entravant les déplacements. Rage infatigable donne aussi un bonus de 20 % à sa vitesse de déplacement.
 La principale différence avec la Rage du barbare est que la version améliorée n'a aucun effet négatif et dure deux fois plus longtemps. Cette capacité ne fatigue pas le barbare et dure 1 tour. 
 Cette capacité ne peut être utilisée en même temps que Rage du barbare.~
 
 @206 = ~Peau résistante~
 @207 = ~Peau résistante
 
-Cette capacité passive augmente les résistances naturelles du barbare au feu et au froid non magiques, et rend son corps moins vulnérable aux dégâts magiques. Chacune de ces résistances est augmentée de 5%.
+Cette capacité passive augmente les résistances naturelles du barbare au feu et au froid non magiques, et rend son corps moins vulnérable aux dégâts magiques. Chacune de ces résistances est augmentée de 5 %.
 
 Pré-requis : Mental d'acier~
 
 @208 = ~Protecteur de Easthaven +3~
 @209 = ~Protecteur de Easthaven +3
-Ce fléau fut forgé il y a un siècle environ, en l'honneur de la défaite du démon Balhifet. Il devait toujours être conservé dans la ville de Easthaven pour rappeler à la population que le démon n'avait été vaincu qu'après de terribles combats.
+Ce fléau fut forgé il y a un siècle environ, en l'honneur de la défaite du démon Belhifet. Il devait toujours être conservé dans la ville de Easthaven pour rappeler à la population que le démon n'avait été vaincu qu'après de terribles combats.
 
 PARAMETRES:
 
 Capacités :
  +2 à la CA
- +10% résistance aux dégâts tranchants, perforants et contondants
-THACO :  +3
-Dégâts :  1D6 + 4
+ +10 % de résistance aux dégâts tranchants, perforants et contondants
+TAC0 : +3
+Dégâts : 1D6 +4
 Type de dégâts : contondant
 Poids : 12
 Facteur de vitesse : 5
@@ -743,21 +762,21 @@ Non utilisable par :
 @210 = ~Ambidextrie améliorée~
 @211 = ~Ambidextrie améliorée
 
-Les rôdeurs sont entraînés à l'usage de deux armes en même temps. Cette capacité passive augmente encore ce talent en supprimant le malus de 2 au THAC0 pour la seconde main.~
+Les rôdeurs sont entraînés à l'usage de deux armes en même temps. Cette capacité passive augmente encore ce talent en supprimant le malus de 2 au TAC0 pour la seconde main.~
 
 @212 = ~Endurance~
 @213 = ~Endurance
 
-Cette capacité donne une meilleure endurance au rôdeur durant 5 heures. Ainsi, sa vitesse de déplacement augmente de 25% (non cumulable avec les bottes de rapidité) et il gagne un bonus de +1 à ses jets de sauvegardes, jets d'attaque, un bonus de 10% à son maximum de points de vie, l'immunité à la fatigue et à l'inconscience et une légère régénération (1 point de vie par round).
+Cette capacité donne une meilleure endurance au rôdeur durant 5 heures. Ainsi, sa vitesse de déplacement augmente de 25 % (non cumulable avec les bottes de rapidité) et il gagne un bonus de +1 à ses jets de sauvegardes, jets d'attaque, un bonus de 10 % à son maximum de points de vie, l'immunité à la fatigue et à l'inconscience et une légère régénération (1 point de vie par round).
 Cette capacité peut être utilisée 1 fois par jour.~
 
 @214 = ~Il s'agit de la cape légendaire de Montolio DeBrouchee, le mentor vénérable et aveugle du rôdeur Drizzt Do'urden. Tout comme son élève le plus connu, Montolio était un spécialiste du maniement simultané de deux lames.
 
 PARAMETRES :
 
-CA +1.
-+1 à tous les jets de sauvegarde.
-THAC0 +1 pour chacune des mains
++1 à la CA
++1 à tous les jets de sauvegarde
++1 au TAC0 pour chacune des mains
 
 Utilisable seulement par :
  Rôdeurs~
@@ -785,12 +804,12 @@ Niveau : 10
 Portée : 0
 Durée : 1 tour
 Temps d'incantation : 9
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 Clones miroirs est un des sorts les plus puissants de l'illusionniste, seulement utilisable par les illusionnistes de haut niveau.
-Clones miroirs crée deux parfaites copies du lanceur. Ces clones sont identiques au mage, excepté qu'ils n'ont que 60% des niveaux et des points de vie du lanceur. Ils sont capables de lancer des sorts, attaquer, et obéissent aux ordres du lanceur, lequel devient invisible. Il se retrouve donc dans un état comparable à celui du sort Détection faussée.~
-@303 = ~Vous ne pouvez utiliser un autre sort de ce type pour l'instant.~
+Clones miroirs crée deux parfaites copies du lanceur. Ces clones sont identiques au mage, excepté qu'ils n'ont que 60 % des niveaux et des points de vie du lanceur. Ils sont capables de lancer des sorts, attaquer, et obéissent aux ordres du lanceur, lequel devient invisible. Il se retrouve donc dans un état comparable à celui du sort Détection faussée.~
+@303 = ~Vous ne pouvez pas utiliser un autre sort de ce type pour l'instant.~
 
 @304 = ~Révélation~
 @305 = ~Révélation (Divination) 
@@ -798,35 +817,35 @@ Niveau : 10
 Portée : 0
 Durée : 15 rounds
 Temps d'incantation : 9
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 Révélation est le sort de divination ultime, seulement utilisable par les devins de haut niveau.
-Une fois par round, jusqu'à l'expiration du sort, tous les sorts d'illusion/fantasme ennemis dans un rayon 21 mètres sont dissipés, l'alignement principal de toute créature non membre du groupe est révélée (aucun jet de sauvegarde).
+Une fois par round, jusqu'à l'expiration du sort, tous les sorts d'illusion/fantasme ennemis dans un rayon de 21 mètres sont dissipés, l'alignement principal de toute créature non membre du groupe est révélé (aucun jet de sauvegarde).
 En plus, le mage gagne la capacité de lancer "Révéler la zone" jusqu'à une fois par round : ceci ne requiert qu'une très faible concentration durant un très court instant (ce qui n'empêche donc pas au mage de lancer un autre sort durant le round), et permet au devin de se concentrer sur une partie de la carte et d'y voir tout ce qu'il s'y passe. Les zones espionnées restent visibles durant deux rounds après le lancement du sort.~
 @306 = ~Révéler la zone~
 
 @307 = ~Rune d'immunité~
 @308 = ~Rune d'immunité (Abjuration) 
 Niveau : 10
-Portée : Champ visuel du laceur
+Portée : champ visuel du lanceur
 Durée : 4 rounds
 Temps d'incantation : 5
 Zone d'effet : 1 créature
-Jet de sauvegarde : Aucun
+Jet de sauvegarde : aucun
 
 Rune d'immunité est le plus puissant sort de protection anti-magie qui soit, utilisable uniquement par les abjurateurs de haut niveau.
 Après le lancement de ce sort, une rune enchantée est placée sous la créature cible. Peu de temps après, les énergies magiques sont récoltées afin de créer une barrière impénétrable autour de la cible, la rendant immunisée à toutes les écoles de magie pour un court moment. Même les sorts alliés ne peuvent pénétrer la barrière, néanmoins, la créature ciblée peut lancer des sorts librement depuis l'intérieur de la barrière.
-Rune d'immunité ne peut être dissipée que par un Perce bouclier ou un Sort d'assaut.~
+Rune d'immunité ne peut être dissipée que par un Perce-bouclier ou un Sort d'assaut.~
 
 @309 = ~Création de golem d'os~
 @310 = ~Création de golem d'os (Nécromancie)
 Niveau : 10
 Portée : 18 mètres
-Durée : Spécial
+Durée : spéciale
 Temps d'incantation : 8
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 Le nécromancien lance un appel aux corps des morts enterrés afin de construire une horrible abomination connue sous le nom de golem d'os. A un niveau plus élevé (25 et plus) le lanceur est capable de créer un golem d'os de l'apocalypse, un allié vraiment redoutable. Contrôler ces puissants morts-vivants est très éprouvant pour le mage et cela lui demande une intense concentration ; il perd donc 1D8+5 points de vie en créant un golem d'os et 1D12+5 en créant un golem d'os de l'apocalypse. Les golems d'os sont créés pour 10 tours et les golems d'os de l'apocalypse pour 7 tours.
 Ce sort ne peut être dissipé par aucun moyen magique.~
@@ -836,13 +855,13 @@ Ce sort ne peut être dissipé par aucun moyen magique.~
 @313 = ~Sort de ver~
 @314 = ~Sort de ver (Enchantement/Charme)
 Niveau : 10
-Portée : Champ visuel du lanceur
-Durée : 5 Tours
+Portée : champ visuel du lanceur
+Durée : 5 tours
 Temps d'incantation : 6
 Zone d'effet : 1 créature
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
-Ce sort de haut niveau inflige à sa cible une amnésie progressive. Sur un jet de sauvegarde raté, elle perd à chaque round un de ses sorts de plus haut niveau. Durant le premier round un jet de sauvegarde contre les sorts à -4 est autorisé. A chaque round suivant il y a une chance pour la victime oublie un sort. Les chances d'oubli sont réduites de 5% par tranche de 5 rounds (i.e. la cible a 100% de chance d'oublier un sort durant les 5 premiers rounds, et seulement 75% de chances entre les 26 et 30ème rounds). De plus, le combat mental de la cible avec le Sort de ver lui cause un malus de 25% de chances de rater un sort, à moins qu'elle réussisse un jet de sauvegarde contre les sorts à -4 durant le premier round. Cependant, même si le jet de sauvegarde est réussi, la déconcentration empêche à la cible de réussir une quelconque incantation durant 2 rounds. Les effets de ce sort durent 5 tours.~
+Ce sort de haut niveau inflige à sa cible une amnésie progressive. Sur un jet de sauvegarde raté, elle perd à chaque round un de ses sorts de plus haut niveau. Durant le premier round un jet de sauvegarde contre les sorts à -4 est autorisé. A chaque round suivant il y a une chance pour que la victime oublie un sort. Les chances d'oubli sont réduites de 5 % par tranche de 5 rounds (i.e. la cible a 100 % de chance d'oublier un sort durant les 5 premiers rounds, et seulement 75 % de chances entre les 26 et 30ème rounds). De plus, le combat mental de la cible avec le Sort de ver lui cause un malus de 25 % de chances de rater un sort, à moins qu'elle réussisse un jet de sauvegarde contre les sorts à -4 durant le premier round. Cependant, même si le jet de sauvegarde est réussi, la déconcentration empêche à la cible de réussir une quelconque incantation durant 2 rounds. Les effets de ce sort durent 5 tours.~
 
 @315 = ~Attaque sauvage~
 @316 = ~Attaque sauvage (Conjuration/Convocation)
@@ -851,7 +870,7 @@ Portée : 27 mètres
 Durée : 2 tours 
 Temps d'incantation : 6
 Zone d'effet : 1 créature
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 Ce sort est à utiliser contre les lanceurs de sorts ennemis. Il déforme toute tentative de lancement de sort, convertissant l'énergie magique en un mouvement sauvage.
 La victime d'une attaque sauvage peut tenter de faire un jet de sauvegarde contre les sorts à -2. Mais même si le jet de sauvegarde est réussi, le sort a quand même des effets : la cible devient sujette à une magie sauvage pour 2 rounds (quand la victime tente de lancer un sort ou d'utiliser une charge d'un objet magique, un mouvement sauvage survient automatiquement).
@@ -861,11 +880,11 @@ La résistance à la magie de la cible est ignorée.~
 @317 = ~Pacte obscur~
 @318 = ~Pacte obscur (Nécromancie)
 Niveau : 10
-Portée : Contact
+Portée : contact
 Durée : 50 tours
 Temps d'incantation : 6
 Zone d'effet : 1 créature
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 Grâce à ce sort le nécromancien peut augmenter la puissance d'un de ses serviteurs morts-vivants. Le lanceur lie une partie de sa force vitale à la créature augmentant son maximum de points de vie pour 50 tours. Le sort draine 3D6 points de vie au nécromancien et les tranfère au mort-vivant pour le fortifier, augmentant sa santé de 6D10 points de vie. Etant donné la nature de Pacte obscur, répéter le procédé peut rendre un mort-vivant incroyablement résistant. Le nécromancien doit faire particulièrement attention, chaque fois que le sort est lancé, il doit réussir un jet de sauvegarde contre la mort à -2 afin de ne pas perdre 1 point de constitution pour 50 tours.
 Le nécromancien ne peut lancer Pacte obscur sur lui-même ou une autre créature vivante.~
@@ -876,20 +895,20 @@ Niveau : 10
 Portée : 50
 Durée : 15 rounds
 Temps d'incantation : 7
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 En lançant ce sort, le conjurateur concentre une partie de sa magie pour créer un golem de pure énergie magique. Cette créature sans âme obéit à tous les ordres du lanceur jusqu'à expiration du sort, ou jusqu'à ce qu'il soit tué. Le golem magique est totalement immunisé à la magie, ceci inclut les sorts et les armes enchantées. Il ne peut être blessé que par des armes normales. Les sorts causant des dégâts et centrés sur la créature la soigneront.
-Créer un golem magique est particulièrement difficile et requiert une grande concentration au conjurateur. Durant les 3 rounds suivant le lancement, il ne peut lancer aucun sort et se déplace à la moitié de sa vitesse. Après les 3 rounds, le mage souffre toujours de 33% de chance de rater un sort, et ce, tant que le golem reste présent. Ces malus étant cumulatifs pour chaque golem invoqué.~
+Créer un golem magique est particulièrement difficile et requiert une grande concentration au conjurateur. Durant les 3 rounds suivant le lancement, il ne peut lancer aucun sort et se déplace à la moitié de sa vitesse. Après les 3 rounds, le mage souffre toujours de 33 % de chance de rater un sort, et ce, tant que le golem reste présent. Ces malus étant cumulatifs pour chaque golem invoqué.~
 
 @321 = ~Furie de Malavon~
 @322 = ~Furie de Malavon (Invocation)
 Niveau : 10
 Portée : 0
-Durée : Spécial
+Durée : spéciale
 Temps d'incantation : 1
 Zone d'effet : rayon de 9 mètres
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 Ce sort dévastateur a été créé par le puissant mage drow Malavon, quelque part au plus profond de l'Epine dorsale du monde. C'est une version améliorée de son sort : Rage de Malavon. L'invocateur crée des douzaines de flèches acides afin de frapper quiconque se trouve dans un rayon de 9 mètres. Toute créature dans la zone d'effet encaisse 15D8 points de dégâts d'acide (jet de sauvegarde contre le souffle pour moitié). Ceux qui sont frappés par le sort souffrent de 1D8 points de dégâts d'acide supplémentaires par round pendant 3 rounds.
 Furie de Malavon n'affecte pas le lanceur.~
@@ -898,13 +917,13 @@ Furie de Malavon n'affecte pas le lanceur.~
 @324 = ~Création de golem de chair (Altération)
 Niveau : 10
 Portée : 20
-Durée : Permanent
+Durée : permanente
 Temps d'incantation : 8
 Zone d'effet : 1 créature
-Jet de sauvegarde : Annule
+Jet de sauvegarde : annule
 
 En lançant ce terrible sort, le transmutateur tente de détruire magiquement le corps de sa cible et de le transformer en un golem de chair, contrôlé par le lanceur. La cible doit réussir un jet de sauvegarde contre la métamorphose afin d'éviter la mort et la transformation. Mais même si le jet de sauvegarde est réussi, la cible souffre de 3D6+3 points de dégâts à cause du choc physique. Le golem de chair ainsi créé obéit à tous les ordres du mage.
-Normalement les golems sont créés par des procédés longs et complexes. Les liens magiques maintenant leur corps requièrent un temps considérable et de nombreux enchantements pour être permanents. Cette méthode a donc un désavantage: tout golem de chair créé par ce sort va pourrir et s'effondrer après 1 heure.~
+Normalement les golems sont créés par des procédés longs et complexes. Les liens magiques maintenant leur corps requièrent un temps considérable et de nombreux enchantements pour être permanents. Cette méthode a donc un désavantage : tout golem de chair créé par ce sort va pourrir et s'effondrer après 1 heure.~
 
 @325 = ~Peau d'adamantine~
 @326 = ~Peau d'adamantine (Altération)
@@ -912,12 +931,12 @@ Niveau : 10
 Portée : 1
 Durée : 6 rounds +1 round/5 niveaux
 Temps d'incantation : 7
-Zone d'effet : Créature touchée
-Jet de sauvegarde : Spécial
+Zone d'effet : créature touchée
+Jet de sauvegarde : spécial
 
 C'est une version améliorée du sort Peau de pierre ; elle transforme la peau de la créature touchée en adamantine.
-Cette peau métallique a de nombreux avantages : elle réduit la classe d'armure de 5, confère une totale immunité aux dégâts élémentaires et de poison, 90% de résistance à la magie et aux attaques physiques. La résistance aux dégâts magique de la cible est amenée à 25%. En plus, la peau d'adamantine ne peut être traversée que par les armes +3 (ou mieux). Bien que cette peau ne permette pas d'utiliser d'armes, les poings du mage deviennent un recours plus qu'acceptable en combat : ils sont considérés comme une arme +4, infligent 4D6 points de dégâts et sont utilisés avec la maîtrise d'un Grand maître.
-Néanmoins, Une telle transformation n'est pas sans risque. La cible doit réussir un jet de sauvegarde contre la métamorphose. Si elle rate son jet de sauvegarde (à -4), elle est ralentie pour 5 rounds. Si elle rate son jet de sauvegarde (à -2), la cible est étourdie pour 2 rounds à cause du choc. Un jet de sauvegarde à 0 raté entraîne une grande souffrance : 5D8 points de dégâts et une grande fatigue à la fin du sort. Même si le jet de sauvegarde est réussi, la cible souffre de 30% de chance de rater une incantation jusqu'à expiration du sort.~
+Cette peau métallique a de nombreux avantages : elle réduit la classe d'armure de 5, confère une totale immunité aux dégâts élémentaires et de poison, 90 % de résistance à la magie et aux attaques physiques. La résistance aux dégâts magique de la cible est amenée à 25 %. En plus, la peau d'adamantine ne peut être traversée que par les armes +3 (ou mieux). Bien que cette peau ne permette pas d'utiliser d'armes, les poings du mage deviennent un recours plus qu'acceptable en combat : ils sont considérés comme une arme +4, infligent 4D6 points de dégâts et sont utilisés avec la maîtrise d'un Grand maître.
+Néanmoins, une telle transformation n'est pas sans risque. La cible doit réussir un jet de sauvegarde contre la métamorphose. Si elle rate son jet de sauvegarde (à -4), elle est ralentie pour 5 rounds. Si elle rate son jet de sauvegarde (à -2), la cible est étourdie pour 2 rounds à cause du choc. Un jet de sauvegarde à 0 raté entraîne une grande souffrance : 5D8 points de dégâts et une grande fatigue à la fin du sort. Même si le jet de sauvegarde est réussi, la cible souffre de 30 % de chance de rater une incantation jusqu'à expiration du sort.~
 
 
 
@@ -928,7 +947,7 @@ Néanmoins, Une telle transformation n'est pas sans risque. La cible doit réussir
 @351 = ~Poison nerveux
 
 Avec l'expérience, les assassins deviennent de vrais maîtres des toxines et autres poisons. En utilisant ces connaissances ils sont en mesure de créer de très puissants poisons, lesquels ne se contentent pas de causer une grande souffrance, mais peuvent aussi handicaper le système nerveux de la victime.
-Poison nerveux a trois principaux effets : tout d'abord, il cause 1 point de dégâts de poison par seconde durant 12 secondes. Le second : il a une chance de paralyser la cible pour 5 rounds et de l'affliger de 50% de chances de rater ses incantations jusqu'à ce que le poison ne fasse plus effet. Pour finir, il cause des dégâts supplémentaires chaque round de la manière suivante : 
+Poison nerveux a trois principaux effets : tout d'abord, il cause 1 point de dégâts de poison par seconde durant 12 secondes. Le second : il a une chance de paralyser la cible pour 5 rounds et de l'affliger de 50 % de chances de rater ses incantations jusqu'à ce que le poison ne fasse plus effet. Pour finir, il cause des dégâts supplémentaires chaque round de la manière suivante : 
 1er : 1D6 de dégâts
 2ème : 2D6 de dégâts
 3ème : 3D6 de dégâts
@@ -962,7 +981,7 @@ Pré-requis : Alchimie~
 @358 = ~Piège empoisonné~
 @359 = ~Piège empoisonné
 
-Cette capacité permet à un chasseur de prime de poser un piège libérant de puissantes toxines. Le nuage empoisonné cause 1 point de dégâts par seconde durant 15 rounds (jet de sauvegarde contre le poison pour moitié) et réduit la vitesse de déplacement des ennemis de 75% pour 3 rounds (pas de jet de sauvegarde). Si une créature vivante est exposée aux toxines, elle doit réussir un jet de sauvegarde contre la mort afin d'éviter de devenir inconsciente. La durée de cet état dépend de la pénalité du jet de sauvegarde (3 rounds si la victime rate son jet de sauvegarde à 0, 2 rounds si raté à -2 et 1 round si raté à -4). Pour finir, la toxine diminue la constitution de tous les ennemis de 3 points s'ils ratent leur jet de sauvegarde à -4.~
+Cette capacité permet à un chasseur de prime de poser un piège libérant de puissantes toxines. Le nuage empoisonné cause 1 point de dégâts par seconde durant 15 rounds (jet de sauvegarde contre le poison pour moitié) et réduit la vitesse de déplacement des ennemis de 75 % pour 3 rounds (pas de jet de sauvegarde). Si une créature vivante est exposée aux toxines, elle doit réussir un jet de sauvegarde contre la mort afin d'éviter de devenir inconsciente. La durée de cet état dépend de la pénalité du jet de sauvegarde (3 rounds si la victime rate son jet de sauvegarde à 0, 2 rounds si raté à -2 et 1 round si raté à -4). Pour finir, la toxine diminue la constitution de tous les ennemis de 3 points s'ils ratent leur jet de sauvegarde à -4.~
 
 
 
@@ -971,7 +990,7 @@ Cette capacité permet à un chasseur de prime de poser un piège libérant de puiss
 @370 = ~Ambidextrie améliorée~
 @371 = ~Ambidextrie améliorée
 
-Les maîtres lames sont entraînés à l'usage de deux armes en même temps. Cette capacité passive augmente encore ce talent en supprimant le malus de 2 au THAC0 pour la seconde main.~
+Les maîtres lames sont entraînés à l'usage de deux armes en même temps. Cette capacité passive augmente encore ce talent en supprimant le malus de 2 au TAC0 pour la seconde main.~
 
 @372 = ~Spécialisation : lames~
 @373 = ~Spécialisation : lames
@@ -984,7 +1003,7 @@ Pré-requis : Utilisation d'objets~
 @374 = ~Spécialisation : armes contondantes~
 @375 = ~Spécialisation : armes contondantes
 
-Les skalds sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les armes contondantes à spécialiste. Le barde devient spécialisé dans toutes les armes contondantes, quelque soit son degré de compétence dans la maîtrise de ces armes.
+Les skalds sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les armes contondantes à spécialiste. Le barde devient spécialisé dans toutes les armes contondantes, quel que soit son degré de compétence dans la maîtrise de ces armes.
 Cette capacité empêche d'utiliser la capacité Spécialisation : lames.
 
 Pré-requis : Utilisation d'objets~
@@ -992,7 +1011,7 @@ Pré-requis : Utilisation d'objets~
 @376 = ~Chant de skald amélioré~
 @377 = ~Chant de skald amélioré
 
-Ce chant est d'une grande aide à la fois pour le skald et pour ses alliés. Le chant donne au skald un bonus de 6 à sa CA et 10% de résistance à la magie. Le chant donne aussi un bonus de 6 au THAC0, aux dégâts, et à la CA, l'immunité à la peur, à l'étourdissement, la confusion, +5% de résistance à la magie et l'immunité aux armes normales.
+Ce chant est d'une grande aide à la fois pour le skald et pour ses alliés. Le chant donne au skald un bonus de 6 à sa CA et 10 % de résistance à la magie. Le chant donne aussi un bonus de 6 au TAC0, aux dégâts, et à la CA, l'immunité à la peur, à l'étourdissement, la confusion, +5 % de résistance à la magie et l'immunité aux armes normales.
 Cette capacité remplace le chant actuel du barde.~
 
 @378 = ~Chant persistant~
@@ -1006,8 +1025,8 @@ Pré-requis : Chant de skald amélioré~
 @380 = ~Chant de bouffon amélioré~
 @381 = ~Chant de bouffon amélioré
 
-Ce chant magique est une terrible menace pour les ennemis du bouffon. Tous les ennemis qui entendent le chant doivent réussir un jet de sauvegarde contre les sorts à -4 pour ne pas être ralentis pour 1 round, un jet de sauvegarde contre les sorts à -2 pour ne pas être confus pour 1 round, et un jet de sauvegarde contre les sorts (sans malus) pour ne pas être inconscient pour 1 round. Le pouvoir du chant donne au bouffon un bonus de 10% à sa résistance à la magie et diminue sa CA de 6.
-Cette capacité remplace le chant actuel du barde.~
+Ce chant magique est une terrible menace pour les ennemis du bouffon. Tous les ennemis qui entendent le chant doivent réussir un jet de sauvegarde contre les sorts à -4 pour ne pas être ralentis pour 1 round, un jet de sauvegarde contre les sorts à -2 pour ne pas être confus pour 1 round, et un jet de sauvegarde contre les sorts (sans malus) pour ne pas être inconscient pour 1 round. Le pouvoir du chant donne au bouffon un bonus de 10 % à sa résistance à la magie et diminue sa CA de 6.
+Cette capacité remplace le chant semblable du barde.~
 
 @382 = ~Chant persistant~
 @383 = ~Chant persistant
@@ -1020,7 +1039,7 @@ Pré-requis : Chant de bouffon amélioré~
 @384 = ~Chant de barde amélioré~
 @385 = ~Chant de barde amélioré
 
-C'est une puissante aide à la fois pour le barde et pour ses alliés. Le chant donne au barde un bonus de 6 à sa CA et 10% de résistance à la magie. Le chant donne aussi aux alliés du barde un bonus de 4 au THAC0, à la CA et à tous les jets de sauvegarde, +5% de résistance à la magie, et une immunité aux armes normales, à la peur et aux charmes.~
+C'est une puissante aide à la fois pour le barde et pour ses alliés. Le chant donne au barde un bonus de 6 à sa CA et 10 % de résistance à la magie. Le chant donne aussi aux alliés du barde un bonus de 4 au TAC0, à la CA et à tous les jets de sauvegarde, +5 % de résistance à la magie, et une immunité aux armes normales, à la peur et aux charmes.~
 
 @386 = ~Flûte de skald~
 @387 = ~Flûte de skald
@@ -1031,7 +1050,7 @@ La flûte est utilisée comme une baguette magique et dure 1 journée.~
 @388 = ~Finesse~
 @389 = ~Finesse
 
-Avec le talent et l'entraînement, un maître lame peut atteindre la perfection  dans la maîtrise de ses spirales offensives et défensives. Cette capacité passive augmente à la fois spirale offensive et spirale défensive. Spirale offensive donne alors, en plus des bonus habituels, 5% de chance supplémentaire de réussir un coup critique. Quant à spirale défensive, elle n'empêche plus au barde de se déplacer, néanmoins celui-ci se déplace à seulement 25% de sa vitesse normale.~
+Avec le talent et l'entraînement, un maître-lame peut atteindre la perfection dans la maîtrise de ses spirales offensives et défensives. Cette capacité passive augmente à la fois spirale offensive et spirale défensive. Spirale offensive donne alors, en plus des bonus habituels, 5 % de chance supplémentaire de réussir un coup critique. Quant à spirale défensive, elle n'empêche plus au barde de se déplacer, néanmoins celui-ci se déplace à seulement 25 % de sa vitesse normale.~
 @390 = ~Vos capacités spirales offensives et défensives ont été améliorées de façon permanente.~
 
 
@@ -1041,21 +1060,21 @@ Avec le talent et l'entraînement, un maître lame peut atteindre la perfection  d
 @401 = ~Idole du froid
 
 Les puissants sorciers peuvent développer la capacité de s'unifier avec les éléments pour un temps limité.
-En utilisant cette capacité le sorcier obtient 115% de résistance au froid, ce qui lui donne une véritable affinité au froid (au lieu de lui causer des dégâts, le froid le soigne). L'arme du lanceur cause alors 1D10 points de dégâts supplémentaires et ralentit la victime pour deux rounds (pas de jet de sauvegarde). Toute créature à proximité du sorcier encaisse 2D10 points de dégâts par round (jet de sauvegarde contre le souffle pour moitié) et est ralentie pendant 1 round (pas de jet de sauvegarde) du fait de l'aura de froid qui l'entoure. De plus, l'aura a 5% de chances de tuer les ennemis en les transformant en glace (jet de sauvegarde contre la mort à -4). Cependant, même si le jet de sauvegarde est réussi, la victime doit encaisser 20 points de dégâts de froid. Cette capacité endurcit le corps et le rend résistant aux attaques tranchantes et perforantes.
-Le problème de ce sort est qu'il diminue la résistance au feu, à l'acide et à l'électricité de 25%, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
+En utilisant cette capacité le sorcier obtient 115 % de résistance au froid, ce qui lui donne une véritable affinité au froid (au lieu de lui causer des dégâts, le froid le soigne). L'arme du lanceur cause alors 1D10 points de dégâts supplémentaires et ralentit la victime pour deux rounds (pas de jet de sauvegarde). Toute créature à proximité du sorcier encaisse 2D10 points de dégâts par round (jet de sauvegarde contre le souffle pour moitié) et est ralentie pendant 1 round (pas de jet de sauvegarde) du fait de l'aura de froid qui l'entoure. De plus, l'aura a 5 % de chances de tuer les ennemis en les transformant en glace (jet de sauvegarde contre la mort à -4). Cependant, même si le jet de sauvegarde est réussi, la victime doit encaisser 20 points de dégâts de froid. Cette capacité endurcit le corps et le rend résistant aux attaques tranchantes et perforantes.
+Le problème de ce sort est qu'il diminue la résistance au feu, à l'acide et à l'électricité de 25 %, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
 Idole du froid empêche d'utiliser la capacité Esprit du feu~
 
 @402 = ~Remémoration~
 @403 = ~Remémoration
 
-Ayant un talent inné pour le lancement de sort, les sorciers peuvent encore développer leur habilité à maîtriser les arcanes. Cette capacité permet au personnage de se souvenir d'un sort par niveau de sort jusqu'au niveau 6. Ceci requiert une certaine concentration,  d'où le long temps d'incantation et une courte période d'étourdissement après le lancement.
+Ayant un talent inné pour le lancement de sort, les sorciers peuvent encore développer leur habilité à maîtriser les arcanes. Cette capacité permet au personnage de se souvenir d'un sort par niveau de sort jusqu'au niveau 6. Ceci requiert une certaine concentration, d'où le long temps d'incantation et une courte période d'étourdissement après le lancement.
 
 Pré-requis : Focalisation intérieure~
 
 @404 = ~Ruine magique~
 @405 = ~Ruine magique
 
-En utilisant cette capacité de haut niveau le sorcier tente de briser tout enchantement ennemi autour de lui. Tous les ennemis dans un rayon de 9 mètres doivent réussir un jet de sauvegarde à -2 pour éviter la dissipation de tous les effets magiques qui les touchent. De plus, tous les ennemis voient leur résistance à la magie diminuée de 15% et souffrent d'un malus de 2 aux jets de sauvegarde contre les sorts.
+En utilisant cette capacité de haut niveau le sorcier tente de briser tout enchantement ennemi autour de lui. Tous les ennemis dans un rayon de 9 mètres doivent réussir un jet de sauvegarde à -2 pour éviter la dissipation de tous les effets magiques qui les touchent. De plus, tous les ennemis voient leur résistance à la magie diminuée de 15 % et souffrent d'un malus de 2 aux jets de sauvegarde contre les sorts.
 Les effets de cette capacité durent 1 tour.
 
 Pré-requis : Focalisation intérieure~
@@ -1063,15 +1082,15 @@ Pré-requis : Focalisation intérieure~
 @406 = ~Résistance à la magie~
 @407 = ~Résistance à la magie
 
-Cette capacité permet au sorcier de temporairement combattre les effets de la magie ennemie. Durant 5 rounds la résistance à la magie du personnage augmente de 30%. Ce bonus est cumulatif avec les autres résistances à la magie. Ainsi, si le sorcier a 10% de résistance à la magie, cette capacité augmentera sa résistance à 40%.~
+Cette capacité permet au sorcier de combattre temporairement les effets de la magie ennemie. Durant 5 rounds la résistance à la magie du personnage augmente de 30 %. Ce bonus est cumulatif avec les autres résistances à la magie. Ainsi, si le sorcier a 10 % de résistance à la magie, cette capacité augmentera sa résistance à 40 %.~
 @413 = ~Résistance à la magie n'est pas cumulable avec elle-même.~
 
 @408 = ~Esprit du feu~
 @409 = ~Esprit du feu
 
 Les puissants sorciers peuvent développer la capacité de s'unifier avec les éléments pour un temps limité.
-En utilisant cette capacité le sorcier obtient 115% de résistance au feu, ce qui lui donne une véritable affinité au feu (au lieu de lui causer des dégâts, le feu le soigne). Le lanceur est incapable d'utiliser une arme durant toute la durée du sort, mais ses poings lui servent d'armes causant 2D10 points de dégâts de feu et ayant 25% de diminuer de 10% la résistance au feu de la cible. Toute créature à proximité du sorcier encaisse 2D6 points de dégâts de feu par round du fait de l'aura embrasée qui l'entoure. Cette capacité rend le lanceur partiellement éthéré et lui confère donc une immunité aux armes normales.
-Le problème de ce sort est qu'il diminue la résistance au froid, à l'acide et à l'électricité de 25%, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
+En utilisant cette capacité le sorcier obtient 115 % de résistance au feu, ce qui lui donne une véritable affinité au feu (au lieu de lui causer des dégâts, le feu le soigne). Le lanceur est incapable d'utiliser une arme durant toute la durée du sort, mais ses poings lui servent d'armes causant 2D10 points de dégâts de feu et ayant 25 % de chance de diminuer de 10 % la résistance au feu de la cible. Toute créature à proximité du sorcier encaisse 2D6 points de dégâts de feu par round du fait de l'aura embrasée qui l'entoure. Cette capacité rend le lanceur partiellement éthéré et lui confère donc une immunité aux armes normales.
+Le problème de ce sort est qu'il diminue la résistance au froid, à l'acide et à l'électricité de 25 %, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
 Esprit du feu empêche d'utiliser la capacité Idole du froid~
 
 @410 = ~Focalisation intérieure~
@@ -1085,16 +1104,16 @@ Afin d'augmenter leurs capacités magiques, les sorciers doivent accroître leur c
 @415 = ~Aqua mortis
 
 Les puissants sorciers peuvent développer la capacité de s'unifier avec les éléments pour un temps limité.
-En utilisant cette capacité le sorcier obtient 115% de résistance à l'acide, ce qui lui donne une véritable affinité à l'acide (au lieu de lui causer des dégâts, l'acide le soigne). Toute créature attaquant le sorcier doit subir un contrecoup acide (pas de jet de sauvegarde). Le lanceur devient par ailleurs immunisé à tous les poisons et toutes les maladies.
-Le problème de ce sort est qu'il diminue la résistance au feu, au froid et à l'électricité de 25%, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
+En utilisant cette capacité le sorcier obtient 115 % de résistance à l'acide, ce qui lui donne une véritable affinité à l'acide (au lieu de lui causer des dégâts, l'acide le soigne). Toute créature attaquant le sorcier doit subir un contrecoup acide (pas de jet de sauvegarde). Le lanceur devient par ailleurs immunisé à tous les poisons et toutes les maladies.
+Le problème de ce sort est qu'il diminue la résistance au feu, au froid et à l'électricité de 25 %, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
 Aqua mortis empêche d'utiliser la capacité Descendant des tempêtes.~
 
 @416 = ~Descendant des tempêtes~
 @417 = ~Descendant des tempêtes
 
 Les puissants sorciers peuvent développer la capacité de s'unifier avec les éléments pour un temps limité.
-En utilisant cette capacité le sorcier obtient 115% de résistance à l'électricité, ce qui lui donne une véritable affinité à l'électricité (au lieu des lui causer de dégâts, l'électricité le soigne). Les attaques de mêlée du lanceur libèrent son énergie électrique causant 1D10 point de dégâts supplémentaires. Toute créature attaquant le sorcier doit encaisser 1D10 points de dégâts et il y a 25% de chances qu'elle soit étourdie pour 1 round (jet de sauvegarde contre les sorts à -2 pour éviter l'effet). Cette capacité donne aussi un bonus de 25% à la vitesse de déplacement.
-Le problème de ce sort est qu'il diminue la résistance au feu, au froid et à l'acide de 25%, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
+En utilisant cette capacité le sorcier obtient 115 % de résistance à l'électricité, ce qui lui donne une véritable affinité à l'électricité (au lieu des lui causer de dégâts, l'électricité le soigne). Les attaques de mêlée du lanceur libèrent son énergie électrique causant 1D10 point de dégâts supplémentaires. Toute créature attaquant le sorcier doit encaisser 1D10 points de dégâts et il y a 25 % de chances qu'elle soit étourdie pour 1 round (jet de sauvegarde contre les sorts à -2 pour éviter l'effet). Cette capacité donne aussi un bonus de 25 % à la vitesse de déplacement.
+Le problème de ce sort est qu'il diminue la résistance au feu, au froid et à l'acide de 25 %, le lanceur devient donc vulnérable à ces éléments. Les effets durent 1 tour.
 Descendant des tempêtes empêche d'utiliser la capacité Aqua mortis.~
 
 @418 = ~Augmentation de la vitesse d'incantation~
@@ -1110,7 +1129,7 @@ Pré-requis : Incantation par la volonté~
 
 Les sorciers de haut niveau ont un incroyable pouvoir magique concentré dans leurs corps.
 Ce terrible sort leur permet de relâcher cette énergie, laquelle explose en une colossale tempête magique autour du lanceur. C'est un acte suicidaire et qui se termine souvent par la mort même du sorcier, elle doit donc être utilisée dans les moments de très grand danger.
-L'énergie magique est totalement incontrôlable et ravage la zone dans un périmètre de 12 mètres, blessant tous ceux qui s'y trouvent. Une fois le sort lancé, le sorcier n'a aucun contrôle sur les énergies et se retrouve sonné au centre de la tempête. Après avoir dévoré les pouvoirs magiques du lanceur, le sort utilise éventuellement sa force vitale. La tempête inflige 4D10 points de dégâts magiques, 1D10 de dégâts électriques, 1D10 de dégâts de feu, 1D10 de dégâts de froid (pas de jet de sauvegarde) à toute créature dans la zone d'effet (amie, ou ennemie) toutes les 3 secondes après le lancement du sort. Toute personne se trouvant dans la zone d'effet souffre en plus de 25% de chances de rater ses sorts (pas de jet de sauvegarde) et se trouve ralentie (jet de sauvegarde contre les sorts à -4). Les créatures qui tentent de se rapprocher du centre de la tempête seront repoussées sur une courte distance. Les sorts et protections magiques du sorcier nourrissent la tempête, et seront totalement perdus. Après quelques secondes, les violentes décharges commenceront à attaquer la force vitale du lanceur lui drainant 2D10+10 points de vie par tranche de 3 secondes. Si le sorcier survit aux attaques magiques, il reste inconscient pour 6 rounds et est fatigué juste après.
+L'énergie magique est totalement incontrôlable et ravage la zone dans un périmètre de 12 mètres, blessant tous ceux qui s'y trouvent. Une fois le sort lancé, le sorcier n'a aucun contrôle sur les énergies et se retrouve sonné au centre de la tempête. Après avoir dévoré les pouvoirs magiques du lanceur, le sort utilise éventuellement sa force vitale. La tempête inflige 4D10 points de dégâts magiques, 1D10 de dégâts électriques, 1D10 de dégâts de feu, 1D10 de dégâts de froid (pas de jet de sauvegarde) à toute créature dans la zone d'effet (amie, ou ennemie) toutes les 3 secondes après le lancement du sort. Toute personne se trouvant dans la zone d'effet souffre en plus de 25 % de chances de rater ses sorts (pas de jet de sauvegarde) et se trouve ralentie (jet de sauvegarde contre les sorts à -4). Les créatures qui tentent de se rapprocher du centre de la tempête seront repoussées sur une courte distance. Les sorts et protections magiques du sorcier nourrissent la tempête, et seront totalement perdus. Après quelques secondes, les violentes décharges commenceront à attaquer la force vitale du lanceur lui drainant 2D10+10 points de vie par tranche de 3 secondes. Si le sorcier survit aux attaques magiques, il reste inconscient pour 6 rounds et est fatigué juste après.
 Tempête d'énergie dure 15 secondes.
 
 Pré-requis : Onde de choc~
@@ -1170,10 +1189,11 @@ PARAMETRES :
 Capacités d'équipement :
 CA : portée à 5
 Temps d'incantation réduit de 4 (mais seulement de 2 pour les sorciers)
-+10 % résistance magique
++10 % de résistance à la magie
+
 Poids : 3
 Utilisable par :
-Mage (y compris multiclassé et classes jumelées)~
+ Mage (y compris multiclassé et à classes jumelées)~
 
 
 
@@ -1182,7 +1202,7 @@ Mage (y compris multiclassé et classes jumelées)~
 @440 = ~Cri de guerre amélioré~
 @441 = ~Cri de guerre amélioré
 
-Avec le Cri de guerre amélioré, le berserker pousse un puissant et effrayant hurlement qui terrorise les ennemis dans un rayon de 9 mètres s'ils ratent leur jet de sauvegarde contre les sorts à -2. En plus de cet effet, le Cri de guerre amélioré augmente la combativité des membres du groupe dans la zone d'effet en leur donnant un bonus de 3 au THAC0 et l'immunité à la peur pendant 2 rounds.
+Avec le Cri de guerre amélioré, le berserker pousse un puissant et effrayant hurlement qui terrorise les ennemis dans un rayon de 9 mètres s'ils ratent leur jet de sauvegarde contre les sorts à -2. En plus de cet effet, le Cri de guerre amélioré augmente la combativité des membres du groupe dans la zone d'effet en leur donnant un bonus de 3 au TAC0 et l'immunité à la peur pendant 2 rounds.
 
 Pré-requis : Cri de guerre~
 
@@ -1198,13 +1218,13 @@ Pré-requis : Mental d'acier~
 @444 = ~Véritable Kaï~
 @445 = ~Véritable Kaï
 
-Ce type d'attaque nécessite un immense entraînement, et seuls les guerriers les plus doués sont à même de l'utiliser correctement en combat. Durant 12 secondes, toute attaque faite par le kensaï fait le maximum de dégâts et chaque coup a 25% de chances de tuer la cible si elle rate son jet de sauvegarde contre la mort à -2.~
+Ce type d'attaque nécessite un immense entraînement, et seuls les guerriers les plus doués sont à même de l'utiliser correctement en combat. Durant 12 secondes, toute attaque faite par le kensaï fait le maximum de dégâts et chaque coup a 25 % de chances de tuer la cible si elle rate son jet de sauvegarde contre la mort à -2.~
 
 @446 = ~Science du coup critique~
 @447 = ~Science du coup critique
 
 Les guerriers entraînés sont capables d'augmenter la précision de leurs coups et leur maîtrise du combat.
-Cette capacité passive augmente les chances de coup critique de 5%.
+Cette capacité passive augmente les chances de coup critique de 5 %.
 
 Pré-requis : Coup critique~
 
@@ -1221,7 +1241,7 @@ Résistance peut être choisie jusqu'à 5 fois.~
 @451 = ~Vertu
 
 Les cavaliers ont, au fond de leur coeur, un profond mépris pour les démons et les autres créatures mauvaises. A mesure qu'ils augmentent de niveau, ils peuvent utiliser ce mépris pour combattre ces adversaires plus efficacement.
-En choisissant cette capacité passive, le charisme du cavalier est augmenté de 1 point de façon permanente et le paladin reçoit un bonus de 2 aux dégâts et au THAC0 contre les créatures chaotiques mauvaises. Ce bonus est cumulatif avec tous les autres bonus aux dégâts et au THAC0.~
+En choisissant cette capacité passive, le charisme du cavalier est augmenté de 1 point de façon permanente et le paladin reçoit un bonus de 2 aux dégâts et au TAC0 contre les créatures chaotiques mauvaises. Ce bonus est cumulatif avec tous les autres bonus aux dégâts et au TAC0.~
 
 @452 = ~Cercle de la loi~
 @453 = ~Cercle de la loi
@@ -1234,7 +1254,7 @@ Pré-requis : Bouclier de la loi~
 @454 = ~Châtiment des morts-vivants~
 @455 = ~Châtiment des morts-vivants
 
-En canalisant la haine de son dieu pour les morts vivants, le chasseur de morts-vivants peut créer un rayon de lumière dorée qui brûle les morts-vivants avec les flammes des cieux. Les morts-vivants doivent encaisser 20D6 points de dégâts magiques (jet de sauvegarde contre le souffle pour moitié), et doivent réussir un jet de sauvegarde contre les sorts pour ne pas être instantanément détruits. Et même si le jet de sauvegarde est réussi, la cible est ralentie pour 1 round. Le paladin doit être assez proche pour toucher la créature (mais pas besoin de réussir un jet de toucher) afin d'utiliser cette attaque. Châtiment des morts-vivants n'a aucun effet sur les créatures vivantes.
+En canalisant la haine de son dieu pour les morts-vivants, le chasseur de morts-vivants peut créer un rayon de lumière dorée qui brûle les morts-vivants avec les flammes des cieux. Ceux-ci doivent encaisser 20D6 points de dégâts magiques (jet de sauvegarde contre le souffle pour moitié), et doivent réussir un jet de sauvegarde contre les sorts pour ne pas être instantanément détruits. Et même si le jet de sauvegarde est réussi, la cible est ralentie pour 1 round. Le paladin doit être assez proche pour toucher la créature (mais pas besoin de réussir un jet de toucher) afin d'utiliser cette attaque. Châtiment des morts-vivants n'a aucun effet sur les créatures vivantes.
 
 Pré-requis : Exorcisme~
 
@@ -1244,13 +1264,13 @@ Pré-requis : Exorcisme~
 @460 = ~Ressemblance avec les animaux~
 @461 = ~Ressemblance avec les animaux
 
-Les belluaires vivent entourés d'animaux et de la force de la nature. Avec le temps et l'expérience, ils en arrivent à un point où ils perdent de leur humanité et deviennent un peu plus bestiaux. En choisissant cette capacité passive le belluaire gagne, de façon permanente, 1 point de bonus à sa constitution et 1 point de bonus à tous ses jets de sauvegarde (sauf aux jets de sauvegarde contre les sorts où il a 1 point de malus). En plus de ces bonus, Ressemblance avec les animaux confère une infravision permanente.~
+Les belluaires vivent entourés d'animaux et de la force de la nature. Avec le temps et l'expérience, ils en arrivent à un point où ils perdent de leur humanité et deviennent un peu plus bestiaux. En choisissant cette capacité passive le belluaire gagne, de façon permanente, 1 point de bonus à sa constitution et 1 point de bonus à tous ses jets de sauvegarde (sauf aux jets de sauvegarde contre les sorts où il obtient 1 point de malus). En plus de ces bonus, Ressemblance avec les animaux confère une infravision permanente.~
 
 @462 = ~Précision~
 @463 = ~Précision
 
-Avec une bonne concentration, un archer suffisamment entraîné peut rendre ses attaques bien plus précises et dangereuses. En utilisant cette capacité l'archer gagne un bonus de 6 à son THAC0 avec les armes à projectiles et +10 aux dégâts pour 3 rounds, de plus, il a 20% chance par coup de tirer un coup mortel (la cible doit réussir un jet de sauvegarde contre la mort ou mourir). La cible doit aussi réussir un jet de sauvegarde contre le souffle à -2 pour ne pas être projeté au loin.
-Précision à certains inconvénients : elle nécessite une grande concentration, rendant toute défense impossible et diminuant par deux le nombre d'attaques par round. La vitesse de déplacement de l'archer diminue elle aussi considérablement et il souffre d'un malus de 5 à la CA jusqu'à expiration de la capacité.~
+Avec une bonne concentration, un archer suffisamment entraîné peut rendre ses attaques bien plus précises et dangereuses. En utilisant cette capacité l'archer gagne un bonus de 6 à son TAC0 avec les armes à projectiles et +10 aux dégâts pour 3 rounds, de plus, il a 20 % de chance par coup de tirer un coup mortel (la cible doit réussir un jet de sauvegarde contre la mort ou mourir). La cible doit aussi réussir un jet de sauvegarde contre le souffle à -2 pour ne pas être projetée au loin.
+Précision a certains inconvénients : elle nécessite une grande concentration, rendant toute défense impossible et diminuant par deux le nombre d'attaques par round. La vitesse de déplacement de l'archer diminue elle aussi considérablement et il souffre d'un malus de 5 à la CA jusqu'à expiration de la capacité.~
 
 @464 = ~Communauté des ombres~
 @465 = ~Communauté des ombres
@@ -1265,10 +1285,10 @@ En activant Communauté des ombres, le rôdeur peut choisir un sort d'illusion de 
 @471 = ~Comète (toutes écoles)  
 Niveau : Quête
 Portée : 80 mètres
-Durée : Instantanée
+Durée : instantanée
 Temps d'incantation : 6
 Zone d'effet : rayon de 9 mètres
-Jet de sauvegarde : Spécial
+Jet de sauvegarde : spécial
 
 C'est la version druidique du sort de mage de même nom, disponible uniquement aux justiciers. Une comète de taille moyenne frappe le sol, blessant toutes les créatures sur son trajet et renversant toutes les autres dans sa zone d'effet. Ces dernières doivent alors réussir un jet de sauvegarde contre la paralysie ou être étourdies pendant 1D4 rounds. La comète inflige 10D10 points de dégâts. 
 
@@ -1287,8 +1307,8 @@ Niveau : Quête
 Portée : 9 mètres
 Durée : 2 rounds + 1 round/8 niveaux
 Temps d'incantation : 1
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
 Le druide, en puisant dans le lien entre son passé et son présent, peut invoquer un esprit ancestral pour combattre à ses cotés. L'esprit ancestral est un puissant druide ayant toujours la totalité de ses pouvoirs (y compris la capacité de lancer des sorts) ainsi que les pouvoirs de tout esprit.
 
@@ -1305,9 +1325,9 @@ Portée : 0
 Durée : 10 rounds
 Temps d'incantation : 7
 Zone d'effet : rayon de 5 mètres
-Jet de sauvegarde : Aucun
+Jet de sauvegarde : aucun
 
-En utilisant cette puissante capacité, le prêtre de Helm devient un véritable bastion de la loi et obtient de colossales protections contre les créatures chaotiques et mauvaises. Elle lui confère une totale immunité aux sorts de nécromancie, un bonus de 3 points à ses jets de sauvegarde contre la mort et diminue sa CA de 3 points. De plus le prêtre et ses compagnons présents dans un rayon de 5 mètres sont protégés contre le mal et tous les sorts ou effets chaotiques tels que chaos, débilité mentale, peur, berserk, etc. 
+En utilisant cette puissante capacité, le prêtre de Heaum devient un véritable bastion de la loi et obtient de colossales protections contre les créatures chaotiques et mauvaises. Elle lui confère une totale immunité aux sorts de nécromancie, un bonus de 3 points à ses jets de sauvegarde contre la mort et diminue sa CA de 3 points. De plus le prêtre et ses compagnons présents dans un rayon de 5 mètres sont protégés contre le mal et tous les sorts ou effets chaotiques tels que chaos, débilité mentale, peur, berserk, etc. 
 Cette capacité dure 10 rounds.
 
 Pré-requis : Eclaircissement~
@@ -1319,10 +1339,10 @@ Sphère : Combat
 Portée : 0
 Durée : 3 rounds +1 round/3 niveaux après le niveau 20
 Temps d'incantation : 7
-Zone d'effet : Spécial
-Jet de sauvegarde : Aucun
+Zone d'effet : spéciale
+Jet de sauvegarde : aucun
 
-Le lanceur de ce dangereux sort de combat appelle à lui un marteau de guerre béni par Talos en personne. Pendant toute la durée du sort, le prêtre de Talos peut utiliser cette arme sans les pénalités dues à l'absence de compétence dans le maniement du marteau de guerre. Celui-ci frappe comme une arme +5, donne un bonus de 5 au THAC0 et a une grande portée. Le marteau inflige 3D10 +5 points de dégâts d'électricité.
+Le lanceur de ce dangereux sort de combat appelle à lui un marteau de guerre béni par Talos en personne. Pendant toute la durée du sort, le prêtre de Talos peut utiliser cette arme sans les pénalités dues à l'absence de compétence dans le maniement du marteau de guerre. Celui-ci frappe comme une arme +5, donne un bonus de 5 au TAC0 et a une grande portée. Le marteau inflige 3D10+5 points de dégâts d'électricité.
 En plus de ces effets, cette puissante arme a une chance de lancer un des sorts suivants sur la victime malchanceuse :
 - Cécité
 - Confusion
@@ -1346,18 +1366,18 @@ Etant donné la nature de la bénédiction, seuls les prêtres d'une grande générosi
 @500 = ~Réflexes de combat~
 @501 = ~Réflexes de combat
 
-Les guerriers/voleurs excellent à la fois par leurs prouesses de combat et par la précision de leurs mouvements. Un entraînement coûteux couplé à l'expérience du combat leur permettent de dépasser ses propres limites. Leurs temps de réaction, sens et réflexes s'améliorent lui donnant un bonus permanent de 1 à la CA et d'un point supplémentaire contre projectiles. De plus leur vitesse de déplacement augmente d'un point et leurs jets de sauvegarde contre les souffles sont diminués de 1 point.~
+Les guerriers/voleurs excellent à la fois par leurs prouesses de combat et par la précision de leurs mouvements. Un entraînement coûteux couplé à l'expérience du combat leur permettent de dépasser leurs propres limites. Leurs temps de réaction, sens et réflexes s'améliorent leur donnant un bonus permanent de 1 à la CA et d'un point supplémentaire contre projectiles. De plus leur vitesse de déplacement augmente d'un point et leurs jets de sauvegarde contre les souffles sont diminués de 1 point.~
 
 @502 = ~Coup sauvage~
 @503 = ~Coup sauvage
 
-Ce que la nature donne, la nature le reprend. Les guerriers/druides peuvent développer la capacité de diminuer temporairement toute résistance, magique ou non, aux dégâts physiques et élémentaires par un simple toucher. Le lanceur doit se rapprocher suffisamment pour toucher la cible et lancer Coup sauvage, il n'y a pas besoin de réussir un jet de toucher. La cible doit réussir un jet de sauvegarde contre les sorts à -4 afin de ne pas perdre 25% de résistance au feu, au froid et à l'électricité ainsi que 10% de résistance à tous les dégâts physiques. Ces pénalités durent 5 rounds. Les bonus dus à un usage multiple de cette capacité sont cumulatifs.~
+Ce que la nature donne, la nature le reprend. Les guerriers/druides peuvent développer la capacité de diminuer temporairement toute résistance, magique ou non, aux dégâts physiques et élémentaires par un simple toucher. Le lanceur doit se rapprocher suffisamment pour toucher la cible et lancer Coup sauvage, il n'y a pas besoin de réussir un jet de toucher. La cible doit réussir un jet de sauvegarde contre les sorts à -4 afin de ne pas perdre 25 % de résistance au feu, au froid et à l'électricité ainsi que 10 % de résistance à tous les dégâts physiques. Ces pénalités durent 5 rounds. Les malus dus à un usage multiple de cette capacité sont cumulatifs.~
 
 @504 = ~Résistance aux dégâts magiques~
 @505 = ~Résistance aux dégâts magiques
 
 Les guerriers peuvent devenir résistants à différentes formes d'attaques magiques, mais les guerriers/mages peuvent aller bien plus loin. Leurs prouesses physiques ainsi que leur compréhension des arts magiques leur permettent de résister aux dégâts magiques.
-A chaque fois que cette capacité est choisie, le guerrier/mage augmente de façon permanente sa résistance aux dégâts magiques de 10%.
+A chaque fois que cette capacité est choisie, le guerrier/mage augmente de façon permanente sa résistance aux dégâts magiques de 10 %.
 Résistance aux dégâts magiques peut être sélectionnée 3 fois.
 
 Pré-requis : Mental d'acier~
@@ -1365,12 +1385,12 @@ Pré-requis : Mental d'acier~
 @506 = ~Esprit insaisissable~
 @507 = ~Esprit insaisissable
 
-L'esprit a de nombreuses formes de défenses contre les attaques extérieures : un mage peut protéger son esprit par de puissantes incantations, un voleur peut dissimuler ses pensées pour les rendre plus difficiles à contrôler par les autres. Un mage/voleur a ses deux capacités, grâce à cela il finit par devenir totalement immunisé à tous les sorts affectant l'esprit tel que Charme ou Confusion. Notez que les sorts ou capacités surnaturelles attaquant directement le système nerveux peuvent toujours affecter le personnage.~
+L'esprit a de nombreuses formes de défenses contre les attaques extérieures : un mage peut protéger son esprit par de puissantes incantations, un voleur peut dissimuler ses pensées pour les rendre plus difficiles à contrôler par les autres. Un mage/voleur dispose de ces deux capacités, et grâce à cela finit par devenir totalement immunisé à tous les sorts affectant l'esprit tel que Charme ou Confusion. Notez que les sorts ou capacités surnaturelles attaquant directement le système nerveux peuvent toujours affecter le personnage.~
 
 @508 = ~Dissimulation~
 @509 = ~Dissimulation
 
-Quand un voleur obtient les faveurs d'un dieu, il peut rester caché des autres, ceux moins estimés seraient détectés. Les lanceurs de sorts profanes utilisent souvent des sorts d'invisibilité, mais ils sont sensibles aux sorts de détection magique des devins. Quand un clerc/voleur utilise cette puissante capacité il devient totalement indétectable par n'importe quel sort : la divination est totalement inutile contre la dissimulation divine. Tant qu'il est sous les effets de cette capacité, le personnage peut agir de la même façon que s'il était sous les effets du sort de mage Invisibilité majeure. Toute action offensive rompt l'invisibilité et rend le clerc/voleur partiellement visible. 
+Quand un voleur obtient les faveurs d'un dieu, il peut rester caché des autres ; ceux moins estimés seraient détectés. Les lanceurs de sorts profanes utilisent souvent des sorts d'invisibilité, mais ils sont sensibles aux sorts de détection magique des devins. Quand un clerc/voleur utilise cette puissante capacité il devient totalement indétectable par n'importe quel sort : la divination est totalement inutile contre la dissimulation divine. Tant qu'il est sous les effets de cette capacité, le personnage peut agir de la même façon que s'il était sous les effets du sort de mage Invisibilité majeure. Toute action offensive rompt l'invisibilité et rend le clerc/voleur partiellement visible. 
 Dissimulation dure 6 rounds +1 round/5 niveaux.~
 
 
@@ -1386,7 +1406,7 @@ Cette capacité peut être sélectionnée 2 fois.~
 
 Un clerc/mage est béni par la connaissance de deux types différents de magie. A haut niveau il peut utiliser une combinaison des magies divines et profanes et sa connaissance des mécanismes magiques afin de former une solide union entre les deux. Ceci apparaît par une puissante aura conférant des bonus aux alliés du personnage.
 
-Chaque créature affectée obtient un bonus de 10% de résistance à la magie. Les lanceurs de sorts sont ceux qui bénéficient le plus de cette aura, voyant leur vitesse d'incantation augmentée de 1 alors que leur niveau effectif est augmenté de 5.
+Chaque créature affectée obtient un bonus de 10 % de résistance à la magie. Les lanceurs de sorts sont ceux qui bénéficient le plus de cette aura, voyant leur vitesse d'incantation augmenter de 1 alors que leur niveau effectif est augmenté de 5.
 
 De plus, le clerc/mage gagne l'immunité aux effets d'échec de sort et l'immunité aux sorts de premier et deuxième niveau pendant toute la durée du sort, qui est de 1 heure.~
 
@@ -1394,7 +1414,7 @@ De plus, le clerc/mage gagne l'immunité aux effets d'échec de sort et l'immunité
 
 Un clerc/mage est béni par la connaissance de deux types différents de magie. A haut niveau il peut utiliser une combinaison des magies divines et profanes et sa connaissance des mécanismes magiques afin de former une solide union entre les deux. Ceci apparaît par une puissante aura conférant des bonus aux alliés du personnage.
 
-Chaque créature affectée obtient un bonus de 10% de résistance à la magie. Les lanceurs de sorts sont ceux qui bénéficient le plus de cette aura, voyant leur vitesse d'incantation augmentée de 1.
+Chaque créature affectée obtient un bonus de 10 % de résistance à la magie. Les lanceurs de sorts sont ceux qui bénéficient le plus de cette aura, voyant leur vitesse d'incantation augmentée de 1.
 
 De plus, le clerc/mage gagne l'immunité aux effets d'échec de sort et l'immunité aux sorts de premier et deuxième niveau pendant toute la durée du sort, qui est de 1 heure.~
 
@@ -1402,16 +1422,16 @@ De plus, le clerc/mage gagne l'immunité aux effets d'échec de sort et l'immunité
 @516 = ~Vous disposez d'au moins un mod incompatible~
 @517 = ~Trop de kits. Vous avez besoin du composant "Autoriser 1280 kits en tout" de ToBEx.~
 @518 = ~Trop de kits sans ToBEx~
-@519 = ~Pour la meilleure experience de jeu avec Refinements, veuillez installer les composants suivants du mod ToBEx de Ascension64 (http://bit.ly/i8awTx) :~
+@519 = ~Pour la meilleure experience de jeu avec Refinements, veuillez installer les composants suivants du mod ToBEx d'Ascension64 (http://bit.ly/i8awTx) :~
 @520 = ~Appliquer les penalites des Assassins et des Chasseurs de primes aux kits similaires [C]~
 @521 = ~Appliquer le bonus au niveau effectif de lancement des sorts [C]~
-@522 = ~Correctif pour Kit Trigger~
-@523 = ~Correctif pour AddKit~
+@522 = ~Correctif pour le trigger Kit~
+@523 = ~Correctif pour l'action AddKit~
 @524 = ~Pour une meilleure experience de jeu il vous faut la version Windows de BG2.
 
-Si vous utilisez GemRB signalez-le et j'enqueterai sur la compatibilite.
-Si vous utilisez un Intel Mac procurez-vous la version Windows de BG2 et lancez-la via Wine.
-Si vous utilisez un PowerPC Mac vous etes FICHU.
+Si vous utilisez GemRB signalez-le et j'evaluerai la compatibilite.
+Si vous utilisez un Mac Intel procurez-vous la version Windows de BG2 et lancez-la via Wine.
+Si vous utilisez un Mac PowerPC vous etes FICHU.
 ~
 
 ////////////////////////////////////////////////////////
@@ -1428,7 +1448,7 @@ Si vous utilisez un PowerPC Mac vous etes FICHU.
 @600 = ~"SwashImoen : Imoen modifiee en bretteuse mage", changements complets (recommande)~
 @601 = ~"SwashImoen : Imoen modifiee en bretteuse mage"~
 @602 = ~"SwashImoen : Imoen modifiee en bretteuse mage", modification du kit uniquement (aucune documentation)~
-
+@603 = ~"SwashImoen : Imoen modifiee en bretteuse mage", points en Detection des illusions plutot que Pose de pieges.~
 
 
 
@@ -1437,6 +1457,8 @@ Si vous utilisez un PowerPC Mac vous etes FICHU.
 //Shapeshifting fix
 
 @700 = ~Correction des bugs sur les metamorphoses~
+@701 = ~Guerison lors du retour a la forme humaine (par defaut)~
+@702 = ~Guerison lors de la transformation en animal (par Borsook)~
 
 
 
@@ -1512,6 +1534,10 @@ Utilisable uniquement par :
  Mage 
  Moine~
 
+@807 = ~%desc%
+Moine
+~
+
 
 
 //////////////////////////////////////////////
@@ -1531,7 +1557,7 @@ Utilisable uniquement par :
 @1020 = ~Forte volonté~ 
 @1021 = ~Forte volonté
 
-Grâce à une grande capacité d'introspection à la fois naturelle et innée, un angelame peut atteindre une meilleure conscience de lui-même, de son corps et de son rôle dans le grand plan des évènements : l'acceptation de sa propre souffrance et des conséquences incertaines des actions humaines renforce sa détermination lui permettant d'aller toujours de l'avant, quelles que soient les circonstances.
+Grâce à une grande capacité d'introspection à la fois naturelle et innée, un angelame peut atteindre une meilleure conscience de lui-même, de son corps et de son rôle dans le grand plan des événements : l'acceptation de sa propre souffrance et des conséquences incertaines des actions humaines renforce sa détermination lui permettant d'aller toujours de l'avant, quelles que soient les circonstances.
 En choisissant cette capacité le personnage gagne un bonus permanent de 1 à la sagesse et de 2 aux jets de sauvegarde contre les sorts. De plus, les capacités nécessitant une sérénité et une volonté exceptionnelles deviennent accessibles.~
 @1022 = ~Votre sagesse a été augmentée de façon permanente.~ 
 
@@ -1561,7 +1587,7 @@ Pré-requis : Forte volonté~
 @1030 = ~Bannissement
 
 En fondant son existence sur le respect de la sacralité de la vie, un angelame développe de la pitié pour les morts-vivants et les êtres persistant après la mort, et une grande aversion pour les créatures démoniaques, venues d'autres plans pour répandre la souffrance.
-Cette capacité émet une puissante explosion dont l'énergie provient de la force vitale du lanceur, une plainte remettant les choses en place : les morts-vivants proches du lanceur bénéficient du repos éternel, alors que les démons alentours sont "tués" et disparaissent du plan. Toutes ces créatures peuvent tenter un jet de sauvegarde contre la mort à -2 pour éviter de mourir, mais celles qui réussissent à résister sont projetées au loin et souffrent d'un malus de 4 au THAC0, à la CA et aux jets de sauvegarde durant 2 rounds. 
+Cette capacité émet une puissante explosion dont l'énergie provient de la force vitale du lanceur, une plainte remettant les choses en place : les morts-vivants proches du lanceur bénéficient du repos éternel, alors que les démons alentours sont "tués" et disparaissent du plan. Toutes ces créatures peuvent tenter un jet de sauvegarde contre la mort à -2 pour éviter de mourir, mais celles qui réussissent à résister sont projetées au loin et souffrent d'un malus de 4 au TAC0, à la CA et aux jets de sauvegarde durant 2 rounds. 
 Cette terrible utilisation de la volonté est très éprouvante et vide la force vitale du lanceur presque entièrement. 
 Bannissement ne peut être choisi qu'une fois.
 
@@ -1571,7 +1597,7 @@ Pré-requis : Forte volonté~
 @1032 = ~Héroïsme
 
 Cette capacité augmente la valeur du lanceur au combat inspirant un inébranlable courage à son groupe qui le voit comme un véritable héros, un chef à suivre sans hésitation.
-Le nombre d'attaques du lanceur est doublé durant 2 rounds et son maximum de point de vie augmenté de 20% pendant 5 rounds tandis que les membres du groupe sont protégés contre la peur et les échecs de moral.
+Le nombre d'attaques du lanceur est doublé durant 2 rounds et son maximum de point de vie augmenté de 20 % pendant 5 rounds tandis que les membres du groupe sont protégés contre la peur et les échecs de moral.
 Héroïsme ne peut être utilisé plus d'une fois par tour.~
 @1033 = ~Vous ne pouvez lancer Héroïsme plus d'une fois par tour.~
 
@@ -1579,7 +1605,7 @@ Héroïsme ne peut être utilisé plus d'une fois par tour.~
 @1035 = ~Intégrité spirituelle
 
 Durant 5 rounds l'angelame essaye de maintenir non seulement une parfaite harmonie avec lui-même, mais aussi un lien empathique avec l'environnement et les créatures proches.
-Cette capacité confère les même bonus qu'Harmonie spirituelle (3 à la CA, 2 au THAC0, 2 aux jets de sauvegarde contre la mort, le souffle et la métamorphose, bonus à la vitesse de déplacement et immunité  aux sorts comme Domination et Confusion) mais sans période de fatigue. De plus, toutes les résistances sont augmentées de 25% et le lanceur est immunisé au drainage de niveau.
+Cette capacité confère les même bonus qu'Harmonie spirituelle (3 à la CA, 2 au TAC0, 2 aux jets de sauvegarde contre la mort, le souffle et la métamorphose, bonus à la vitesse de déplacement et immunité  aux sorts comme Domination et Confusion) mais sans période de fatigue. De plus, toutes les résistances sont augmentées de 25 % et le lanceur est immunisé au drainage de niveau.
 Puisque les êtres vivants sont perçus par empathie plutôt que par la vue, pendant toute la durée d'effet de la capacité, le lanceur ne peut être abusé par les illusions et devient conscient des alignements des créatures alentours.
 Il y a d'autres conséquences : si l'angelame frappe une créature, il ressent une partie de la souffrance qu'il inflige !
 
@@ -1599,8 +1625,8 @@ Pré-requis : Forte volonté~
 @1041 = ~Effleurement de l'âme~
 @1042 = ~Effleurement de l'âme
 
-L'influence d'un angelame peut se manifester par une aura affectant les compagnons alentours. Sa présence les inspire et les motive, soit en leur donnant le désir de l'aider et le protéger, soit en leur donnant celui de lui ressembler. A ce moment l'effet devient suffisamment puissant pour affecter leurs esprits et leurs volontés les protégeant totalement contre tous les types de peur.
-De plus, l'angelame est capable d'enlacer les âmes de tous ses compagnons, sauf les plus égoïstes: un tel lien spirituel leur offre une immunité temporaire à la majorité des sorts affectant l'esprit, comme pour un Bouclier spirituel.
+L'influence d'un angelame peut se manifester par une aura affectant les compagnons alentours. Sa présence les inspire et les motive, soit en leur donnant le désir de l'aider et le protéger, soit en leur donnant celui de lui ressembler. A ce moment l'effet devient suffisamment puissant pour affecter leurs esprits et leurs volontés les protégeant totalement contre tous types de peur.
+De plus, l'angelame est capable d'enlacer les âmes de tous ses compagnons, sauf les plus égoïstes : un tel lien spirituel leur offre une immunité temporaire à la majorité des sorts affectant l'esprit, comme pour un Bouclier spirituel.
 Tous les effets de peur et effets spirituels déjà en action ne sont pas supprimés par cette capacité.
 
 Pré-requis : Héroïsme~
@@ -1615,19 +1641,18 @@ Cependant, ce pouvoir est éprouvant pour son âme, il ne peut donc pas l'utiliser
 Pré-requis : Intégrité spirituelle~
 
 @1050 = ~Angelame~ 
-@1051 = ~Angelame~
-@1052 = ~ANGELAME :
-Il s'agit d'un guerrier au coeur pur, capable transcender son propre entraînement grâce à une grande force spirituelle. On raconte que jamais deux de ces guerriers si vertueux ne mentent durant la même période historique ! Bien que ne servant aucun dieu, ces nobles combattants mélangent l'abnégation du paladin, la concentration du kensaï et les pouvoirs mystiques du moine. Leur entraînement a pour but de développer la discipline et la maîtrise de leur corps, ils ne frappent donc que rarement avec force ou colère et jamais vicieusement : les angelames n'apprennent aucun mouvement perfide pour tuer, ou traverser les armures. Ce guerrier à l'âme pure combat avec honneur et évite d'avoir recours à la violence autant que possible.
+@1051 = ~angelame~
+@1052 = ~ANGELAME : il s'agit d'un guerrier au coeur pur, capable de transcender son propre entraînement grâce à une grande force spirituelle. On raconte que jamais deux de ces guerriers si vertueux ne vécurent en même temps dans l'histoire ! Bien que ne servant aucun dieu, ces nobles combattants mélangent l'abnégation du paladin, la concentration du kensaï et les pouvoirs mystiques du moine. Leur entraînement a pour but de développer la discipline et la maîtrise de leur corps, ils ne frappent donc que rarement avec force ou colère et jamais vicieusement : les angelames n'apprennent aucun mouvement perfide pour tuer, ou traverser les armures. Ce guerrier à l'âme pure combat avec honneur et évite d'avoir recours à la violence autant que possible.
 
-Avantages:
+Avantages :
 - +1 au toucher et à la CA tous les 6 niveaux
 - +1 au facteur de vitesse tous les 4 niveaux
 - Peut soigner par apposition des mains une fois par jour
 - Immunité à la peur et aux échecs de moral
-- "Harmonie spirituelle" 1 fois par jour par 4 niveaux
+- "Harmonie spirituelle" 1 fois par jour par tranche de 4 niveaux
 - "Clémence" activable à volonté
 
-Désavantages:
+Désavantages :
 - Nécessite un minimum de 13 en sagesse (caractéristique principale), 10 en intelligence et 13 en dextérité
 - Ne peut être qu'humain, elfe ou demi-elfe
 - Ne peut qu'être d'alignement neutre bon
@@ -1639,7 +1664,7 @@ Désavantages:
 - Souffre d'une pénalité aux dégâts de -3 avec toutes les armes
 
 Harmonie spirituelle (5+2 rounds) :
-Quand le corps et l'esprit ne font plus qu'un, l'un et l'autre deviennent plus fort : les réflexes sont améliorés alors que l'esprit se protège et gagne en stabilité. Cet état confère un bonus de 3 à la CA, 2 au THAC0, augmente la vitesse de déplacement, immunise aux sorts comme Domination et Confusion, et donne un bonus de 2 aux jets de sauvegarde contre la mort, le souffle et la métamorphose. Un tel état de parfaite unité est éprouvant pour un mortel, donc un état de grand stress suit peut de temps après (pénalités à la CA, au THAC0, à la vitesse de déplacement, impossibilité de lancer un sort pour les angelames jumelés).
+Quand le corps et l'esprit ne font plus qu'un, l'un et l'autre deviennent plus fort : les réflexes sont améliorés alors que l'esprit se protège et gagne en stabilité. Cet état confère un bonus de 3 à la CA, 2 au TAC0, augmente la vitesse de déplacement, immunise aux sorts comme Domination et Confusion, et donne un bonus de 2 aux jets de sauvegarde contre la mort, le souffle et la métamorphose. Un tel état de parfaite unité est éprouvant pour un mortel, donc un état de grand stress suit peut de temps après (pénalités à la CA, au TAC0, à la vitesse de déplacement, impossibilité de lancer un sort pour les angelames jumelés).
 
 Clémence :
 Tenter de se battre en évitant de blesser l'adversaire entraîne une pénalité de 6 aux dégâts, cependant chaque coup sur une créature ayant moins de 20 points de vie a une chance de la rendre inconsciente pour 5 rounds (jet de sauvegarde contre la mort à -2). Cette possibilité retire la nécessité immédiate de tuer. Certaines créatures peuvent être immunisées à ces effets.
@@ -1655,8 +1680,8 @@ Capacités perdues !~
 PARAMETRES
 
 Capacités d'équipement :
-CA +1.
-PV +15.
++1 à la CA
++15 aux PV
 Régénération de 1 PV par round
 
 Utilisable par :
@@ -1665,13 +1690,22 @@ Utilisable par :
  Kensai
  Angelame~
 
+/* warning: @2000 is the subcomponent group for non-english, @2009 for english */
 
 @2000 = ~Armures et boucliers modifies~
 @2001 = ~Grand bouclier +1, +3 contre les projectiles~
 @2002 = ~Mise a jour des descriptions pour Armures et boucliers modifies~
-@2003 = ~Uniquement en français~
-@2004 = ~En français ou, le cas echeant, en anglais~
+
+// change YOUR_LANGUAGE with spanish, italian, french...
+// as needed in @2003 and @2004.
+@2003 = ~Mise a jour des descriptions uniquement en francais~
+@2004 = ~Mise a jour des descriptions en francais ou, en cas d'absence, en anglais~
+
 @2005 = ~Composant prevu pour des langues autres que l'anglais~
 @2006 = ~Composant prevu uniquement en anglais~
+@2007 = ~Pas du tout de mise a jour des descriptions~
+@2008 = ~Mettre a jour les descriptions~
+@2009 = ~Revised Armors & Shields.~
+@2010 = ~Composant obsolete~
+@2011 = ~Mise a jour des descriptions, pas de penalite de deplacement~
 @2012 = ~Incompatible avec Item Revisions~
-

@@ -17,7 +17,7 @@ AUTO_TRA ~refinements/languages/english~
 AUTO_TRA ~refinements/%s~
 
 README ~Refinements/README-Refinements.htm~
-VERSION ~beta 4.05~
+VERSION ~beta 4.09~
 
 
 ALWAYS
@@ -95,6 +95,21 @@ ALWAYS
 
   INCLUDE ~Refinements/lib/fl#add_kit_ee.tpa~
 
+  // Convert strings to UTF-8 for BG2EE
+  // Using default_language is mandatory since english is used as fallback in case of missing string in a language
+  ACTION_DEFINE_ARRAY tb#noconvert BEGIN prompts END
+  ACTION_DEFINE_ARRAY tb#reload BEGIN setup miscscripts END
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charset = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%~ // Since %LANGUAGE% will include "languages/"
+      iconv_path = EVAL ~%MOD_FOLDER%/languages/iconv~ // Must be set since iconv is not in tra_path
+      default_language = ~languages/english~
+      noconvert_array = tb#noconvert
+      reload_array = tb#reload
+  END
+
 END  //ALWAYS
 
 
@@ -103,7 +118,7 @@ LANGUAGE ~English~ ~languages/english~ ~refinements/languages/english/setup.tra~
                                        ~refinements/languages/english/miscscripts.tra~
                                        ~refinements/languages/english/prompts.tra~
 
-LANGUAGE ~French, by Sir Crapoilleau and Anomaly~ ~languages/french~   ~refinements/languages/english/setup.tra~
+LANGUAGE ~French, by Sir Crapouilleau and Anomaly~ ~languages/french~   ~refinements/languages/english/setup.tra~
                                        ~refinements/languages/english/miscscripts.tra~
                                        ~refinements/languages/english/prompts.tra~
                                        ~refinements/languages/french/setup.tra~
