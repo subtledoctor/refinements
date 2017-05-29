@@ -381,7 +381,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
   END 
  END
  CLEAR_ARRAYS
- COPY ~refinements/Hlab/thief/ee/copy~	  	~override~
+// COPY ~refinements/Hlab/thief/ee/copy~	  	~override~
  COPY ~refinements/Hlab/thief/ee/d5_scrl.spl~	~override/d5_scrl.spl~
     SAY NAME1 @144
     SAY NAME2 @144
@@ -399,7 +399,9 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
     SET_2DA_ENTRY 12 6 9 1
     SET_2DA_ENTRY 12 7 9 AP_D5_SCRL
 */
- COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
+OUTER_SET scroll_count = 0
+OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
+COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
   READ_BYTE     0x2f current ELSE 0
   READ_BYTE     0x2b current2 ELSE 0
   // Analyze items; if:
@@ -407,6 +409,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
   // 2) one contains ~cast spell~ (0x92 or 0x94) on a wizard spell
   // 3) The other contains ~Learn Spell~ (0x93) on the same spell
   // then it's a wizardly spell scroll: update for Use Scrolls!
+  // (also do wands)
   READ_LONG 0x64 headoffset  ELSE 0
   READ_SHORT 0x68 headcount  ELSE 0
   READ_LONG 0x6a effectsoffset  ELSE 0
@@ -424,7 +427,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
           INNER_PATCH_FILE ~%resref_learn%.spl~ BEGIN
             READ_SHORT 0x1c type
           END
-          PATCH_IF (type = 1) BEGIN //wizardly
+          PATCH_IF (type = 1) BEGIN // spell scroll
             thishead = 1
             haslearn = 1
           END
@@ -434,7 +437,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
           INNER_PATCH_FILE ~%resref_cast%.spl~ BEGIN
             READ_SHORT 0x1c type
           END
-          PATCH_IF (type = 1) BEGIN //wizardly
+          PATCH_IF (type = 1) OR (type = 2) BEGIN // spell scroll
             thishead = 1
             hascast = 1
           END
@@ -442,14 +445,24 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
       END // FOR... effect_cycle
     END // FOR... header cycle
   END // PATCH_IF... have exactly 2 headers
-  PATCH_IF (haslearn = 1) AND (hascast = 1) AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) BEGIN
+  PATCH_IF /*(haslearn = 1) AND */(hascast = 1) /*AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) */BEGIN
 	READ_BYTE ~0x1f~ ~byte1~
-	WRITE_BYTE ~0x1f~ (~%byte1%~ BAND ~0b11111101~)
+	WRITE_BYTE ~0x1f~ (~%byte1%~ BAND ~0b10100101~)
 	READ_BYTE ~0x20~ ~byte2~
 	WRITE_BYTE ~0x20~ (~%byte2%~ BAND ~0b10111101~)
-	WRITE_SHORT 0x2f current BOR 0b00100000
+//	WRITE_SHORT 0x2f current BOR 0b00100000
   END
- BUT_ONLY_IF_IT_CHANGES
+  PATCH_IF (haslearn = 1) AND (hascast = 1) /*AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) */BEGIN
+	SPRINT $use_scrolls(~%scroll_count%~) ~%SOURCE_RES%~
+	SET ++scroll_count
+  END
+BUT_ONLY_IF_IT_CHANGES
+COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
+  PHP_EACH use_scrolls AS _ => spell BEGIN
+	PATCH_IF FILE_EXISTS_IN_GAME ~%spell%.itm~ BEGIN
+	  LPF ADD_SPELL_EFFECT INT_VAR opcode = 180 parameter1 = (0 - 1) parameter2 = 0 target = 1 timing = 9 STR_VAR resource = EVAL ~%spell%~ END
+	END
+  END
 END
 //end EE new stuff_____________________________________________________________
 
