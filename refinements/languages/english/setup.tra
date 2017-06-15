@@ -309,12 +309,12 @@ Whenever a saving throw is allowed, the character will always succeed and the ch
 An experienced thief knows many dirty tricks to hinder or disable opponents in combat. For 3 rounds after the ability is activated, every attack of the thief has a chance to weaken his target. Anytime the thief makes a successful attack, the Strength of the victim is lowered to 10 for 18 seconds (save vs. death to avoid). In addition there is a 25% chance that the target will be either blinded, slowed, or will suffer an extra 5D6 piercing damage (save vs. breath at -4 to avoid effects).~
 @143 = ~You cannot reactivate Cripple right now.~
 
-@144 = ~Use Scrolls~
-@145 = ~Use Scrolls
+@144 = ~Use Magical Devices~
+@145 = ~Use Magical Devices
 Thieves always rely on their shrewdness, and learn every kind of trick to survive their days of adventuring.
-By observing mages who make use of their Art a smart thief may come to know enough of the mechanics of magic and spell casting to learn to read and understand mage scrolls, and actually even cast spells through them.
-Thieves of low intelligence probably won't be able to emulate mages with success, though.~
-@146 = ~Ability to cast mage spells from scrolls acquired.~
+By observing mages who make use of their Art a smart thief may come to know enough of the mechanics of magic and spell casting to learn to read and understand magic scrolls and wands, and actually even cast spells through them.
+Thieves of low intelligence probably won't be able to emulate spells with success, though.~
+@146 = ~Ability to use magical scrolls and wands acquired.~
 
 
 /* Cleric */
