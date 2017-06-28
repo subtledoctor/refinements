@@ -370,18 +370,59 @@ SAY 0xfe @146
 // subtledoctor's EE new stuff here:___________________________________________
 //
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
- COPY_EXISTING ~clabth01.2da~ ~override~
+  ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_nscrl.spl~ BEGIN
+	COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+	  READ_SHORT 0x1c item_type
+	  PATCH_IF item_type = 11 BEGIN 				//		make green scrolls into "food"
+		READ_BYTE 0x20 thief_use
+		PATCH_IF (%thief_use% BOR 0b10111111) = 0b10111111 BEGIN
+		  WRITE_SHORT 0x1c 13
+		END
+	  END
+	  PATCH_IF item_type = 35 BEGIN 				//		make general-use wands into "misc"
+		READ_BYTE 0x20 thief_use
+		PATCH_IF (%thief_use% BOR 0b10111111) = 0b10111111 BEGIN
+		  WRITE_SHORT 0x1c 0
+		END
+	  END
+	BUT_ONLY
+	COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+	  READ_SHORT	0x1c item_type
+	  PATCH_IF (item_type = 11) BEGIN
+		WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  END
+	  PATCH_IF (item_type = 35) BEGIN
+		WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  END
+	BUT_ONLY
+	ACTION_FOR_EACH case IN ~bag03~ ~bag03b~ ~bag03c~ ~bag03d~ ~bag03e~ ~bag03f~ ~bag03g~ ~bag03h~ ~bag03i~ BEGIN
+	  ACTION_IF FILE_EXISTS_IN_GAME ~%case%.sto~ BEGIN
+		COPY_EXISTING ~%case%.sto~ ~override~
+		  WRITE_LONG 0x9c 13
+	  END
+	END
+  END
+  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
+    SAY NAME1 @144
+    SAY NAME2 @144
+    SAY UNIDENTIFIED_DESC @145
+
+  COPY_EXISTING ~clabth01.2da~ ~override~
 	LPM remove_blank_lines
 	APPEND_FILE ~refinements/Hlab/thief/ee/no_use_devices.txt~
- COPY_EXISTING ~kitlist.2da~ ~override~
+  COPY_EXISTING ~kitlist.2da~ ~override~
 	COUNT_2DA_ROWS ~9~ "rows"
 	FOR ( index = 2 ; index < rows ; index = index + 1 ) BEGIN
 		READ_2DA_ENTRY %index% 5 9 modclab
 		READ_2DA_ENTRY %index% 8 9 modclass
 		DEFINE_ASSOCIATIVE_ARRAY d5_scrolls_array BEGIN "%modclab%" => "%modclass%" END
 	END
- BUT_ONLY
- ACTION_PHP_EACH d5_scrolls_array AS bo => zo BEGIN
+  BUT_ONLY
+  ACTION_PHP_EACH d5_scrolls_array AS bo => zo BEGIN
 	ACTION_IF (%zo% = 4) AND (FILE_EXISTS_IN_GAME ~%bo%.2da~) BEGIN
 		COPY_EXISTING ~%bo%.2da~ ~override~
 			LPM remove_blank_lines
@@ -392,23 +433,15 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 			LPM remove_blank_lines
 			APPEND_FILE ~refinements/Hlab/thief/ee/use_devices.txt~
 	END
- END
- ACTION_FOR_EACH mageclab IN ~clabma01~ ~clabma02~ ~clabma03~ ~clabma04~ ~clabma05~ ~clabma06~ ~clabma07~ ~clabma08~ ~clabma09~ BEGIN
-  ACTION_IF NOT FILE_EXISTS_IN_GAME ~%mageclab%.2da~ BEGIN
-   COPY ~refinements/Hlab/thief/ee/%mageclab%.2da~ ~override~
-	LPM remove_blank_lines
-	APPEND_FILE ~refinements/Hlab/thief/ee/use_devices.txt~
-  END 
- END
- CLEAR_ARRAYS
- COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
- COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
- COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
- COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
- COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
-    SAY NAME1 @144
-    SAY NAME2 @144
-    SAY UNIDENTIFIED_DESC @145
+  END
+  ACTION_FOR_EACH mageclab IN ~clabma01~ ~clabma02~ ~clabma03~ ~clabma04~ ~clabma05~ ~clabma06~ ~clabma07~ ~clabma08~ ~clabma09~ BEGIN
+	ACTION_IF NOT FILE_EXISTS_IN_GAME ~%mageclab%.2da~ BEGIN
+	  COPY ~refinements/Hlab/thief/ee/%mageclab%.2da~ ~override~
+		LPM remove_blank_lines
+		APPEND_FILE ~refinements/Hlab/thief/ee/use_devices.txt~
+	END 
+  END
+  CLEAR_ARRAYS
 /*
   COPY_EXISTING ~luth2.2da~ ~override~
                 ~luth3.2da~ ~override~
@@ -422,32 +455,6 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
     SET_2DA_ENTRY 12 6 9 1
     SET_2DA_ENTRY 12 7 9 AP_D5_UMD
 */
-
- COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  READ_SHORT 0x1c item_type
-  PATCH_IF item_type = 11 BEGIN 				//		make green scrolls into "misc"
-	READ_BYTE 0x20 thief_use
-	PATCH_IF (%thief_use% BOR 0b10111111) = 0b10111111 BEGIN
-	  WRITE_SHORT 0x1c 0
-	END
-  END
-  PATCH_IF item_type = 35 BEGIN 				//		make general-use wands into "misc"
-	READ_BYTE 0x20 thief_use
-	PATCH_IF (%thief_use% BOR 0b10111111) = 0b10111111 BEGIN
-	  WRITE_SHORT 0x1c 0
-	END
-  END
- BUT_ONLY
-
- COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  READ_SHORT	0x1c item_type
-  PATCH_IF (item_type = 11) BEGIN
-	WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-  END
-  PATCH_IF (item_type = 35) BEGIN
-	WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-  END
- BUT_ONLY
 
 END
 //end EE new stuff_____________________________________________________________
