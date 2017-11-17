@@ -99,6 +99,7 @@ LAF action_remove_hla STR_VAR kit_name = ~NECROMANCER~ remove_ability = ~GA_SPCL
 LAF action_remove_hla STR_VAR kit_name = ~NECROMANCER~ remove_ability = ~GA_SPCL929~ END
 LAF action_remove_hla STR_VAR kit_name = ~NECROMANCER~ remove_ability = ~GA_SPCL930~ END
 LAF action_add_hla STR_VAR kit_name = ~NECROMANCER~ ability = ~GA_TG#DRGB~ num_allowed = ~1~ END
+LAF action_add_hla STR_VAR kit_name = ~NECROMANCER~ ability = ~GA_TG#BONE~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~NECROMANCER~ ability = ~AP_TG#CLEA~ num_allowed = ~1~ END
 LAF action_add_hla STR_VAR kit_name = ~NECROMANCER~ ability = ~AP_TG#BONU~ num_allowed = ~1~ prerequisite = ~AP_TG#CLEA~ END
 LAF action_add_hla STR_VAR kit_name = ~NECROMANCER~ ability = ~GA_TG#DTHF~ num_allowed = ~1~ END
