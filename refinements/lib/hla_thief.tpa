@@ -244,10 +244,10 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 			 ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
 			 END
-// Use Scrolls can't handle MC thieves on EE yet...
-//			 ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
-//			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_D5_UMD~ num_allowed = ~1~ END
-//			 END
+// Use Scrolls can't handle MC thieves on EE yet... or can it??
+			 ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_D5_UMD~ num_allowed = ~1~ END
+			 END
 			END
 		END
 	  END
