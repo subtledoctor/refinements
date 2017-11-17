@@ -143,7 +143,7 @@ Le mage peut tenter de créer un parchemin spécifique en le choisissant parmi un 
 10) Labyrinthe
 11) Arrêt du temps
 
-Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrègera donc au bout de 12 heures, détruisant le parchemin.~
+Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrégera donc au bout de 12 heures, détruisant le parchemin.~
 
 @117 = ~Ecriture de parchemins
 
@@ -160,7 +160,7 @@ Le barde peut tenter de créer un parchemin spécifique en le choisissant parmi un
 8) Vaporisation prismatique
 9) Labyrinthe
 
-Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrègera donc au bout de 12 heures, détruisant le parchemin.~
+Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrégera donc au bout de 12 heures, détruisant le parchemin.~
 
 @118 = ~Ecriture de parchemins
 
@@ -178,7 +178,7 @@ Le voleur peut tenter de créer un parchemin spécifique en le choisissant parmi u
 9) Convocation de monstres III
 10) Nuage mortel
 
-Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrègera donc au bout de 12 heures, détruisant le parchemin.
+Néanmoins, même si le procédé est réussi, un enchantement créé en aussi peu de temps est forcément incomplet et instable. Il se désagrégera donc au bout de 12 heures, détruisant le parchemin.
 
 Pré-requis : Utilisation de parchemins~
 
@@ -317,16 +317,16 @@ Donc, quand un jet de sauvegarde est autorisé, le mage le réussit systématiqueme
 @141 = ~Estropier~
 @142 = ~Estropier
 
-Un voleur expérimenté connait de nombreux sales tours afin d'handicaper un ennemi ou le mettre hors de combat. Durant 3 rounds après son lancement, chaque attaque a une chance d'affaiblir sa cible. A chaque coup réussi la victime doit réussir un jet de sauvegarde contre la mort ou voir sa force réduite à 10 pendant 18 secondes. De plus il y a 25 % de chance que la cible soit aveuglée, ralentie, ou souffre de 5D6 points de dégâts perforants supplémentaires (jet de sauvegarde contre le souffle à -4 pour éviter ces effets).~
+Un voleur expérimenté connaît de nombreux sales tours afin d'handicaper un ennemi ou le mettre hors de combat. Durant 3 rounds après son lancement, chaque attaque a une chance d'affaiblir sa cible. A chaque coup réussi la victime doit réussir un jet de sauvegarde contre la mort ou voir sa force réduite à 10 pendant 18 secondes. De plus il y a 25 % de chance que la cible soit aveuglée, ralentie, ou souffre de 5D6 points de dégâts perforants supplémentaires (jet de sauvegarde contre le souffle à -4 pour éviter ces effets).~
 @143 = ~Vous ne pouvez réactiver la capacité Estropier pour l'instant.~
 
-@144 = ~Utilisation de parchemins~
-@145 = ~Utilisation de parchemins
+@144 = ~Utilisation d'équipements magiques~
+@145 = ~Utilisation d'équipements magiques
 
 Les voleurs comptent toujours sur leur astuce pour s'en sortir, et apprennent toutes sortes de tours au fil de leurs aventures.
-En observant les mages user de leur art, un voleur suffisamment rusé peut en apprendre assez sur les mécanismes de la magie et le lancement des sorts pour pouvoir lire et comprendre les parchemins des mages, et même lancer les sorts qu'ils renferment.
-Les voleurs de faible intelligence risquent de ne pas être capables de reproduire les actions des mages.~
-@146 = ~Vous avez acquis la capacité de lancer des sorts de mage à l'aide de parchemins.~
+En observant les mages user de leur art, un voleur suffisamment rusé peut en apprendre assez sur les mécanismes de la magie et le lancement des sorts pour pouvoir lire et comprendre les parchemins et baguettes magiques, et même lancer les sorts qu'ils renferment.
+Les voleurs de faible intelligence risquent de ne pas être capables d'exploiter les sorts avec succès, néanmoins.~
+@146 = ~Vous avez acquis la capacité d'utiliser les parchemins et les baguettes magiques.~
 
 
 /* Cleric */
@@ -535,7 +535,7 @@ Temps d'incantation : 6
 Zone d'effet : rayon de 6 mètres
 Jet de sauvegarde : spécial
 
-Un archidruide peut créer une grande tornade à l'aide de ce sort. La tornade nouvellement formée commence par errer aléatoirement autour de la zone d'effet, projetant toute créature sur son passage, amie ou ennemie. Ceux qui ne peuvent s'échapper souffrent automatiquement de 1D10 points de dégâts contondants et 1D10 points de dégâts tranchants, les créatures de taille normale ou de petite taille sont sonnées (aucun jet de sauvegarde). Celles qui restent encore dans la zone d'effet verront leurs chances de réussir une incantation tomber à 50 % jusqu'à ce qu'ils aient quitté la zone (que ce soit intentionnellement ou parce qu'ils ont été projetés par la tornade). De plus, si quelq'un rate son jet de sauvegarde contre le souffle, il souffre alors de 1D10 points de dégâts contondants supplémentaires et devient inconscient pendant 1 round. 
+Un archidruide peut créer une grande tornade à l'aide de ce sort. La tornade nouvellement formée commence par errer aléatoirement autour de la zone d'effet, projetant toute créature sur son passage, amie ou ennemie. Ceux qui ne peuvent s'échapper souffrent automatiquement de 1D10 points de dégâts contondants et 1D10 points de dégâts tranchants, les créatures de taille normale ou de petite taille sont sonnées (aucun jet de sauvegarde). Celles qui restent encore dans la zone d'effet verront leurs chances de réussir une incantation tomber à 50 % jusqu'à ce qu'ils aient quitté la zone (que ce soit intentionnellement ou parce qu'ils ont été projetés par la tornade). De plus, si quelqu'un rate son jet de sauvegarde contre le souffle, il souffre alors de 1D10 points de dégâts contondants supplémentaires et devient inconscient pendant 1 round. 
 La tornade tue instantanément les créatures de moins de 5 dés de vie, et balaye tous les nuages, vapeurs, brumes et gaz dans la zone.
 Une fois que la tornade a été invoquée, le druide n'a aucun contrôle sur ces vents violents ; ce sort doit donc être utilisé avec précaution.~
 
@@ -561,7 +561,7 @@ C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles
 @173 = ~Mélodie ensorcelante
 
 Alors que le barde fredonne doucement cet entraînant morceau, il peut stupéfier un auditoire complet, comprenant même des êtres qui ne comprennent pas sa langue. Tous les auditeurs dans la zone d'effet doivent réussir un jet de sauvegarde contre la paralysie ou donner au barde leur complète attention, ignorant totalement leur entourage. Même les ennemis se retrouvent assommés d'émerveillement pour 5 rounds s'ils ratent leur jet de sauvegarde. De plus, même si le jet de sauvegarde est réussi, il y a 50 % de chances pour que les adversaires s'immergent si profondément dans l'hypnotique mélodie du barde qu'ils sombrent dans la débilité pendant 1 round (aucun jet de sauvegarde). 
-C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée. Quiconque résiste ou échappe à la mélodie du barde est moins succeptible, pour un temps, d'y succomber s'il y est de nouveau confronté.~
+C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles est ignorée. Quiconque résiste ou échappe à la mélodie du barde est moins susceptible, pour un temps, d'y succomber s'il y est de nouveau confronté.~
 
 @174 = ~Eclatement sonore~
 @175 = ~Eclatement sonore
@@ -573,7 +573,7 @@ C'est une capacité surnaturelle ; de ce fait la résistance à la magie des cibles
 @177 = ~Chant persistant 
 
 Une fois que les talents musicaux d'un barde ont atteint un niveau suffisant, sa musique peut persister dans l'oreille de son auditoire longtemps après que la dernière note ait été jouée. Même après que le barde ait arrêté de jouer, les effets de son chant subsistent chez ses compagnons.
-De plus, les talents améliorés du barde permettent à sa musique d'influencer le coeur de ses alliés sur une plus grande distance.
+De plus, les talents améliorés du barde permettent à sa musique d'influencer le cœur de ses alliés sur une plus grande distance.
 
 Pré-requis : Chant de barde amélioré~
 
@@ -624,8 +624,8 @@ Les moines expérimentés peuvent concentrer leurs ki dans leurs corps afin de se 
 
 Pré-requis : Âme de diamant~
 
-@190 = ~Plus rapide que l'oeil~
-@191 = ~Plus rapide que l'oeil
+@190 = ~Plus rapide que l'œil~
+@191 = ~Plus rapide que l'œil
 
 Grâce à cette capacité les moines peuvent augmenter leur vitesse de déplacement de façon incroyable pour un court instant. Durant ce temps le moine est capable de courir sur une distance limitée sans être stoppé ou frappé par qui que ce soit.
 
@@ -638,7 +638,7 @@ Temps intérieur est clairement la plus puissante des capacités physiques et ment
 Temps intérieur ne se contente pas d'accélérer l'esprit, le corps aussi devient plus rapide, au point que n'importe qui trouverait les mouvements du moine incroyablement rapides. Ses poings deviennent plus dangereux que n'importe quelle arme : le moine obtient 8 attaques par round, 4 points de bonus à ses dégâts, son TAC0 et sa CA, le facteur de vitesse de ses attaques et son temps d'incantation sont aussi réduits de 2. Il peut attraper les projectiles et les relancer en un seul mouvement et enfin, il est protégé contre les attaques sournoises.
 Après l'expiration de cette capacité (dont la durée est de 3 rounds), le moine devient essoufflé et est incapable d'utiliser une quelconque attaque spéciale ou capacité pour les deux rounds suivants.
 
-Pré-requis : Plus rapide que l'oeil~
+Pré-requis : Plus rapide que l'œil~
  
 @194 = ~Evasion~
 @195 = ~Evasion
@@ -886,7 +886,7 @@ Temps d'incantation : 6
 Zone d'effet : 1 créature
 Jet de sauvegarde : spécial
 
-Grâce à ce sort le nécromancien peut augmenter la puissance d'un de ses serviteurs morts-vivants. Le lanceur lie une partie de sa force vitale à la créature augmentant son maximum de points de vie pour 50 tours. Le sort draine 3D6 points de vie au nécromancien et les tranfère au mort-vivant pour le fortifier, augmentant sa santé de 6D10 points de vie. Etant donné la nature de Pacte obscur, répéter le procédé peut rendre un mort-vivant incroyablement résistant. Le nécromancien doit faire particulièrement attention, chaque fois que le sort est lancé, il doit réussir un jet de sauvegarde contre la mort à -2 afin de ne pas perdre 1 point de constitution pour 50 tours.
+Grâce à ce sort le nécromancien peut augmenter la puissance d'un de ses serviteurs morts-vivants. Le lanceur lie une partie de sa force vitale à la créature augmentant son maximum de points de vie pour 50 tours. Le sort draine 3D6 points de vie au nécromancien et les transfère au mort-vivant pour le fortifier, augmentant sa santé de 6D10 points de vie. Etant donné la nature de Pacte obscur, répéter le procédé peut rendre un mort-vivant incroyablement résistant. Le nécromancien doit faire particulièrement attention, chaque fois que le sort est lancé, il doit réussir un jet de sauvegarde contre la mort à -2 afin de ne pas perdre 1 point de constitution pour 50 tours.
 Le nécromancien ne peut lancer Pacte obscur sur lui-même ou une autre créature vivante.~
 
 @319 = ~Invocation de golem magique~
@@ -995,7 +995,7 @@ Les maîtres lames sont entraînés à l'usage de deux armes en même temps. Cette ca
 @372 = ~Spécialisation : lames~
 @373 = ~Spécialisation : lames
 
-Les skalds sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les lames à spécialiste. Le barde devient spécialisé dans toutes les armes à lame, quel que soit son degré de compétence dans la maîtrise de ces armes.
+Les scaldes sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les lames à spécialiste. Le barde devient spécialisé dans toutes les armes à lame, quel que soit son degré de compétence dans la maîtrise de ces armes.
 Cette capacité empêche d'utiliser la capacité Spécialisation : armes contondantes.
 
 Pré-requis : Utilisation d'objets~
@@ -1003,24 +1003,24 @@ Pré-requis : Utilisation d'objets~
 @374 = ~Spécialisation : armes contondantes~
 @375 = ~Spécialisation : armes contondantes
 
-Les skalds sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les armes contondantes à spécialiste. Le barde devient spécialisé dans toutes les armes contondantes, quel que soit son degré de compétence dans la maîtrise de ces armes.
+Les scaldes sont d'excellents combattants pour des bardes et ils peuvent étendre leur capacité à manier les armes. Cette capacité fait passer le niveau de spécialisation martiale pour les armes contondantes à spécialiste. Le barde devient spécialisé dans toutes les armes contondantes, quel que soit son degré de compétence dans la maîtrise de ces armes.
 Cette capacité empêche d'utiliser la capacité Spécialisation : lames.
 
 Pré-requis : Utilisation d'objets~
 
-@376 = ~Chant de skald amélioré~
-@377 = ~Chant de skald amélioré
+@376 = ~Chant de scalde amélioré~
+@377 = ~Chant de scalde amélioré
 
-Ce chant est d'une grande aide à la fois pour le skald et pour ses alliés. Le chant donne au skald un bonus de 6 à sa CA et 10 % de résistance à la magie. Le chant donne aussi un bonus de 6 au TAC0, aux dégâts, et à la CA, l'immunité à la peur, à l'étourdissement, la confusion, +5 % de résistance à la magie et l'immunité aux armes normales.
+Ce chant est d'une grande aide à la fois pour le scalde et pour ses alliés. Le chant donne au scalde un bonus de 6 à sa CA et 10 % de résistance à la magie. Le chant donne aussi un bonus de 6 au TAC0, aux dégâts, et à la CA, l'immunité à la peur, à l'étourdissement, la confusion, +5 % de résistance à la magie et l'immunité aux armes normales.
 Cette capacité remplace le chant actuel du barde.~
 
 @378 = ~Chant persistant~
 @379 = ~Chant persistant
 
 Une fois que les talents musicaux d'un barde ont atteint un niveau suffisant, sa musique peut persister dans l'oreille de son auditoire longtemps après que la dernière note ait été jouée. Même après que le barde ait arrêté de jouer, les effets de son chant subsistent chez son auditoire.
-De plus, les talents améliorés du barde permettent à sa musique d'influencer le coeur de ses compagnons sur une plus grande distance.
+De plus, les talents améliorés du barde permettent à sa musique d'influencer le cœur de ses compagnons sur une plus grande distance.
 
-Pré-requis : Chant de skald amélioré~
+Pré-requis : Chant de scalde amélioré~
 
 @380 = ~Chant de bouffon amélioré~
 @381 = ~Chant de bouffon amélioré
@@ -1032,7 +1032,7 @@ Cette capacité remplace le chant semblable du barde.~
 @383 = ~Chant persistant
 
 Une fois que les talents musicaux d'un barde ont atteint un niveau suffisant, sa musique peut persister dans l'oreille de son auditoire longtemps après que la dernière note ait été jouée. Même après que le barde ait arrêté de jouer, les effets de son chant subsistent chez son auditoire.
-De plus, les talents améliorés du barde permettent à sa musique d'influencer le coeur de ses adversaires sur une plus grande distance.
+De plus, les talents améliorés du barde permettent à sa musique d'influencer le cœur de ses adversaires sur une plus grande distance.
 
 Pré-requis : Chant de bouffon amélioré~
 
@@ -1041,10 +1041,10 @@ Pré-requis : Chant de bouffon amélioré~
 
 C'est une puissante aide à la fois pour le barde et pour ses alliés. Le chant donne au barde un bonus de 6 à sa CA et 10 % de résistance à la magie. Le chant donne aussi aux alliés du barde un bonus de 4 au TAC0, à la CA et à tous les jets de sauvegarde, +5 % de résistance à la magie, et une immunité aux armes normales, à la peur et aux charmes.~
 
-@386 = ~Flûte de skald~
-@387 = ~Flûte de skald
+@386 = ~Flûte de scalde~
+@387 = ~Flûte de scalde
 
-Cette faculté permet de créer une flûte magique de pure énergie. Lorsque le skald en joue, la flûte peut invoquer les esprits de 1 à 3 guerrier(s) berserker(s) qui combat(tent) avec le barde pour 1 tour, ou jusqu'à la mort.
+Cette faculté permet de créer une flûte magique de pure énergie. Lorsque le scalde en joue, la flûte peut invoquer les esprits de 1 à 3 guerrier(s) berserker(s) qui combat(tent) avec le barde pour 1 tour, ou jusqu'à la mort.
 La flûte est utilisée comme une baguette magique et dure 1 journée.~
 
 @388 = ~Finesse~
@@ -1240,7 +1240,7 @@ Résistance peut être choisie jusqu'à 5 fois.~
 @450 = ~Vertu~
 @451 = ~Vertu
 
-Les cavaliers ont, au fond de leur coeur, un profond mépris pour les démons et les autres créatures mauvaises. A mesure qu'ils augmentent de niveau, ils peuvent utiliser ce mépris pour combattre ces adversaires plus efficacement.
+Les cavaliers ont, au fond de leur cœur, un profond mépris pour les démons et les autres créatures mauvaises. A mesure qu'ils augmentent de niveau, ils peuvent utiliser ce mépris pour combattre ces adversaires plus efficacement.
 En choisissant cette capacité passive, le charisme du cavalier est augmenté de 1 point de façon permanente et le paladin reçoit un bonus de 2 aux dégâts et au TAC0 contre les créatures chaotiques mauvaises. Ce bonus est cumulatif avec tous les autres bonus aux dégâts et au TAC0.~
 
 @452 = ~Cercle de la loi~
@@ -1348,7 +1348,7 @@ En plus de ces effets, cette puissante arme a une chance de lancer un des sorts 
 - Confusion
 - Grande malédiction
 - Chaos
-- Chaine d'éclairs.
+- Chaîne d'éclairs.
 
 Pré-requis : Eclaircissement~
 
@@ -1469,7 +1469,7 @@ Si vous utilisez un Mac PowerPC vous etes FICHU.
 @800 = ~Robes de bas niveau universelles~
 
 @811 = ~Robe de résistance au froid~
-@801 = ~Les robes de mage de résistance au froid sont courantes dans la région de la Côte des Epées, surtout lorsqu'on se dirige vers le nord. De nombreux jeunes mages en reçoivent une en cadeau de leur instructeur lorsqu'ils ont réussi leurs cinq années d'études. 
+@801 = ~Les robes de mage de résistance au froid sont courantes dans la région de la Côte des Épées, surtout lorsqu'on se dirige vers le nord. De nombreux jeunes mages en reçoivent une en cadeau de leur instructeur lorsqu'ils ont réussi leurs cinq années d'études. 
 
 PARAMETRES :
 
@@ -1642,7 +1642,7 @@ Pré-requis : Intégrité spirituelle~
 
 @1050 = ~Angelame~ 
 @1051 = ~angelame~
-@1052 = ~ANGELAME : il s'agit d'un guerrier au coeur pur, capable de transcender son propre entraînement grâce à une grande force spirituelle. On raconte que jamais deux de ces guerriers si vertueux ne vécurent en même temps dans l'histoire ! Bien que ne servant aucun dieu, ces nobles combattants mélangent l'abnégation du paladin, la concentration du kensaï et les pouvoirs mystiques du moine. Leur entraînement a pour but de développer la discipline et la maîtrise de leur corps, ils ne frappent donc que rarement avec force ou colère et jamais vicieusement : les angelames n'apprennent aucun mouvement perfide pour tuer, ou traverser les armures. Ce guerrier à l'âme pure combat avec honneur et évite d'avoir recours à la violence autant que possible.
+@1052 = ~ANGELAME : il s'agit d'un guerrier au cœur pur, capable de transcender son propre entraînement grâce à une grande force spirituelle. On raconte que jamais deux de ces guerriers si vertueux ne vécurent en même temps dans l'histoire ! Bien que ne servant aucun dieu, ces nobles combattants mélangent l'abnégation du paladin, la concentration du kensaï et les pouvoirs mystiques du moine. Leur entraînement a pour but de développer la discipline et la maîtrise de leur corps, ils ne frappent donc que rarement avec force ou colère et jamais vicieusement : les angelames n'apprennent aucun mouvement perfide pour tuer, ou traverser les armures. Ce guerrier à l'âme pure combat avec honneur et évite d'avoir recours à la violence autant que possible.
 
 Avantages :
 - +1 au toucher et à la CA tous les 6 niveaux
@@ -1670,7 +1670,7 @@ Clémence :
 Tenter de se battre en évitant de blesser l'adversaire entraîne une pénalité de 6 aux dégâts, cependant chaque coup sur une créature ayant moins de 20 points de vie a une chance de la rendre inconsciente pour 5 rounds (jet de sauvegarde contre la mort à -2). Cette possibilité retire la nécessité immédiate de tuer. Certaines créatures peuvent être immunisées à ces effets.
 Le personnage ne peut faire de coup critique tant que cette capacité est activée.~
 
-@1053 = ~Votre coeur vacille, vos actes ne sont pas dépourvus de cruauté. Vous ne suivez plus la voie la plus pure.~
+@1053 = ~Votre cœur vacille, vos actes ne sont pas dépourvus de cruauté. Vous ne suivez plus la voie la plus pure.~
 @1054 = ~Kit perdu : Angelame. 
 Capacités perdues !~
 
