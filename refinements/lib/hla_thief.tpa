@@ -372,35 +372,104 @@ SAY 0xfe @146
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
  ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_nscrl.spl~ BEGIN
 
-  COPY_EXISTING ~scrlzz.itm~ ~override/d5scrlzz.itm~
-  COPY_EXISTING ~scrlzy.itm~ ~override/d5scrlzy.itm~
+DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_specific_id = ~blah~ RET new_specific_ind BEGIN
+ OUTER_SET min_new=1
+ COPY_EXISTING ~specific.ids~ override
+  new_specific_ind=0
+  found=0
+  READ_2DA_ENTRIES_NOW stats 2
+  FOR (row=0;row<stats;row+=1) BEGIN
+    READ_2DA_ENTRY_FORMER stats row 0 ind
+    READ_2DA_ENTRY_FORMER stats row 1 str
+    SET $stat("%row%") = ind
+    PATCH_IF index BEGIN
+      PATCH_IF ind=index BEGIN
+        REMOVE_2DA_ROW row 2
+        found=1
+        PATCH_IF delete=0 BEGIN
+          INSERT_2DA_ROW row 2 ~%index% %new_specific_id%~
+        END
+        row=stats
+      END
+    END ELSE BEGIN
+      PATCH_IF ~%str%~ STRING_EQUAL_CASE ~%new_specific_id%~ BEGIN
+        new_specific_ind=ind
+        found=1
+     /* row=stats */ // don't stop looking, the same ID may be assigned to a greater index, which takes priority when compiling
+      END
+    END
+  END
+  PATCH_IF found=0 BEGIN
+    new_specific_ind=min_new
+    PHP_EACH stat AS row => ind BEGIN
+      PATCH_IF found=0 && (row+1 < stats) BEGIN // not at the end of file
+        next_row = row+1
+        next_ind = EVAL $stat("%next_row%")
+        PATCH_IF index BEGIN
+          PATCH_IF index<next_ind && index>ind BEGIN
+            INSERT_2DA_ROW next_row 2 ~%index% %new_specific_id%~
+            found=1
+          END
+        END ELSE BEGIN
+          PATCH_IF new_specific_ind<next_ind BEGIN
+            PATCH_IF ind<new_specific_ind BEGIN
+              INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
+              found=1
+            END ELSE BEGIN
+              new_specific_ind+=1
+              PATCH_IF new_specific_ind<next_ind BEGIN
+                INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
+                found=1
+              END
+            END
+          END
+        END
+      END ELSE BEGIN // at the end of file
+        PATCH_IF found=0 BEGIN
+          PATCH_IF index BEGIN
+            INSERT_2DA_ROW stats 2 ~%index% %new_specific_id%~
+          END ELSE BEGIN
+            PATCH_IF new_specific_ind>ind BEGIN
+              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
+            END ELSE BEGIN
+              new_specific_ind+=1
+              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
+            END
+          END
+        END
+      END
+    END // PHP_EACH
+  END
+END
 
-  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-   READ_SHORT 0x1c item_type
-   PATCH_IF item_type = 11 BEGIN 					//		make green scrolls into "wands"
-	READ_BYTE 0x20 thief_use
-	PATCH_IF (%thief_use% BOR 0b10111111) = 0b10111111 BEGIN
-	  WRITE_SHORT 0x1c 35
-	END
-   END
-   PATCH_IF item_type = 35 BEGIN 					//		make non-general-use wands into "scrolls"
-	READ_BYTE 0x20 thief_use
-	PATCH_IF (%thief_use% BAND 0b01000000) = 0b01000000 BEGIN
-	  WRITE_SHORT 0x1c 11
-	END
-   END
-  BUT_ONLY
-  OUTER_SET scroll_count = 0
-  OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
-  COPY_EXISTING_REGEXP GLOB ~.*\.itm~ ~override~
-   READ_BYTE     0x2f current ELSE 0
-   READ_BYTE     0x2b current2 ELSE 0
-   READ_LONG 0x64 headoffset  ELSE 0
-   READ_SHORT 0x68 headcount  ELSE 0
-   READ_LONG 0x6a effectsoffset  ELSE 0
-   haslearn = 0
-   hascast = 0
-   PATCH_IF (headcount = 2) BEGIN
+LAF d5_resolve_specific STR_VAR new_specific_id = ~NO_SCROLLS~ RET new_specific_ind END
+
+OUTER_SET nscrl_specific = %new_specific_ind%
+
+ END
+  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
+	WRITE_LONG 0x1c %nscrl_specific%
+//  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
+//  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
+    SAY NAME1 @144
+    SAY NAME2 @144
+    SAY UNIDENTIFIED_DESC @145
+	WRITE_ASCII 0x3a ~TG#USSCB~ #8
+	LPF ALTER_SPELL_HEADER STR_VAR icon = ~TG#USSCB~ END
+
+OUTER_SET scroll_count = 0
+OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE     0x2f current ELSE 0
+  READ_BYTE     0x2b current2 ELSE 0
+  READ_LONG 0x64 headoffset  ELSE 0
+  READ_SHORT 0x68 headcount  ELSE 0
+  READ_LONG 0x6a effectsoffset  ELSE 0
+  haslearn = 0
+  hascast = 0
+//	  PATCH_IF (headcount = 2) BEGIN
     FOR (headcyc = 0; headcyc < headcount ; headcyc = headcyc + 1) BEGIN
       thishead = 0
       READ_SHORT (headoffset + (headcyc * 0x38) + 0x1e) effcount  ELSE 0
@@ -429,116 +498,54 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
         END // PATCH_IF (opcode = cast spell)
       END // FOR... effect_cycle
     END // FOR... header cycle
-   END // PATCH_IF... have exactly 2 headers
-   PATCH_IF (haslearn = 1) AND (hascast = 1) /*AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) */BEGIN
+//  END // PATCH_IF... have exactly 2 headers
+  PATCH_IF (haslearn = 1) AND (hascast = 1) /*AND (~%resref_cast%~ STRING_EQUAL_CASE ~%resref_learn%~) */BEGIN
 	SPRINT $use_scrolls(~%scroll_count%~) ~%SOURCE_RES%~
 	SET ++scroll_count
-   END
-  BUT_ONLY
-  ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
-   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
+  END
+BUT_ONLY
+ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
+	PRINT ~%scroll% is a wizard scroll~
 	COPY_EXISTING ~%scroll%.itm~ ~override~
-	  WRITE_SHORT 0x1c 11
+	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
 	BUT_ONLY
-   END
   END
-  ACTION_FOR_EACH scroll_case IN ~bag03~ ~bag03b~ ~bag03c~ ~bag03d~ ~bag03e~ ~bag03f~ ~bag03g~ ~bag03h~ ~bag03i~ BEGIN
-   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll_case%.sto~ BEGIN
-	COPY_EXISTING ~%scroll_case%.sto~ ~override~
-	  READ_LONG 0x9c thing_1
-	  READ_LONG 0xa0 thing_2
-	  PATCH_IF (%thing_1% = 37) BEGIN
-		WRITE_LONG 0x9c 35
-	  END
-	  PATCH_IF (%thing_2% = 37) BEGIN
-		WRITE_LONG 0xa0 35
-	  END
-/*
-	  READ_LONG 0x2c purchased_offset
-	  READ_LONG 0x30 purchased_num
-	  WHILE (%purchased_num% > 0) BEGIN
-		SET purchased_num = %purchased_num% - 1
-		READ_LONG (%purchased_offset% + (0x04 * %purchased_num%)) thing_1
-		PATCH_IF (%thing_1% = 37)
-		  WRITE_LONG (%purchased_offset% + (0x04 * %purchased_num%)) 13
-		END
-	  END
-*/
-	BUT_ONLY
-   END
-  END
-  COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-   READ_SHORT	0x1c item_type
-   PATCH_IF (item_type = 11) BEGIN
-	WRITE_BYTE 0x1f (THIS BAND 0b11110111)
-	WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-   END
-   PATCH_IF (item_type = 35) BEGIN
-	WRITE_BYTE 0x1f (THIS BAND 0b11110111)
-	WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-   END
-  BUT_ONLY
-/*	
-this isn't working... vv
-//	OUTER_SET store_match = 5 
-	ACTION_DEFINE_ASSOCIATIVE_ARRAY d5_buyable_items BEGIN
-	  13 => 0 	// food
+END
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_SHORT	0x1c item_type
+  PATCH_IF (item_type = 35) BEGIN
+	READ_BYTE 0x20 thief_use
+	PATCH_IF (%thief_use% BAND 0b01000000) = 0b01000000 BEGIN
+	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
 	END
-	OUTER_SET d5_scroll_store = 0
-	COPY_EXISTING_REGEXP GLOB ~^.+\.sto$~ ~override~
-	  SET d5_scroll_store = 0
-	  READ_LONG 0x08 store_type
-	  READ_LONG 0x10 flags
-//	  PATCH_IF ((store_type != store_match) AND ((flags & BIT1) = BIT1)) BEGIN 
-	  PATCH_IF ((flags & BIT1) = BIT1) BEGIN 
-	    SET delta = 0
-	    READ_LONG 0x2c purch_off
-	    READ_LONG 0x30 purch_num
-	    FOR (index = 0 ; index < purch_num ; ++index) BEGIN
-	      READ_LONG (purch_off + (index * 0x04)) type
-	      DEFINE_ASSOCIATIVE_ARRAY d5_buyable_items BEGIN "%type%" => 1 END
-	      PATCH_IF type = 11 BEGIN
-			SET d5_scroll_store = 1
-		  END
-	    END
-	    FOR (index = 0 ; index < purch_num ; ++index) BEGIN
-	      PATCH_IF type = 13 BEGIN
-			SET d5_scroll_store = 0
-		  END
-	    END
-	    PATCH_IF (d5_scroll_store = 1) BEGIN
-		  PATCH_PHP_EACH cd_buyable_item_types AS item => val BEGIN
-			PATCH_IF val = 0 BEGIN
-			  SET delta += 1
-			  INSERT_BYTES purch_off 0x04
-			  WRITE_LONG   purch_off item
-			END ELSE BEGIN
-			  DEFINE_ASSOCIATIVE_ARRAY cd_buyable_item_types BEGIN "%item%" => 0 END
-			END
-		  END
-		  WRITE_LONG 0x30 (THIS + delta) 
-		  PATCH_FOR_EACH off IN 0x34 0x4c 0x70 BEGIN
-			READ_LONG off offset
-			PATCH_IF offset >= purch_off BEGIN
-			  WRITE_LONG off (THIS + (delta * 0x04))
-			END
-		  END
-		END
-	  END
-	BUT_ONLY
-*/
-  COPY_EXISTING ~d5scrlzz.itm~ ~override/scrlzz.itm~
-  COPY_EXISTING ~d5scrlzy.itm~ ~override/scrlzy.itm~
+  END
+BUT_ONLY
 
- END
-  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
-  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
-//  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
-//  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
-  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
-    SAY NAME1 @144
-    SAY NAME2 @144
-    SAY UNIDENTIFIED_DESC @145
+//Generate array with non-joinable NPC cre files
+COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
+  READ_BYTE 0x273 class
+  PATCH_IF (class = 4) BEGIN
+	READ_ASCII DEATHVAR "dv" (32) NULL
+	TO_UPPER dv
+	PATCH_IF NOT VARIABLE_IS_SET $JOINABLE_NPC_ARRAY_dv(~%dv%~) BEGIN
+		DEFINE_ASSOCIATIVE_ARRAY NON_JOINABLE_NPC_ARRAY BEGIN ~%SOURCE_FILE%~ => ~%dv%~ END
+	END
+  END
+BUT_ONLY
+
+ACTION_PHP_EACH NON_JOINABLE_NPC_ARRAY AS cre => dv BEGIN
+  PRINT ~%cre% => %dv%~ 
+  COPY_EXISTING ~%cre%~ ~override~
+	PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+	  LPF ADD_CRE_EFFECT INT_VAR opcode=206 target=1 timing=9 parameter1=(0 - 1) STR_VAR resource=~d5_nscrl~ END
+	END
+  BUT_ONLY
+END
 
   COPY_EXISTING ~clabth01.2da~ ~override~
 	LPM remove_blank_lines
