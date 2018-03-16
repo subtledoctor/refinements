@@ -94,13 +94,14 @@ LAF action_add_hla STR_VAR kit_name = ~CLERIC~ ability = ~GA_SPPR729~ num_allowe
 LAF action_add_hla STR_VAR kit_name = ~CLERIC~ ability = ~GA_TG#DIVI~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVE~ alignment_restrict = ~ALL_EVIL~ END
 LAF action_add_hla STR_VAR kit_name = ~CLERIC~ ability = ~GA_TG#DIVE~ num_allowed = ~1~ prerequisite = ~AP_TG#ENLI~ excluded_by = ~GA_TG#DIVI~ alignment_restrict = ~ALL_GOOD~ END
 
-ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+ACTION_IF (d5_refine_mod_kits = 1) BEGIN
+ ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   OUTER_SET kitlist_row = 31
-END
-ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+ END
+ ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
   OUTER_SET kitlist_row = 40
-END
-COPY_EXISTING ~kitlist.2da~ ~override~
+ END
+ COPY_EXISTING ~kitlist.2da~ ~override~
 //  COUNT_2DA_ROWS num_rows
   COUNT_2DA_COLS num_cols
   READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
@@ -180,7 +181,8 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	  END
 	END
   END
-BUT_ONLY
+ BUT_ONLY
+END
 
 LAF get_hla_table STR_VAR kit_name = ~CLERIC~ RET hla_table END
 ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN

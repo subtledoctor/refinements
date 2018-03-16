@@ -81,13 +81,14 @@ LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#CHNT~ num_allowed 
 LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~GA_TG#ETHE~ num_allowed = ~5~ prerequisite = ~AP_TG#DIAM~ END
 LAF action_add_hla STR_VAR kit_name = ~MONK~ ability = ~AP_TG#DISP~ num_allowed = ~1~ prerequisite = ~GA_TG#ETHE~ END
 
-ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+ACTION_IF (d5_refine_mod_kits = 1) BEGIN
+ ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   OUTER_SET kitlist_row = 31
-END
-ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+ END
+ ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
   OUTER_SET kitlist_row = 40
-END
-COPY_EXISTING ~kitlist.2da~ ~override~
+ END
+ COPY_EXISTING ~kitlist.2da~ ~override~
 //  COUNT_2DA_ROWS num_rows
   COUNT_2DA_COLS num_cols
   READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
@@ -125,7 +126,8 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	  END
 	END
   END
-BUT_ONLY
+ BUT_ONLY
+END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~lud5_48.2da~ BEGIN
   COPY_EXISTING ~lud5_48.2da~ ~override/lumo0.2da~

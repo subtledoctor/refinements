@@ -121,13 +121,14 @@ LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_TG#TRAN~ num_allowed
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~GA_LI#ELTR~ num_allowed = ~20~ prerequisite = ~AP_TG#BLON~ END
 LAF action_add_hla STR_VAR kit_name = ~DRUID~ ability = ~AP_TG#BLON~ num_allowed = ~1~ END
 
-ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
+ACTION_IF (d5_refine_mod_kits = 1) BEGIN
+ ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   OUTER_SET kitlist_row = 31
-END
-ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
+ END
+ ACTION_IF GAME_IS ~bgee bg2ee eet iwdee~ BEGIN
   OUTER_SET kitlist_row = 40
-END
-COPY_EXISTING ~kitlist.2da~ ~override~
+ END
+ COPY_EXISTING ~kitlist.2da~ ~override~
 //  COUNT_2DA_ROWS num_rows
   COUNT_2DA_COLS num_cols
   READ_2DA_ENTRIES_NOW ~r2en_kitlist~ num_cols
@@ -202,7 +203,8 @@ COPY_EXISTING ~kitlist.2da~ ~override~
 	  END
 	END
   END
-BUT_ONLY
+ BUT_ONLY
+END
 
 LAF get_hla_table STR_VAR kit_name = ~DRUID~ RET hla_table END
 ACTION_IF FILE_EXISTS_IN_GAME ~%hla_table%.2da~ BEGIN
