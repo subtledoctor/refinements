@@ -626,7 +626,7 @@ SAY NAME1 @358
 SAY NAME2 @358
 SAY UNIDENTIFIED_DESC @359
 COPY ~refinements/Hlab/Thief/TG#TOXB.SPL~	~override/TG#TOXB.SPL~
-//WRITE_SHORT   0x98   ~%TG#TOXT%~
+WRITE_SHORT   0x98   ~%TG#TOXT%~
 
 
 // Poisons. Strings' numbers ~stealt~ from the first positions :(
