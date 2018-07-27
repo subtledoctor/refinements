@@ -374,13 +374,13 @@ SAY 0xfe @146
 ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
  ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_nscrl.spl~ BEGIN
 
-DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_specific_id = ~blah~ RET new_specific_ind BEGIN
- OUTER_SET min_new=1
- COPY_EXISTING ~specific.ids~ override
-  new_specific_ind=0
-  found=0
-  READ_2DA_ENTRIES_NOW stats 2
-  FOR (row=1;row<stats;row+=1) BEGIN
+ DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_specific_id = ~blah~ RET new_specific_ind BEGIN
+  OUTER_SET min_new=1
+  COPY_EXISTING ~specific.ids~ override
+   new_specific_ind=0
+   found=0
+   READ_2DA_ENTRIES_NOW stats 2
+   FOR (row=1;row<stats;row+=1) BEGIN
     READ_2DA_ENTRY_FORMER stats row 0 ind
     READ_2DA_ENTRY_FORMER stats row 1 str
     SET $stat("%row%") = ind
@@ -400,8 +400,8 @@ DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_
      /* row=stats */ // don't stop looking, the same ID may be assigned to a greater index, which takes priority when compiling
       END
     END
-  END
-  PATCH_IF found=0 BEGIN
+   END
+   PATCH_IF found=0 BEGIN
     new_specific_ind=min_new
     PHP_EACH stat AS row => ind BEGIN
       PATCH_IF found=0 && (row+1 < stats) BEGIN // not at the end of file
@@ -441,29 +441,16 @@ DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_
         END
       END
     END // PHP_EACH
-  END
-END
-
-LAF d5_resolve_specific STR_VAR new_specific_id = ~NO_SCROLLS~ RET new_specific_ind END
-
-OUTER_SET nscrl_specific = %new_specific_ind%
-
+   END
  END
-  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
-  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
-	WRITE_LONG 0x1c %nscrl_specific%
-//  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
-//  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
-  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
-    SAY NAME1 @144
-    SAY NAME2 @144
-    SAY UNIDENTIFIED_DESC @145
-	WRITE_ASCII 0x3a ~TG#USSCB~ #8
-	LPF ALTER_SPELL_HEADER STR_VAR icon = ~TG#USSCB~ END
 
-OUTER_SET scroll_count = 0
-OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+ LAF d5_resolve_specific STR_VAR new_specific_id = ~NO_SCROLLS~ RET new_specific_ind END
+
+ OUTER_SET nscrl_specific = %new_specific_ind%
+
+ OUTER_SET scroll_count = 0
+ OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
+ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_BYTE     0x2f current ELSE 0
   READ_BYTE     0x2b current2 ELSE 0
   READ_LONG 0x64 headoffset  ELSE 0
@@ -505,8 +492,8 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	SPRINT $use_scrolls(~%scroll_count%~) ~%SOURCE_RES%~
 	SET ++scroll_count
   END
-BUT_ONLY
-ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
+ BUT_ONLY
+ ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
 	PRINT ~%scroll% is a wizard scroll~
 	COPY_EXISTING ~%scroll%.itm~ ~override~
@@ -515,8 +502,8 @@ ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
 	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
 	BUT_ONLY
   END
-END
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+ END
+ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_SHORT	0x1c item_type
   PATCH_IF (item_type = 35) BEGIN
 	READ_BYTE 0x20 thief_use
@@ -526,8 +513,25 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
 	END
   END
-BUT_ONLY
+ BUT_ONLY
 
+  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
+  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
+	WRITE_LONG 0x1c %nscrl_specific%
+//  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
+//  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
+ END
+  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
+    SAY NAME1 @144
+    SAY NAME2 @144
+    SAY UNIDENTIFIED_DESC @145
+	WRITE_ASCII 0x3a ~TG#USSCB~ #8
+	LPF ALTER_SPELL_HEADER STR_VAR icon = ~TG#USSCB~ END
+
+INCLUDE ~refinements/lib/joinable_npcs.tpa~
+
+LAM JOINABLE_NPC_ARRAYS
+/*
 //Generate array with non-joinable NPC cre files
 COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
   READ_BYTE 0x273 class
@@ -539,9 +543,10 @@ COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
 	END
   END
 BUT_ONLY
+*/
 
 ACTION_PHP_EACH NON_JOINABLE_NPC_ARRAY AS cre => dv BEGIN
-  PRINT ~%cre% => %dv%~ 
+//  PRINT ~%cre% => %dv%~ 
   COPY_EXISTING ~%cre%~ ~override~
 	PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
 	  LPF ADD_CRE_EFFECT INT_VAR opcode=206 target=1 timing=9 parameter1=(0 - 1) STR_VAR resource=~d5_nscrl~ END
@@ -615,6 +620,7 @@ COPY ~refinements/Hlab/Thief/TG#BRPO.SPL~	~override/TG#BRPO.SPL~
 SAY NAME1 @356
 SAY NAME2 @356
 SAY UNIDENTIFIED_DESC @357
+ADD_PROJECTILE      ~refinements/Hlab/_pro/TG#TOXT.PRO~
 COPY ~refinements/Hlab/Thief/TG#TOXT.SPL~	~override/TG#TOXT.SPL~
 SAY NAME1 @358
 SAY NAME2 @358
