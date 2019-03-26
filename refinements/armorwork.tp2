@@ -21,8 +21,8 @@ BEGIN ~text -> short~
 
 NO_LOG_RECORD
 
-	COPY ~%LANGUAGE%/armor/human_readable/ident.txt~ ~%LANGUAGE%/armor/ident.txt~
-	     ~%LANGUAGE%/armor/human_readable/unide.txt~ ~%LANGUAGE%/armor/unide.txt~
+	COPY ~%LANGUAGE%/armor/human_readable/ident.tph~ ~%LANGUAGE%/armor/ident.tph~
+	     ~%LANGUAGE%/armor/human_readable/unide.tph~ ~%LANGUAGE%/armor/unide.tph~
 	INNER_PATCH ~1~
 		BEGIN
 		WRITE_BYTE 0 0x0a
