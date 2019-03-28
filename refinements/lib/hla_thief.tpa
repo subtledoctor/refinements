@@ -371,86 +371,42 @@ SAY 0xfe @146
 
 // subtledoctor's EE new stuff here:___________________________________________
 //
-ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
- ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_nscrl.spl~ BEGIN
+INCLUDE ~refinements/lib/new_specifics.tpa~
 
- DEFINE_ACTION_FUNCTION d5_resolve_specific INT_VAR index=0 delete=0 STR_VAR new_specific_id = ~blah~ RET new_specific_ind BEGIN
-  OUTER_SET min_new=1
-  COPY_EXISTING ~specific.ids~ override
-   new_specific_ind=0
-   found=0
-   READ_2DA_ENTRIES_NOW stats 2
-   FOR (row=1;row<stats;row+=1) BEGIN
-    READ_2DA_ENTRY_FORMER stats row 0 ind
-    READ_2DA_ENTRY_FORMER stats row 1 str
-    SET $stat("%row%") = ind
-    PATCH_IF index BEGIN
-      PATCH_IF ind=index BEGIN
-        REMOVE_2DA_ROW row 2
-        found=1
-        PATCH_IF delete=0 BEGIN
-          INSERT_2DA_ROW row 2 ~%index% %new_specific_id%~
-        END
-        row=stats
-      END
-    END ELSE BEGIN
-      PATCH_IF ~%str%~ STRING_EQUAL_CASE ~%new_specific_id%~ BEGIN
-        new_specific_ind=ind
-        found=1
-     /* row=stats */ // don't stop looking, the same ID may be assigned to a greater index, which takes priority when compiling
-      END
-    END
-   END
-   PATCH_IF found=0 BEGIN
-    new_specific_ind=min_new
-    PHP_EACH stat AS row => ind BEGIN
-      PATCH_IF found=0 && (row+1 < stats) BEGIN // not at the end of file
-        next_row = row+1
-        next_ind = EVAL $stat("%next_row%")
-        PATCH_IF index BEGIN
-          PATCH_IF index<next_ind && index>ind BEGIN
-            INSERT_2DA_ROW next_row 2 ~%index% %new_specific_id%~
-            found=1
-          END
-        END ELSE BEGIN
-          PATCH_IF new_specific_ind<next_ind BEGIN
-            PATCH_IF ind<new_specific_ind BEGIN
-              INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
-              found=1
-            END ELSE BEGIN
-              new_specific_ind+=1
-              PATCH_IF new_specific_ind<next_ind BEGIN
-                INSERT_2DA_ROW next_row 2 ~%new_specific_ind% %new_specific_id%~
-                found=1
-              END
-            END
-          END
-        END
-      END ELSE BEGIN // at the end of file
-        PATCH_IF found=0 BEGIN
-          PATCH_IF index BEGIN
-            INSERT_2DA_ROW stats 2 ~%index% %new_specific_id%~
-          END ELSE BEGIN
-            PATCH_IF new_specific_ind>ind BEGIN
-              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
-            END ELSE BEGIN
-              new_specific_ind+=1
-              INSERT_2DA_ROW stats 2 ~%new_specific_ind% %new_specific_id%~
-            END
-          END
-        END
-      END
-    END // PHP_EACH
-   END
- END
+LAF d5_resolve_specific STR_VAR new_specific_id = ~D5_NO_UMD~ RET new_specific_ind END
 
- LAF d5_resolve_specific STR_VAR new_specific_id = ~NO_SCROLLS~ RET new_specific_ind END
+OUTER_SET no_umd_specific = %new_specific_ind%
 
- OUTER_SET nscrl_specific = %new_specific_ind%
+ACTION_IF !(FILE_EXISTS_IN_GAME ~d5_numd.spl~) BEGIN
+ COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override/d5_numd.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 177 STR_VAR resource = ~d5_numd~ END
+// add .eff setting local variable
+  LPF CLONE_EFFECT INT_VAR match_opcode = 177 STR_VAR resource = ~d5numdlv~ END
+END
 
- OUTER_SET scroll_count = 0
- OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
- COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+ACTION_IF !(FILE_EXISTS_IN_GAME ~d5_numd.eff~) BEGIN
+ COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override/D5_NUMD.eff~
+  WRITE_LONG 0x1c %no_umd_specific%
+  WRITE_LONG 0x90 1
+  WRITE_EVALUATED_ASCII 0x94 ~D5_NUMD~ #8
+END
+
+// make an .eff to set D5NOUMD local variable
+ACTION_IF !(FILE_EXISTS_IN_GAME ~d5numdlv.eff~) BEGIN
+  CREATE EFF ~d5numdlv~
+	WRITE_LONG 0x10 309
+	WRITE_LONG 0x14 1
+	WRITE_LONG 0x1c 1
+	WRITE_LONG 0x20 0
+	WRITE_LONG 0x24 9
+	WRITE_LONG 0x28 0
+	WRITE_SHORT 0x2c 100
+	WRITE_ASCII 0x30 ~D5NOUMD~ #8
+END
+
+OUTER_SET scroll_count = 0
+OUTER_SPRINT $use_scrolls(~%scroll_count%~) ~scroll~
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_BYTE     0x2f current ELSE 0
   READ_BYTE     0x2b current2 ELSE 0
   READ_LONG 0x64 headoffset  ELSE 0
@@ -492,36 +448,48 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 	SPRINT $use_scrolls(~%scroll_count%~) ~%SOURCE_RES%~
 	SET ++scroll_count
   END
- BUT_ONLY
- ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
+BUT_ONLY
+ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
-	PRINT ~%scroll% is a wizard scroll~
+//	PRINT ~%scroll% is a wizard scroll~
 	COPY_EXISTING ~%scroll%.itm~ ~override~
-	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
-	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
+	  WRITE_BYTE 0x1f (THIS BAND 0b11111101)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111101)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %no_umd_specific% timing = 2 END
 	BUT_ONLY
   END
- END
- COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+END
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   READ_SHORT	0x1c item_type
   PATCH_IF (item_type = 35) BEGIN
 	READ_BYTE 0x20 thief_use
 	PATCH_IF (%thief_use% BAND 0b01000000) = 0b01000000 BEGIN
-	  WRITE_BYTE 0x1f (THIS BAND 0b11110111)
-	  WRITE_BYTE 0x20 (THIS BAND 0b10111111)
-	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %nscrl_specific% timing = 2 END
+	  WRITE_BYTE 0x1f (THIS BAND 0b11111101)
+	  WRITE_BYTE 0x20 (THIS BAND 0b10111101)
+	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %no_umd_specific% timing = 2 END
 	END
   END
- BUT_ONLY
+BUT_ONLY
 
-  COPY ~refinements/Hlab/thief/ee/d5_nscrl.spl~ ~override~
-  COPY ~refinements/Hlab/thief/ee/d5_rf84n.eff~ ~override~
-	WRITE_LONG 0x1c %nscrl_specific%
-//  COPY ~refinements/Hlab/thief/ee/d5_nwand.spl~ ~override~
-//  COPY ~refinements/Hlab/thief/ee/d5_rf83n.eff~ ~override~
+ ACTION_IF GAME_INCLUDES ~sod~ BEGIN
+  COPY_EXISTING dplayer2.bcs override
+	DECOMPILE_AND_PATCH BEGIN
+	  REPLACE_TEXTUALLY ~THEN[%WNL%%LNL%%MNL%%TAB% ]+RESPONSE[%TAB% ]+#100[%WNL%%LNL%%MNL%%TAB% ]+ChangeSpecifics(Myself,\(1\|NORMAL\))~
+    ~
+  !Specifics(Myself,D5_NO_UMD)
+  Switch("D5NOUMD","locals")
+THEN
+  RESPONSE #0
+    ChangeSpecifics(Myself,NORMAL)
+    SetGlobal("bd_joined","locals",0)
+    SetGlobal("bd_npc_camp","locals",0)
+  RESPONSE #1
+    ChangeSpecifics(Myself,D5_NO_UMD)~
+	END
+  BUT_ONLY
  END
-  COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
+
+COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
     SAY NAME1 @144
     SAY NAME2 @144
     SAY UNIDENTIFIED_DESC @145
@@ -531,29 +499,17 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 INCLUDE ~refinements/lib/joinable_npcs.tpa~
 
 LAM JOINABLE_NPC_ARRAYS
-/*
-//Generate array with non-joinable NPC cre files
-COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
-  READ_BYTE 0x273 class
-  PATCH_IF (class = 4) BEGIN
-	READ_ASCII DEATHVAR "dv" (32) NULL
-	TO_UPPER dv
-	PATCH_IF NOT VARIABLE_IS_SET $JOINABLE_NPC_ARRAY_dv(~%dv%~) BEGIN
-		DEFINE_ASSOCIATIVE_ARRAY NON_JOINABLE_NPC_ARRAY BEGIN ~%SOURCE_FILE%~ => ~%dv%~ END
-	END
-  END
-BUT_ONLY
-*/
 
 ACTION_PHP_EACH NON_JOINABLE_NPC_ARRAY AS cre => dv BEGIN
 //  PRINT ~%cre% => %dv%~ 
   COPY_EXISTING ~%cre%~ ~override~
 	PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
-	  LPF ADD_CRE_EFFECT INT_VAR opcode=206 target=1 timing=9 parameter1=(0 - 1) STR_VAR resource=~d5_nscrl~ END
+	  LPF ADD_CRE_EFFECT INT_VAR opcode=206 target=1 timing=9 parameter1=(0 - 1) STR_VAR resource=~d5_numd~ END
 	END
   BUT_ONLY
 END
 
+ACTION_IF !(FILE_EXISTS_IN_GAME ~d5_rfeat.d5~) BEGIN
   COPY_EXISTING ~clabth01.2da~ ~override~
 	LPM remove_blank_lines
 	APPEND_FILE ~refinements/Hlab/thief/ee/no_use_devices.txt~
@@ -598,8 +554,8 @@ END
     SET_2DA_ENTRY 12 6 9 1
     SET_2DA_ENTRY 12 7 9 AP_D5_UMD
 */
-
 END
+
 //end EE new stuff_____________________________________________________________
 
 /* Thief Kits */
