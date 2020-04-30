@@ -95,7 +95,24 @@ Ta niebezpieczna trucizna zawiera ró¿ne sk³adniki które zapobiegaj¹ krzepniêciu 
 //////////////////////////////////////////////
 //New Abilities
 
-@101 = ~Ulepszony system zdolnosci wysokopoziomowych~
+/* @101 = ~Ulepszony system zdolnosci wysokopoziomowych~ */
+
+// CHANGED !!
+@100 = ~Revised High Level Abilities~
+//
+// NEW !!
+@101 = ~Install revised HLAs for all classes~
+@102 = ~Choose which classes get revised HLAs~
+@10101 = ~Fighter HLAs~
+@10102 = ~Barbarian HLAs~
+@10103 = ~Ranger HLAs~
+@10104 = ~Paladin HLAs~
+@10105 = ~Cleric HLAs~
+@10106 = ~Druid HLAs~
+@10107 = ~Monk HLAs~
+@10108 = ~Wizard HLAs~
+@10109 = ~Bard HLAs~
+@10110 = ~Thief HLAs~
 
 /* shared files */
 

@@ -6,6 +6,35 @@
 
 COPY ~refinements/Hlab/Fighter/d5_fihla.d5~ ~override~
 
+COPY_EXISTING ~projectl.ids~ ~override~
+    READ_2DA_ENTRIES_NOW rows 2
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~proj_index~
+      READ_2DA_ENTRY_FORMER rows row 1 ~proj_name~
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#SHOC~) BEGIN
+        SET TG#SHOC = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#TOXT~) BEGIN
+        SET TG#TOXT = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#ENES2~) BEGIN
+        SET TG#ENES2 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#ENES3~) BEGIN
+        SET TG#ENES3 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~LI#BARD1~) BEGIN
+        SET LI#BARD1 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~LI#BARD2~) BEGIN
+        SET LI#BARD2 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#HOLA~) BEGIN
+        SET TG#HOLA = %proj_index% + 1
+      END
+    END
+BUT_ONLY
+
 LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~AP_TG#IMCR~ num_allowed = ~1~ prerequisite = ~GA_SPCL905~ END
 LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~GA_TG#GCR2~ num_allowed = ~1~ prerequisite = ~GA_SPCL908~ END
 LAF action_add_hla STR_VAR kit_name = ~BERSERKER~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END

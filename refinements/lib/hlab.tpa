@@ -1,3 +1,4 @@
+
 // Cap the damage resistance to 75, 85 if barbarian
 
 // ACTION_IF NOT FILE_EXISTS ~override/tb#resisttweak.txt~ THEN
@@ -79,8 +80,8 @@ APPEND ~GTIMES.IDS~ ~216000 THIRTY_DAYS~ UNLESS ~THIRTY_DAYS~
 APPEND ~GTIMES.IDS~ ~360000 FIFTY_DAYS~ UNLESS ~FIFTY_DAYS~
 // auto-extracted by Excel, didn't type them! same reason as above
 
-ADD_SECTYPE ~TB#Paladinhood~ ~Lost virtuous abilities~
-ADD_SECTYPE ~TB#SecondWind~ ~Second Wind triggered~
+// ADD_SECTYPE ~TB#Paladinhood~ ~Lost virtuous abilities~
+// ADD_SECTYPE ~TB#SecondWind~ ~Second Wind triggered~
 
 // ~Fix~ to the meteor swarm projectile.
 COPY_EXISTING ~metswarm.pro~ ~override~

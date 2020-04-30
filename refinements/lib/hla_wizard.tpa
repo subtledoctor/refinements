@@ -7,6 +7,35 @@
 COPY ~refinements/Hlab/wizard/d5_wihla.d5~ ~override~
 COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~override~
 
+COPY_EXISTING ~projectl.ids~ ~override~
+    READ_2DA_ENTRIES_NOW rows 2
+    FOR (row = 1; row < rows; ++row) BEGIN
+      READ_2DA_ENTRY_FORMER rows row 0 ~proj_index~
+      READ_2DA_ENTRY_FORMER rows row 1 ~proj_name~
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#SHOC~) BEGIN
+        SET TG#SHOC = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#TOXT~) BEGIN
+        SET TG#TOXT = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#ENES2~) BEGIN
+        SET TG#ENES2 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#ENES3~) BEGIN
+        SET TG#ENES3 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~LI#BARD1~) BEGIN
+        SET LI#BARD1 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~LI#BARD2~) BEGIN
+        SET LI#BARD2 = %proj_index% + 1
+      END
+      PATCH_IF (~%proj_name%~ STRING_EQUAL_CASE ~TG#HOLA~) BEGIN
+        SET TG#HOLA = %proj_index% + 1
+      END
+    END
+BUT_ONLY
+
 LAF action_remove_hla STR_VAR kit_name = ~ABJURER~ remove_ability = ~GA_SPWI922~ END
 LAF action_remove_hla STR_VAR kit_name = ~ABJURER~ remove_ability = ~GA_SPWI925~ END
 LAF action_remove_hla STR_VAR kit_name = ~ABJURER~ remove_ability = ~GA_SPCL928~ END
