@@ -20,7 +20,11 @@ COPY ~refinements/Hlab/_shared/copy/STATES.BAM~      ~override~
 COPY ~refinements/Hlab/_shared/copy/SPWI519.SPL~      ~override~
 COPY ~refinements/Hlab/_shared/copy/SPWI606.SPL~      ~override~
 // COPY ~refinements/Hlab/_shared/STATDESC.2DA~     ~override/STATDESC.2DA~
-APPEND  ~STATDESC.2DA~ ~166     AQUA
+
+ACTION_IF GAME_IS ~tob bgt~ BEGIN
+ COPY ~refinements/Hlab/_shared/states.bam~ ~override~
+ COPY ~refinements/Hlab/_shared/states2.bam~ ~override~
+ APPEND  ~STATDESC.2DA~ ~166     AQUA
 167     IDOL
 168     SPIRF
 169     SCION
@@ -42,33 +46,34 @@ APPEND  ~STATDESC.2DA~ ~166     AQUA
 185     INTI
 186     AEGI
 187     SHOL
-188     FORS~
-COPY_EXISTING ~STATDESC.2DA~     ~override/STATDESC.2DA~
-REPLACE ~AQUA~    @414
-REPLACE ~IDOL~    @400
-REPLACE ~SPIRF~   @408
-REPLACE ~SCION~   @416
-REPLACE ~CHANT~   @186
-REPLACE ~DRAGF~   @180
-REPLACE ~TIGS~    @182
-REPLACE ~CHANM~   @422
-REPLACE ~CRIPP~   @141
-REPLACE ~DIVSH~   @152
-REPLACE ~ENDU~    @212
-REPLACE ~GUARD~   @484
-REPLACE ~EXOR~    @120
-REPLACE ~LING~    @176
-REPLACE ~PREC~    @462
-REPLACE ~MERC~    @1016
-REPLACE ~SPII~    @1012
-REPLACE ~TKAI~    @444
-REPLACE ~SECW~    @197
-REPLACE ~INTI~    @192
-REPLACE ~AEGI~    @130
-REPLACE ~SHOL~    @126
-REPLACE ~FORS~    @139
-SET_2DA_ENTRY  124   1   2 8286
-SET_2DA_ENTRY  74   1   2 26228
+188     FORS~ UNLESS ~AQUA~
+ COPY_EXISTING ~STATDESC.2DA~     ~override/STATDESC.2DA~
+  REPLACE ~AQUA~    @414
+  REPLACE ~IDOL~    @400
+  REPLACE ~SPIRF~   @408
+  REPLACE ~SCION~   @416
+  REPLACE ~CHANT~   @186
+  REPLACE ~DRAGF~   @180
+  REPLACE ~TIGS~    @182
+  REPLACE ~CHANM~   @422
+  REPLACE ~CRIPP~   @141
+  REPLACE ~DIVSH~   @152
+  REPLACE ~ENDU~    @212
+  REPLACE ~GUARD~   @484
+  REPLACE ~EXOR~    @120
+  REPLACE ~LING~    @176
+  REPLACE ~PREC~    @462
+  REPLACE ~MERC~    @1016
+  REPLACE ~SPII~    @1012
+  REPLACE ~TKAI~    @444
+  REPLACE ~SECW~    @197
+  REPLACE ~INTI~    @192
+  REPLACE ~AEGI~    @130
+  REPLACE ~SHOL~    @126
+  REPLACE ~FORS~    @139
+  SET_2DA_ENTRY  124   1   2 8286
+  SET_2DA_ENTRY  74   1   2 26228
+END
 
 END
 
@@ -102,10 +107,17 @@ SAY NAME2 @1031
 SAY UNIDENTIFIED_DESC @1032
 COPY ~refinements/swang/LI#HER2.SPL~		~override/LI#HER2.SPL~
 SAY 0xce @1033
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5respii.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1034) STR_VAR bam_file = ~d5respii~ RET icon END
+END
 COPY ~refinements/swang/LI#SPII.SPL~		~override/LI#SPII.SPL~
 SAY NAME1 @1034
 SAY NAME2 @1034
 SAY UNIDENTIFIED_DESC @1035
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/swang/LI#SPBK.SPL~		~override/LI#SPBK.SPL~
 SAY 0xce @1036
 COPY ~refinements/swang/LI#SPER.SPL~		~override/LI#SPER.SPL~
@@ -153,9 +165,16 @@ SAY NAME2 @1010
 COPY ~refinements/swang/LI#FATI.SPL~		~override/LI#FATI.SPL~
 SAY 0x24e @1037
 SAY 0x1ee @1011
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5remerc.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1015) STR_VAR bam_file = ~d5remerc~ RET icon END
+END
 COPY ~refinements/swang/LI#MERC.SPL~		~override/LI#MERC.SPL~
 SAY NAME1 @1015
 SAY 0xfe @1016
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/swang/LI#MERC3.SPL~		~override/LI#MERC3.SPL~
 SAY NAME1 @1017
 WRITE_LONG 306 TB#MercifulFighting
