@@ -182,10 +182,17 @@ COPY ~refinements/Hlab/Fighter/TG#WIZS.SPL~	~override/TG#WIZS.SPL~
 SAY NAME1 @442
 SAY NAME2 @442
 SAY UNIDENTIFIED_DESC @443
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5retkai.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@444) STR_VAR bam_file = ~d5retkai~ RET icon END
+END
 COPY ~refinements/Hlab/Fighter/TG#GKAI.SPL~	~override/TG#GKAI.SPL~
 SAY NAME1 @444
 SAY NAME2 @444
 SAY UNIDENTIFIED_DESC @445
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Fighter/TG#IMCR.SPL~	~override/TG#IMCR.SPL~
 SAY NAME1 @446
 SAY NAME2 @446

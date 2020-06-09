@@ -144,10 +144,17 @@ END
 //SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Paladin/copy~	 	~override~
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reexor.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@120) STR_VAR bam_file = ~d5reexor~ RET icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#EXOR.SPL~     ~override/TG#EXOR.SPL~
 SAY NAME1 @120
 SAY NAME2 @120
 SAY UNIDENTIFIED_DESC @121
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#PURG.SPL~     ~override/TG#PURG.SPL~
 SAY NAME1 @122
 SAY NAME2 @122
@@ -156,10 +163,17 @@ COPY ~refinements/Hlab/Paladin/TG#RIGH.SPL~     ~override/TG#RIGH.SPL~
 SAY NAME1 @124
 SAY NAME2 @124
 SAY UNIDENTIFIED_DESC @125
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reshol.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@126) STR_VAR bam_file = ~d5reshol~ RET icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#SHOL.SPL~     ~override/TG#SHOL.SPL~
 SAY NAME1 @126
 SAY NAME2 @126
 SAY UNIDENTIFIED_DESC @127
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#HOLA.SPL~     ~override/TG#HOLA.SPL~
 SAY NAME1 @128
 SAY NAME2 @128
@@ -178,10 +192,17 @@ SAY NAME1 @450
 SAY NAME2 @450
 SAY UNIDENTIFIED_DESC @451
 WRITE_BYTE 0x27 TB#Paladinhood
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reshol.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@452) STR_VAR bam_file = ~d5reshol~ RET icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#CIOL.SPL~	~override/TG#CIOL.SPL~
 SAY NAME1 @452
 SAY NAME2 @452
 SAY UNIDENTIFIED_DESC @453
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Paladin/TG#SMUN.SPL~	~override/TG#SMUN.SPL~
 SAY NAME1 @454
 SAY NAME2 @454

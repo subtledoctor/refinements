@@ -105,7 +105,10 @@ ADD_PROJECTILE      ~refinements/Hlab/_pro/TG#HOLA.PRO~
 // ~refinements/Hlab/_shared/copy~ folder.
 // COPY ~refinements/Hlab/_shared/STATDESC.2DA~     ~override/STATDESC.2DA~
 
-APPEND  ~STATDESC.2DA~ ~166     AQUA
+ACTION_IF GAME_IS ~tob bgt~ BEGIN
+ COPY ~refinements/Hlab/_shared/states.bam~ ~override~
+ COPY ~refinements/Hlab/_shared/states2.bam~ ~override~
+ APPEND  ~STATDESC.2DA~ ~166     AQUA
 167     IDOL
 168     SPIRF
 169     SCION
@@ -128,35 +131,35 @@ APPEND  ~STATDESC.2DA~ ~166     AQUA
 186     AEGI
 187     SHOL
 188     FORS~
-COPY_EXISTING ~STATDESC.2DA~     ~override/STATDESC.2DA~
-REPLACE ~63873~   @274
-REPLACE ~AQUA~    @414
-REPLACE ~IDOL~    @400
-REPLACE ~SPIRF~   @408
-REPLACE ~SCION~   @416
-REPLACE ~CHANT~   @186
-REPLACE ~DRAGF~   @180
-REPLACE ~TIGS~    @182
-REPLACE ~CHANM~   @422
-REPLACE ~CRIPP~   @141
-REPLACE ~DIVSH~   @152
-REPLACE ~ENDU~    @212
-REPLACE ~GUARD~   @484
-REPLACE ~EXOR~    @120
-REPLACE ~LING~    @176
-REPLACE ~PREC~    @462
-REPLACE ~MERC~    @1016
-REPLACE ~SPII~    @1012
-REPLACE ~TKAI~    @444
-REPLACE ~SECW~    @197
-REPLACE ~INTI~    @192
-REPLACE ~AEGI~    @130
-REPLACE ~SHOL~    @126
-REPLACE ~FORS~    @139
+ COPY_EXISTING ~STATDESC.2DA~     ~override/STATDESC.2DA~
+  REPLACE ~63873~   @274
+  REPLACE ~AQUA~    @414
+  REPLACE ~IDOL~    @400
+  REPLACE ~SPIRF~   @408
+  REPLACE ~SCION~   @416
+  REPLACE ~CHANT~   @186
+  REPLACE ~DRAGF~   @180
+  REPLACE ~TIGS~    @182
+  REPLACE ~CHANM~   @422
+  REPLACE ~CRIPP~   @141
+  REPLACE ~DIVSH~   @152
+  REPLACE ~ENDU~    @212
+  REPLACE ~GUARD~   @484
+  REPLACE ~EXOR~    @120
+  REPLACE ~LING~    @176
+  REPLACE ~PREC~    @462
+  REPLACE ~MERC~    @1016
+  REPLACE ~SPII~    @1012
+  REPLACE ~TKAI~    @444
+  REPLACE ~SECW~    @197
+  REPLACE ~INTI~    @192
+  REPLACE ~AEGI~    @130
+  REPLACE ~SHOL~    @126
+  REPLACE ~FORS~    @139
 // S_2_E_L/N is slower with so small stuff
-SET_2DA_ENTRY  124   1   2 8286
-SET_2DA_ENTRY  74   1   2 26228
-
+  SET_2DA_ENTRY  124   1   2 8286
+  SET_2DA_ENTRY  74   1   2 26228
+END
 
 // Player's summoned critters in BP get their scripts changed.
 // We don't want this to happen to *our* new precious scripts :)

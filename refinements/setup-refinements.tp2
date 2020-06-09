@@ -17,7 +17,7 @@ AUTO_TRA ~refinements/languages/english~
 AUTO_TRA ~refinements/%s~
 
 README ~Refinements/README-Refinements.htm~
-VERSION ~beta 4.26~
+VERSION ~beta 4.27~
 
 
 ALWAYS
@@ -31,6 +31,14 @@ ALWAYS
 
 	// Corrections to KIT.IDS. Translates in WeiDU the corrections originally
 	// made by Dyara, improved by Wisp and Camdawg
+
+  DEFINE_ACTION_FUNCTION cd_new_portrait_icon INT_VAR string = 0 STR_VAR bam_file = "****" RET icon BEGIN
+	COPY_EXISTING ~statdesc.2da~ ~override~
+	  COUNT_2DA_ROWS 3 count
+	  READ_2DA_ENTRY (count - 1) 0 3 icon
+	  SET icon += 1
+	APPEND ~statdesc.2da~ ~%icon% %string% %bam_file%~
+  END
 
   ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
 	COPY_EXISTING ~kit.ids~ ~override~

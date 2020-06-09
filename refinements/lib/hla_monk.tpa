@@ -166,23 +166,44 @@ END
 
 
 COPY ~refinements/Hlab/Monk/copy~	  	 ~override~
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5redrag.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@180) STR_VAR bam_file = ~d5redrag~ RET icon END
+END
 COPY ~refinements/Hlab/Monk/TG#BL03.SPL~	 ~override/TG#BL03.SPL~
 SAY NAME1 @180
 SAY NAME2 @180
 SAY UNIDENTIFIED_DESC @181
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5retigs.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@182) STR_VAR bam_file = ~d5retigs~ RET icon END
+END
 COPY ~refinements/Hlab/Monk/TG#TIGS.SPL~	 ~override/TG#TIGS.SPL~
 SAY NAME1 @182
 SAY NAME2 @182
 SAY UNIDENTIFIED_DESC @183
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Monk/TG#BL09.SPL~	 ~override/TG#BL09.SPL~
 SAY NAME1 @184
 SAY NAME2 @184
 SAY UNIDENTIFIED_DESC @185
 SAY 0xce @196
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5rechnt.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@186) STR_VAR bam_file = ~d5rechnt~ RET icon END
+END
 COPY ~refinements/Hlab/Monk/TG#CHNT.SPL~	 ~override/TG#CHNT.SPL~
 SAY NAME1 @186
 SAY NAME2 @186
 SAY UNIDENTIFIED_DESC @187
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Monk/TG#REGE.SPL~	 ~override/TG#REGE.SPL~
 SAY NAME1 @188
 SAY NAME2 @188
@@ -191,10 +212,17 @@ COPY ~refinements/Hlab/Monk/TG#FAST.SPL~	 ~override/TG#FAST.SPL~
 SAY NAME1 @190
 SAY NAME2 @190
 SAY UNIDENTIFIED_DESC @191
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reinti.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@192) STR_VAR bam_file = ~d5reinti~ RET icon END
+END
 COPY ~refinements/Hlab/Monk/TG#INTI.SPL~	 ~override/TG#INTI.SPL~
 SAY NAME1 @192
 SAY NAME2 @192
 SAY UNIDENTIFIED_DESC @193
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 /*
 COPY ~refinements/Hlab/Monk/LI#INTI.SPL~	 ~override/LI#INTI.SPL~
 WRITE_SHORT   0x98   ~%TG#INTI%~
@@ -205,11 +233,18 @@ COPY ~refinements/Hlab/Monk/TG#GEVA.SPL~	 ~override/TG#GEVA.SPL~
 SAY NAME1 @194
 SAY NAME2 @194
 SAY UNIDENTIFIED_DESC @195
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5resecw.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@197) STR_VAR bam_file = ~d5resecw~ RET icon END
+END
 COPY ~refinements/Hlab/Monk/TG#SECW.SPL~	 ~override/TG#SECW.SPL~
 SAY NAME1 @197
 SAY NAME2 @197
 SAY UNIDENTIFIED_DESC @198
 WRITE_BYTE 0x27 TB#SecondWind
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Monk/TG#SEC2.SPL~	 ~override/TG#SEC2.SPL~
 SAY NAME1 @197
 SAY NAME2 @197

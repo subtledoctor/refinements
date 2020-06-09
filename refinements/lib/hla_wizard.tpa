@@ -460,6 +460,10 @@ END
 //SET_2DA_ENTRIES_NOW ~_#_#_#lua~ 2 // don't pretty print the S_2_E_N/L since it's anyway 1 coloumn...
 
 COPY ~refinements/Hlab/Wizard/copy~	  	~override~
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reaegi.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@130) STR_VAR bam_file = ~d5reaegi~ RET icon END
+END
 COPY ~refinements/Hlab/Wizard/TG#AEGI.SPL~	~override/TG#AEGI.SPL~
 SAY NAME1 @130
 SAY NAME2 @130
@@ -488,10 +492,17 @@ COPY ~refinements/Hlab/Wizard/TG#COME.SPL~	~override/TG#COME.SPL~
 SAY UNIDENTIFIED_DESC @294
 COPY ~refinements/Hlab/Wizard/TG#DRGB.SPL~	~override/TG#DRGB.SPL~
 SAY UNIDENTIFIED_DESC @293
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5refors.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@139) STR_VAR bam_file = ~d5refors~ RET icon END
+END
 COPY ~refinements/Hlab/Wizard/TG#FORS.SPL~	~override/TG#FORS.SPL~
 SAY NAME1 @139
 SAY NAME2 @139
 SAY UNIDENTIFIED_DESC @140
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 
 /* specialist mages: */
 
@@ -564,12 +575,19 @@ SAY UNIDENTIFIED_DESC @326
 
 STRING_SET ~45866~ @430
 COPY ~refinements/Hlab/Sorcerer/copy~	  	~override~
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reidol.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@400) STR_VAR bam_file = ~d5reidol~ RET icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#IDOF.SPL~	~override/TG#IDOF.SPL~
 SAY 0x3ce @431
 SAY 0x3fe @431
 SAY NAME1 @400
 SAY NAME2 @400
 SAY UNIDENTIFIED_DESC @401
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#SSPR.SPL~	~override/TG#SSPR.SPL~
 SAY NAME1 @402
 SAY NAME2 @402
@@ -584,30 +602,51 @@ SAY NAME2 @406
 SAY UNIDENTIFIED_DESC @407
 COPY ~refinements/Hlab/Sorcerer/LI#SRES.SPL~	~override/LI#SRES.SPL~
 SAY 0x9e @413
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5respir.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@408) STR_VAR bam_file = ~d5respir~ RET icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#SPOF.SPL~	~override/TG#SPOF.SPL~
 SAY 0x48e @432
 SAY 0x4be @432
 SAY NAME1 @408
 SAY NAME2 @408
 SAY UNIDENTIFIED_DESC @409
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#SINF.SPL~	~override/TG#SINF.SPL~
 SAY NAME1 @410
 SAY NAME2 @410
 SAY UNIDENTIFIED_DESC @411
 SAY 0x12e @412
 // @413 USED
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reaqua.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@414) STR_VAR bam_file = ~d5reaqua~ RET icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#AQUA.SPL~	~override/TG#AQUA.SPL~
 SAY 0x51e @433
 SAY 0x54e @433
 SAY NAME1 @414
 SAY NAME2 @414
 SAY UNIDENTIFIED_DESC @415
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5rescio.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@416) STR_VAR bam_file = ~d5rescio~ RET icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#SCST.SPL~	~override/TG#SCST.SPL~
 SAY 0x48e @434
 SAY 0x4be @434
 SAY NAME1 @416
 SAY NAME2 @416
 SAY UNIDENTIFIED_DESC @417
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#SPSP.SPL~	~override/TG#SPSP.SPL~
 SAY NAME1 @418
 SAY NAME2 @418
@@ -616,10 +655,17 @@ COPY ~refinements/Hlab/Sorcerer/TG#ENES.SPL~	~override/TG#ENES.SPL~
 SAY NAME1 @420
 SAY NAME2 @420
 SAY UNIDENTIFIED_DESC @421
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5rechnm.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@422) STR_VAR bam_file = ~d5rechnm~ RET icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#CHAM.SPL~	~override/TG#CHAM.SPL~
 SAY NAME1 @422
 SAY NAME2 @422
 SAY UNIDENTIFIED_DESC @423
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Sorcerer/TG#CAAW.SPL~	~override/TG#CAAW.SPL~
 SAY NAME1 @424
 SAY NAME2 @424

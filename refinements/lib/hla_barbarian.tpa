@@ -42,31 +42,6 @@ LAF action_add_hla STR_VAR kit_name = ~BARBARIAN~ ability = ~AP_TG#HSKI~ num_all
 LAF action_add_hla STR_VAR kit_name = ~BARBARIAN~ ability = ~AP_TG#RSKI~ num_allowed = ~3~ prerequisite = ~GA_SPCL904~ END
 LAF action_add_hla STR_VAR kit_name = ~BARBARIAN~ ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
 
-/*
-LAF get_hla_table STR_VAR kit_name = ~BARBARIAN~ RET hla_table END 
-ACTION_IF (~%hla_table%~ STRING_EQUAL_CASE ~Fi0~) AND (FILE_EXISTS_IN_GAME ~lufi0.2da~) BEGIN 
-  COPY_EXISTING ~lufi0.2da~ ~override/lud5brb.2da~ 
-	LPF remove_hla STR_VAR remove_ability = ~GA_SPCL901~ END
-	LPF add_hla STR_VAR ability = ~GA_TG#GCRY~ num_allowed = ~1~ prerequisite = ~GA_SPCL908~ END
-	LPF add_hla STR_VAR ability = ~GA_TG#TLES~ num_allowed = ~3~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#HSKI~ num_allowed = ~3~ prerequisite = ~GA_SPCL907~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#RSKI~ num_allowed = ~3~ prerequisite = ~GA_SPCL904~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
-  COPY_EXISTING ~LUABBR.2DA~ ~override~
-    SET_2DA_ENTRY 49 1 2 ~d5brb~
-END
-ELSE BEGIN 
- ACTION_IF FILE_EXISTS_IN_GAME ~lu%hla_table%.2da~ BEGIN
-  COPY_EXISTING ~lu%hla_table%.2da~ ~override~
-	LPF remove_hla STR_VAR remove_ability = ~GA_SPCL901~ END
-	LPF add_hla STR_VAR ability = ~GA_TG#GCRY~ num_allowed = ~1~ prerequisite = ~GA_SPCL908~ END
-	LPF add_hla STR_VAR ability = ~GA_TG#TLES~ num_allowed = ~3~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#HSKI~ num_allowed = ~3~ prerequisite = ~GA_SPCL907~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#RSKI~ num_allowed = ~3~ prerequisite = ~GA_SPCL904~ END
-	LPF add_hla STR_VAR ability = ~AP_TG#TOUG~ num_allowed = ~5~ END
- END
-END
-*/
 
 // old code, replaced by above
 //COPY_EXISTING     ~LUABBR.2DA~                  ~override/LUABBR.2DA~

@@ -387,11 +387,19 @@ ACTION_IF FILE_EXISTS ~bgmain.exe~ THEN BEGIN
 END
 */
 
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5recrip.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@141) STR_VAR bam_file = ~d5recrip~ RET icon END
+END
 COPY ~refinements/Hlab/Thief/TG#CRIP.SPL~	~override/TG#CRIP.SPL~
 SAY NAME1 @141
 SAY NAME2 @141
 SAY UNIDENTIFIED_DESC @142
 SAY 0x5ae @143
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
+
 COPY ~refinements/Hlab/Thief/TG#USSC.SPL~	~override/TG#USSC.SPL~
 SAY NAME1 @144
 SAY NAME2 @144

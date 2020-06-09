@@ -263,12 +263,33 @@ SAY UNIDENTIFIED_DESC @389
 SAY 0xfe @390
 
 // New projectiles additions (actually not only for kits..)
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reling.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~ ~) STR_VAR bam_file = ~d5reling~ RET icon END
+END
 COPY ~refinements/Hlab/Bard/TG#LIN1.SPL~         ~override/TG#LIN1.SPL~ 
 WRITE_SHORT   0x98   LI#BARD1
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
+
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~ ~) STR_VAR bam_file = ~d5reling~ RET icon END
+END
 COPY ~refinements/Hlab/Bard/TG#LIN2.SPL~         ~override/TG#LIN2.SPL~
 WRITE_SHORT   0x98   LI#BARD2
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
+
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(~ ~) STR_VAR bam_file = ~d5reling~ RET icon END
+END
 COPY ~refinements/Hlab/Bard/TG#LIN3.SPL~         ~override/TG#LIN3.SPL~
 WRITE_SHORT   0x98   LI#BARD1
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 
 
 //////////////////////////////////////////////////////////////////////////////////

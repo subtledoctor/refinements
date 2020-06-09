@@ -153,10 +153,17 @@ COPY ~refinements/Hlab/Ranger/TG#AMBI.SPL~	 ~override/TG#AMBI.SPL~
 SAY NAME1 @210
 SAY NAME2 @210
 SAY UNIDENTIFIED_DESC @211
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reendu.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@212) STR_VAR bam_file = ~d5reendu~ RET icon END
+END
 COPY ~refinements/Hlab/Ranger/TG#ENDU.SPL~	 ~override/TG#ENDU.SPL~
 SAY NAME1 @212
 SAY NAME2 @212
 SAY UNIDENTIFIED_DESC @213
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 
 ACTION_IF !(MOD_IS_INSTALLED ~item_rev.tp2~ 0) THEN BEGIN
 	COPY_EXISTING ~clck32.itm~ ~override~
@@ -230,11 +237,18 @@ COPY ~refinements/Hlab/Ranger/TG#ANIM.SPL~	~override/TG#ANIM.SPL~
 SAY NAME1 @460
 SAY NAME2 @460
 SAY UNIDENTIFIED_DESC @461
+ACTION_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  COPY ~refinements/hlab/_ee_icons/d5reprec.bam~ ~override~
+  LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@462) STR_VAR bam_file = ~d5reprec~ RET icon END
+END
 COPY ~refinements/Hlab/Ranger/TG#PREC.SPL~	~override/TG#PREC.SPL~
 SAY NAME1 @462
 SAY NAME2 @462
 SAY UNIDENTIFIED_DESC @463
 SAY 0x15e @51
+PATCH_IF (GAME_IS ~bgee bg2ee eet~) BEGIN
+  LPF ALTER_EFFECT INT_VAR silent = 1 match_opcode = 142 parameter2 = icon END
+END
 COPY ~refinements/Hlab/Ranger/TG#STAL.SPL~	~override/TG#STAL.SPL~
 SAY NAME1 @464
 SAY NAME2 @464
