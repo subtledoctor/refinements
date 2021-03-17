@@ -4,7 +4,7 @@
 
 /* Fighter + Figther Kits */
 
-COPY ~refinements/Hlab/Fighter/d5_fihla.d5~ ~override~
+COPY ~refinements/Hlab/Fighter/d5_fihla.d5~ ~override/d5__fihla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2

@@ -4,7 +4,7 @@
 
 /* Ranger */
 
-COPY ~refinements/Hlab/ranger/d5_rahla.d5~ ~override~
+COPY ~refinements/Hlab/ranger/d5_rahla.d5~ ~override/d5__rahla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2

@@ -5,7 +5,7 @@
 /* Bards */
 /* Mostly a courtesy of aVENGER. Stuff is expanded and refined too. */
 
-COPY ~refinements/Hlab/Bard/d5_bahla.d5~ ~override~
+COPY ~refinements/Hlab/Bard/d5_bahla.d5~ ~override/d5__bahla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
@@ -98,7 +98,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#BHL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
   LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~GA_SPCL917~ num_allowed = ~16~ prerequisite = ~GA_TG#EVAS~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_profs.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__profs.d5~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_TG#SWSP~ num_allowed = ~16~ prerequisite = ~AP_SPCL915~ excluded_by = ~AP_TG#BWSP~ END
   LAF action_add_hla STR_VAR kit_name = ~SKALD~ ability = ~AP_TG#BWSP~ num_allowed = ~16~ prerequisite = ~AP_SPCL915~ excluded_by = ~AP_TG#SWSP~ END
 END

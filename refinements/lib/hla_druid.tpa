@@ -4,7 +4,7 @@
 
 /* Druid */
 
-COPY ~refinements/Hlab/Druid/d5_drhla.d5~ ~override~
+COPY ~refinements/Hlab/Druid/d5_drhla.d5~ ~override/d5__drhla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
@@ -397,7 +397,7 @@ COMPILE ~refinements/Hlab/Druid/tb#spir.baf~ USING ~refinements/languages/%s/mis
 
 /* Multiclasses */
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__fihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_DRUID~ ability = ~GA_TG#FERL~ num_allowed = ~20~ END
  COPY ~refinements/Hlab/Multiclass/TG#FERL.SPL~	 ~override/TG#FERL.SPL~
  SAY NAME1 @502

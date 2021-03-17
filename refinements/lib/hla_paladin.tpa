@@ -4,7 +4,7 @@
 
 /* Paladin */
 
-COPY ~refinements/Hlab/paladin/d5_pahla.d5~ ~override~
+COPY ~refinements/Hlab/paladin/d5_pahla.d5~ ~override/d5__pahla.d5~
 
 ADD_SECTYPE ~TB#Paladinhood~ ~Lost virtuous abilities~
 

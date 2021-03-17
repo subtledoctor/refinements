@@ -4,8 +4,8 @@
 
 /* Wizard */
 
-COPY ~refinements/Hlab/wizard/d5_wihla.d5~ ~override~
-COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~override~
+COPY ~refinements/Hlab/wizard/d5_wihla.d5~ ~override/d5__wihla.d5~
+COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~overrided5__sohla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
@@ -711,7 +711,7 @@ COPY ~refinements/Hlab/Sorcerer/tb#vecna.eff~ ~override~
 
 /* Multiclasses */
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__fihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE~ ability = ~AP_TG#MDRE~ num_allowed = ~3~ END
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_TG#MDRE~ num_allowed = ~3~ END
  COPY ~refinements/Hlab/Multiclass/TG#MDRE.SPL~	 ~override/TG#MDRE.SPL~
@@ -719,7 +719,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
  SAY NAME2 @504
  SAY UNIDENTIFIED_DESC @505
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_clhla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__clhla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~CLERIC_MAGE~ ability = ~GA_TG#UNIO~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#UNIO.SPL~	 ~override/TG#UNIO.SPL~
  SAY NAME1 @512

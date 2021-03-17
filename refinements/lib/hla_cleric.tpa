@@ -4,7 +4,7 @@
 
 /* Cleric */
 
-COPY ~refinements/Hlab/Cleric/d5_clhla.d5~ ~override~
+COPY ~refinements/Hlab/Cleric/d5_clhla.d5~ ~override/d5__clhla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
@@ -323,7 +323,7 @@ SAY 0x9e @486
 
 /* Multiclasses */
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__fihla.d5~) BEGIN
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_CLERIC~ ability = ~AP_LI#COPR~ num_allowed = ~2~ END
 LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_LI#COPR~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/LI#COPR.SPL~	 ~override/LI#COPR.SPL~
@@ -331,7 +331,7 @@ LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_CLERIC~ ability = ~AP_LI#COP
  SAY NAME2 @510
  SAY UNIDENTIFIED_DESC @511
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_rahla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__rahla.d5~) BEGIN
 LAF action_add_hla STR_VAR kit_name = ~CLERIC_RANGER~ ability = ~AP_LI#COPR~ num_allowed = ~2~ END
 END
 

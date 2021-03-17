@@ -4,7 +4,7 @@
 
 /* Monk */
 
-COPY ~refinements/Hlab/monk/d5_mohla.d5~ ~override~
+COPY ~refinements/Hlab/monk/d5_mohla.d5~ ~override/d5__mohla.d5~
 
 ADD_SECTYPE ~TB#SecondWind~ ~Second Wind triggered~
 

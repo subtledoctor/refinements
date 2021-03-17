@@ -4,7 +4,7 @@
 
 /* Barbarian */
 
-COPY ~refinements/Hlab/Barbarian/d5_bbhla.d5~ ~override~
+COPY ~refinements/Hlab/Barbarian/d5_bbhla.d5~ ~override/d5__bbhla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2

@@ -6,7 +6,7 @@
 
 INCLUDE ~refinements/lib/remove_lines.tpa~
 
-COPY ~refinements/Hlab/thief/d5_thhla.d5~ ~override~
+COPY ~refinements/Hlab/thief/d5_thhla.d5~ ~override/d5__thhla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
@@ -55,7 +55,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#CRIP~ num_allowed = ~5~ END
   LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~ASSASIN~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -77,7 +77,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~BOUNTY_HUNTER~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -98,7 +98,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SWASHBUCKLER~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -118,7 +118,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~SHADOWDANCER~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -139,7 +139,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -173,7 +173,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
  END
@@ -205,7 +205,7 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~RR#THL01.SPL~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
   LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 END
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
  ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
   LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
   LAF action_add_hla STR_VAR kit_name = ~THIEF~ ability = ~GA_LI#SCRT~ num_allowed = ~1~ prerequisite = ~AP_TG#USSC~ END
@@ -244,7 +244,7 @@ ACTION_IF (d5_refine_mod_kits = 1) BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 //			END
-			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
 			 ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_LI#SCRT~ num_allowed = ~1~ prerequisite = ~AP_TG#USSC~ END
@@ -270,7 +270,7 @@ ACTION_IF (d5_refine_mod_kits = 1) BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 //			END
-			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
 			 ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
 			 END
@@ -310,7 +310,7 @@ ACTION_IF (d5_refine_mod_kits = 1) BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#CRIP~ num_allowed = ~3~ END
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~GA_TG#EVAS~ num_allowed = ~16~ END
 //			END
-			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5_rfeat.d5~ BEGIN
+			ACTION_IF NOT FILE_EXISTS_IN_GAME ~d5__rfeat.d5~ BEGIN
 			 ACTION_IF ENGINE_IS ~soa tob bgt~ BEGIN
 			  LAF action_add_hla STR_VAR kit_name = EVAL ~%kitlist_name%~ ability = ~AP_TG#USSC~ num_allowed = ~1~ END
 			 END
@@ -492,7 +492,7 @@ ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
 	COPY_EXISTING ~%scroll%.itm~ ~override~
 	  WRITE_BYTE 0x1f (THIS BAND 0b11111101)
 	  WRITE_BYTE 0x20 (THIS BAND 0b10111101)
-	  PATCH_IF !(FILE_EXISTS_IN_GAME ~d5_umd.d5~) BEGIN
+	  PATCH_IF !(FILE_EXISTS_IN_GAME ~d5__umd.d5~) BEGIN
 		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %no_umd_specific% timing = 2 END
 	  END
 	BUT_ONLY
@@ -505,7 +505,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 	PATCH_IF (%thief_use% BAND 0b01000000) = 0b01000000 BEGIN
 	  WRITE_BYTE 0x1f (THIS BAND 0b11111101)
 	  WRITE_BYTE 0x20 (THIS BAND 0b10111101)
-	  PATCH_IF !(FILE_EXISTS_IN_GAME ~d5_umd.d5~) BEGIN
+	  PATCH_IF !(FILE_EXISTS_IN_GAME ~d5__umd.d5~) BEGIN
 		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 6 parameter1 = %no_umd_specific% timing = 2 END
 	  END
 	END
@@ -530,7 +530,7 @@ THEN
   BUT_ONLY
  END
 
- COPY ~%MOD_FOLDER%/lib/markers/d5_marker.d5~ ~override/d5_umd.d5~
+ COPY ~%MOD_FOLDER%/lib/markers/d5_marker.d5~ ~override/d5__umd.d5~
 
 COPY ~refinements/Hlab/thief/ee/d5_umd.spl~ ~override~
     SAY NAME1 @144
@@ -559,7 +559,7 @@ ACTION_FOR_EACH kitclab IN ~clabma01~ ~clabma02~ ~clabma03~ ~clabma04~ ~clabma05
   END 
 END  
 
-ACTION_IF !(FILE_EXISTS_IN_GAME ~d5_rfeat.d5~) BEGIN
+ACTION_IF !(FILE_EXISTS_IN_GAME ~d5__rfeat.d5~) BEGIN
   COPY_EXISTING ~clabth01.2da~ ~override~
 	LPM remove_blank_lines
 	APPEND_FILE ~refinements/Hlab/thief/ee/no_use_devices.txt~
@@ -710,7 +710,7 @@ APPEND  ~CLEARAIR.2DA~ ~ToxicTrap     TG#TOXT~
 
 /* Multiclasses */
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__fihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_THIEF~ ability = ~AP_TG#COMR~ num_allowed = ~1~ END
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#COMR~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#COMR.SPL~	 ~override/TG#COMR.SPL~
@@ -718,7 +718,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~d5_fihla.d5~) BEGIN
  SAY NAME2 @500
  SAY UNIDENTIFIED_DESC @501
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_wihla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__wihla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~MAGE_THIEF~ ability = ~AP_TG#SLIP~ num_allowed = ~1~ END
  LAF action_add_hla STR_VAR kit_name = ~FIGHTER_MAGE_THIEF~ ability = ~AP_TG#SLIP~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#SLIP.SPL~	 ~override/TG#SLIP.SPL~
@@ -726,7 +726,7 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~d5_wihla.d5~) BEGIN
  SAY NAME2 @506
  SAY UNIDENTIFIED_DESC @507
 END
-ACTION_IF (FILE_EXISTS_IN_GAME ~d5_clhla.d5~) BEGIN
+ACTION_IF (FILE_EXISTS_IN_GAME ~d5__clhla.d5~) BEGIN
  LAF action_add_hla STR_VAR kit_name = ~CLERIC_THIEF~ ability = ~GA_TG#DINV~ num_allowed = ~1~ END
  COPY ~refinements/Hlab/Multiclass/TG#DINV.SPL~	 ~override/TG#DINV.SPL~
  SAY NAME1 @508
