@@ -5,7 +5,7 @@
 /* Wizard */
 
 COPY ~refinements/Hlab/wizard/d5_wihla.d5~ ~override/d5__wihla.d5~
-COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~overrided5__sohla.d5~
+COPY ~refinements/Hlab/sorcerer/d5_sohla.d5~ ~override/d5__sohla.d5~
 
 COPY_EXISTING ~projectl.ids~ ~override~
     READ_2DA_ENTRIES_NOW rows 2
